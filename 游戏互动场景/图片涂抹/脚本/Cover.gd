@@ -1,8 +1,8 @@
 extends TextureRect
 
 @export var brush_size = 30
-var erase_points:PackedVector2Array
-var shader_material:ShaderMaterial
+var erase_points:PackedVector2Array #记录涂抹的点
+var shader_material:ShaderMaterial #材质
 var init_window #记录初始窗口大小
 var temp
 var normalized_pos
