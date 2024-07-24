@@ -5,6 +5,7 @@ extends AnimatedSprite2D
 
 func _ready():
 	set_scale(Vector2(scale_x,scale_y))
+	z_index = 99
 
 func _enter_tree():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
