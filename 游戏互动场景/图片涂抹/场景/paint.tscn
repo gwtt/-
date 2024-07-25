@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjyl0o18wf4fh"]
+
+[ext_resource type="Shader" path="res://游戏互动场景/图片涂抹/脚本/paint.gdshader" id="1_twfik"]
+[ext_resource type="Texture2D" uid="uid://cn6b3hm36ksf6" path="res://游戏互动场景/图片涂抹/资源/狐狸头像.png" id="2_nt6eb"]
+[ext_resource type="Script" path="res://游戏互动场景/图片涂抹/脚本/Cover.gd" id="2_x8q67"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ln8nx"]
+shader = ExtResource("1_twfik")
+shader_parameter/erase_points = null
+shader_parameter/erase_point_count = 0
+shader_parameter/brush_size = 30.0
+shader_parameter/scale_ratio = Vector2(1, 1)
+shader_parameter/texture = ExtResource("2_nt6eb")
+
+[node name="Paint" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cover" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_ln8nx")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = -258.0
+offset_right = 255.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nt6eb")
+expand_mode = 1
+script = ExtResource("2_x8q67")
