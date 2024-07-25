@@ -2,7 +2,6 @@ extends TextureRect
 
 @export var MIN_DISTANCE_THRESHOLD = 20
 var erase_points:PackedVector2Array #记录涂抹的点
-var erase_then_points:PackedVector2Array #记录一个大型全局的点并判断范围
 var shader_material:ShaderMaterial #材质
 var init_window #记录初始窗口大小
 var temp
