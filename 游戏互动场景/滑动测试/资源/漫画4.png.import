@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnvvc3f1er34j"
-path="res://.godot/imported/漫画4.png-d9b19f574c2dcebc8f9902a1ae05a42e.ctex"
+path="res://.godot/imported/漫画4.png-25fd6629fe01a2b89dd499cdc812ab2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://全局脚本/滑动测试/资源/漫画4.png"
-dest_files=["res://.godot/imported/漫画4.png-d9b19f574c2dcebc8f9902a1ae05a42e.ctex"]
+source_file="res://游戏互动场景/滑动测试/资源/漫画4.png"
+dest_files=["res://.godot/imported/漫画4.png-25fd6629fe01a2b89dd499cdc812ab2b.ctex"]
 
 [params]
 

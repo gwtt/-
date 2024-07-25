@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpseq4q1qu2aj"
-path="res://.godot/imported/漫画3.png-7c7a6c53e62e153a1314cbaa200ffbcd.ctex"
+uid="uid://i4fq5qoowxk3"
+path="res://.godot/imported/漫画1.png-8ea7e89eeb3ea01b4c2ff0d9ebde8b12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://全局脚本/滑动测试/资源/漫画3.png"
-dest_files=["res://.godot/imported/漫画3.png-7c7a6c53e62e153a1314cbaa200ffbcd.ctex"]
+source_file="res://游戏互动场景/滑动测试/资源/漫画1.png"
+dest_files=["res://.godot/imported/漫画1.png-8ea7e89eeb3ea01b4c2ff0d9ebde8b12.ctex"]
 
 [params]
 
