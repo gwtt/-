@@ -5,14 +5,10 @@ extends Node2D
 var isDrag = false
 var StartPos = 0
 var StartCamPos = 0
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == 1:
+		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.is_pressed():
 				isDrag = true
 				StartPos = event.position.y
@@ -23,6 +19,4 @@ func _input(event):
 	if 	isDrag:
 		var OFFSET = StartPos - event.position.y
 		camera_2d.position.y = StartCamPos + OFFSET
-
-	
 	pass

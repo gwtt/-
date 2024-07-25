@@ -19,11 +19,6 @@ config/icon="res://icon.svg"
 
 MouseIcon="*res://全局脚本/鼠标指针/场景/mouse_icon.tscn"
 
-[display]
-
-window/size/viewport_width=909
-window/size/viewport_height=1214
-
 [dotnet]
 
 project/assembly_name="The first Game"
