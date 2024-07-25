@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhkj8fpp40c0a"]
+
+[ext_resource type="Script" path="res://游戏互动场景/3D跳动/脚本/Jump.gd" id="1_cacwv"]
+[ext_resource type="Texture2D" uid="uid://cbmecwnfuiffk" path="res://icon.svg" id="2_s2dsb"]
+
+[sub_resource type="Curve" id="Curve_m3uew"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.276899, 1), 0.0, 0.0, 0, 0, Vector2(0.406646, 0.0186567), 0.0, 0.0, 0, 0, Vector2(0.560127, 0.496269), 0.0, 0.0, 0, 0, Vector2(0.759494, 0.011194), 0.0, 0.0, 0, 0, Vector2(0.879747, 0.287313), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 7
+
+[node name="player" type="Node2D"]
+position = Vector2(129, 117)
+script = ExtResource("1_cacwv")
+curve = SubResource("Curve_m3uew")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_s2dsb")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.411765)
+show_behind_parent = true
+position = Vector2(1, 117)
+rotation = 3.1381
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_s2dsb")

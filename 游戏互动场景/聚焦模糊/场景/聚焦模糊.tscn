@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://515swlxv7wnq"]
+
+[ext_resource type="Shader" path="res://游戏互动场景/聚焦模糊/资源/聚焦模糊.gdshader" id="1_mvdqy"]
+[ext_resource type="Texture2D" uid="uid://cbmecwnfuiffk" path="res://icon.svg" id="2_tisnu"]
+[ext_resource type="Script" path="res://游戏互动场景/聚焦模糊/脚本/图片.gd" id="3_vdalg"]
+[ext_resource type="Texture2D" uid="uid://dyc75d0xra8vc" path="res://游戏互动场景/聚焦模糊/资源/滑动条.png" id="4_3x7wn"]
+[ext_resource type="Script" path="res://游戏互动场景/聚焦模糊/脚本/滑动条.gd" id="4_7ghsk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pghh4"]
+shader = ExtResource("1_mvdqy")
+shader_parameter/rotation_speed = 0.1
+shader_parameter/_Radius = 2.388
+shader_parameter/y_rot = 27.0
+shader_parameter/x_rot = 30.484
+shader_parameter/fov = 90.235
+shader_parameter/inset = 0.0
+
+[node name="聚焦模糊" type="Node2D"]
+
+[node name="图片" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_pghh4")
+position = Vector2(542, 228)
+texture = ExtResource("2_tisnu")
+script = ExtResource("3_vdalg")
+
+[node name="滑动条" type="Sprite2D" parent="."]
+position = Vector2(531, 472)
+texture = ExtResource("4_3x7wn")
+script = ExtResource("4_7ghsk")
