@@ -8,7 +8,7 @@ var StartCamPos = 0
 
 func _input(event):
 	if event is InputEventMouse:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+		if event.button_mask == MOUSE_BUTTON_LEFT:
 			if event.is_pressed():
 				isDrag = true
 				StartPos = event.position.y
@@ -19,4 +19,3 @@ func _input(event):
 	if 	isDrag:
 		var OFFSET = StartPos - event.position.y
 		camera_2d.position.y = StartCamPos + OFFSET
-	pass
