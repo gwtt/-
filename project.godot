@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The first Game"
-run/main_scene="res://全局脚本/滑动测试/场景/comicV.tscn"
+run/main_scene="res://游戏互动场景/蓄力测试/场景/progress.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

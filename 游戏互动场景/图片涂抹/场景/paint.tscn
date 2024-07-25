@@ -8,7 +8,7 @@
 shader = ExtResource("1_twfik")
 shader_parameter/erase_points = null
 shader_parameter/erase_point_count = 0
-shader_parameter/brush_size = 30.0
+shader_parameter/brush_size = 59.725
 shader_parameter/scale_ratio = Vector2(1, 1)
 shader_parameter/texture = ExtResource("2_nt6eb")
 
