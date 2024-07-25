@@ -3,11 +3,12 @@
 [ext_resource type="SpriteFrames" uid="uid://f712vlbae13i" path="res://全局脚本/鼠标指针/资源/mouse_icon.tres" id="1_rxd2l"]
 [ext_resource type="Script" path="res://全局脚本/鼠标指针/脚本/mouse_icon.gd" id="2_w14vw"]
 
-[node name="mouse_icon" type="AnimatedSprite2D"]
-z_index = 99
+[node name="mouse_icon" type="CanvasLayer"]
+layer = 0
 rotation = -0.523599
+transform = Transform2D(0.866025, -0.5, 0.5, 0.866025, 0, 0)
+
+[node name="mouse_icon" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_rxd2l")
-animation = &"默认"
+animation = &"点击"
 script = ExtResource("2_w14vw")
-scale_x = 0.5
-scale_y = 0.5
