@@ -18,6 +18,16 @@ config/icon="res://icon.svg"
 [autoload]
 
 MouseIcon="*res://全局脚本/鼠标指针/场景/mouse_icon.tscn"
+BaseSetting="*res://全局脚本/游戏基本设置/BaseSetting.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [dotnet]
 

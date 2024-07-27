@@ -4,8 +4,9 @@
 [ext_resource type="Script" path="res://全局脚本/鼠标指针/脚本/mouse_icon.gd" id="2_w14vw"]
 
 [node name="mouse_icon" type="CanvasLayer"]
-layer = 0
+layer = 99
 rotation = -0.523599
+scale = Vector2(1, 1)
 transform = Transform2D(0.866025, -0.5, 0.5, 0.866025, 0, 0)
 
 [node name="mouse_icon" type="AnimatedSprite2D" parent="."]

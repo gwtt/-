@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://3xny5hkx7g1b"]
+
+[ext_resource type="Script" path="res://场景/主菜单/代码/演示代码.gd" id="1_n1ln3"]
+[ext_resource type="Texture2D" uid="uid://tgakd6oaw5y0" path="res://场景/主菜单/资源/黄.png" id="2_awyte"]
+[ext_resource type="Theme" uid="uid://c5qnus27enhds" path="res://场景/主菜单/资源/theme.tres" id="3_powus"]
+[ext_resource type="Script" path="res://场景/主菜单/代码/Button.gd" id="4_bhkjb"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_n1ln3")
+print_name = "神的游戏"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_awyte")
+expand_mode = 1
+
+[node name="TopMarginContainer" type="MarginContainer" parent="Control/PanelContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/TopMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Florence"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer"]
+custom_minimum_size = Vector2(300, 400)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_powus")
+theme_override_constants/separation = 20
+
+[node name="StartGame" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "开始游戏"
+script = ExtResource("4_bhkjb")
+change_size = null
+
+[node name="Setting" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "设置"
+
+[node name="quit" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "退出"
