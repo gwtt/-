@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dv72gtnbi3pm6"]
+[gd_scene load_steps=7 format=3 uid="uid://bbm57dwff3qv1"]
 
 [ext_resource type="Script" path="res://游戏互动场景/对话气泡/脚本/bubble.gd" id="1_rbw1u"]
 [ext_resource type="Texture2D" uid="uid://drl3r78ftx1e" path="res://游戏互动场景/对话气泡/资源/粒子.png" id="2_e141e"]
-[ext_resource type="Theme" uid="uid://cbg77ev71pcap" path="res://游戏互动场景/对话气泡/资源/bubble_theme.tres" id="2_g38xp"]
+[ext_resource type="Theme" uid="uid://bxhoc7ds1iobe" path="res://游戏互动场景/对话气泡/资源/bubble_theme.tres" id="2_g38xp"]
 
 [sub_resource type="Gradient" id="Gradient_pqcvp"]
 offsets = PackedFloat32Array(0.00547945, 0.30411, 0.646575, 1)
