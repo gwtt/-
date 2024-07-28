@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c2mcv8k6xwhso" path="res://游戏互动场景/蓄力测试/资源/char_blue_1.png" id="1_4tuwj"]
 [ext_resource type="Script" path="res://游戏互动场景/对话气泡/脚本/dialog.gd" id="1_rmwbj"]
-[ext_resource type="PackedScene" path="res://游戏互动场景/对话气泡/场景/bubble.tscn" id="3_bjxhc"]
+[ext_resource type="PackedScene" uid="uid://bbm57dwff3qv1" path="res://游戏互动场景/对话气泡/场景/bubble.tscn" id="3_bjxhc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lqebx"]
 atlas = ExtResource("1_4tuwj")
