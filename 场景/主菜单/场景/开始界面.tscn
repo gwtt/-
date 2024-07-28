@@ -95,7 +95,7 @@ alignment = 0
 script = ExtResource("3_f1r4u")
 target_node = NodePath("../../../../设置界面")
 
-[node name="abort" type="Button" parent="Control/初始界面/MarginContainer/VBoxContainer"]
+[node name="abort" type="Button" parent="Control/初始界面/MarginContainer/VBoxContainer" node_paths=PackedStringArray("target_node")]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -103,6 +103,7 @@ size_flags_vertical = 0
 text = "关于"
 alignment = 0
 script = ExtResource("5_mw00k")
+target_node = NodePath("../../../../关于界面")
 
 [node name="quit" type="Button" parent="Control/初始界面/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 50)
