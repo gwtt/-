@@ -23,7 +23,7 @@ var bubble_theme_dictionary = {
 
 func _button_appear():
 	StartPos = button.position
-	EndPos = StartPos-Vector2(0,300)
+	EndPos = StartPos-Vector2(0,600)
 	create_tween().tween_property(button,"position",EndPos,randf_range(0.5,2))
 	StartMod = Color(1,1,1,1)
 	create_tween().tween_property(button,"modulate",StartMod,1.5)
