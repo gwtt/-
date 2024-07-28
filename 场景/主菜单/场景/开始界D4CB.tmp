@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://3xny5hkx7g1b"]
+[gd_scene load_steps=19 format=3 uid="uid://3xny5hkx7g1b"]
 
 [ext_resource type="Texture2D" uid="uid://tgakd6oaw5y0" path="res://场景/主菜单/资源/黄.png" id="2_awyte"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/StartGame.gd" id="3_12ed7"]
@@ -7,7 +7,6 @@
 [ext_resource type="Theme" uid="uid://c5qnus27enhds" path="res://场景/主菜单/资源/theme.tres" id="3_powus"]
 [ext_resource type="Texture2D" uid="uid://d1rj5oqblt3ut" path="res://场景/主菜单/资源/白.png" id="4_lh0r4"]
 [ext_resource type="Texture2D" uid="uid://m8qq8beyjswl" path="res://场景/主菜单/资源/箭头.png" id="5_7lyvb"]
-[ext_resource type="Script" path="res://场景/主菜单/代码/abort.gd" id="5_mw00k"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/设置箭头返回.gd" id="6_flygc"]
 [ext_resource type="Theme" uid="uid://csrygy4s61w6x" path="res://场景/主菜单/资源/设置按钮主题.tres" id="6_wi7pi"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/分辨率设置.gd" id="7_722gu"]
@@ -95,14 +94,15 @@ alignment = 0
 script = ExtResource("3_f1r4u")
 target_node = NodePath("../../../../设置界面")
 
-[node name="abort" type="Button" parent="Control/初始界面/MarginContainer/VBoxContainer"]
+[node name="abort" type="Button" parent="Control/初始界面/MarginContainer/VBoxContainer" node_paths=PackedStringArray("target_node")]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "关于"
 alignment = 0
-script = ExtResource("5_mw00k")
+script = ExtResource("3_o5efq")
+target_node = NodePath("../../../../关于界面")
 
 [node name="quit" type="Button" parent="Control/初始界面/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 50)
@@ -227,6 +227,16 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 80
 theme_override_constants/margin_bottom = 40
 
+[node name="回去箭头" type="TextureButton" parent="Control/关于界面/MarginContainer" node_paths=PackedStringArray("start_panel", "own_panel")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("5_7lyvb")
+stretch_mode = 4
+script = ExtResource("6_flygc")
+start_panel = NodePath("../../../初始界面")
+own_panel = NodePath("../..")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/关于界面/MarginContainer"]
 layout_mode = 2
 
@@ -244,7 +254,6 @@ text = "关于"
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/关于界面/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 theme = ExtResource("16_jj0p3")
 theme_override_constants/margin_right = 60
 
@@ -256,17 +265,6 @@ text = "\"我的梦想是搁浅的孤船，瘦骨如柴，皲裂疲倦；斑驳�
 做游戏也是我们的梦想，不要等着自己准备好再去做，直接去做吧！
 这款游戏是我们设计第一款游戏，灵感来源于Florence!"
 autowrap_mode = 2
-
-[node name="回去箭头" type="TextureButton" parent="Control/关于界面/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" node_paths=PackedStringArray("start_panel", "own_panel")]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-texture_normal = ExtResource("5_7lyvb")
-stretch_mode = 0
-script = ExtResource("6_flygc")
-start_panel = NodePath("../../../../../../初始界面")
-own_panel = NodePath("../../../../..")
 
 [node name="介绍" type="VBoxContainer" parent="Control/关于界面/MarginContainer/HBoxContainer"]
 layout_mode = 2
