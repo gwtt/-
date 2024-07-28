@@ -1,0 +1,216 @@
+[gd_scene load_steps=27 format=3 uid="uid://sp7gnoe0ytht"]
+
+[ext_resource type="Texture2D" uid="uid://c2mcv8k6xwhso" path="res://游戏互动场景/蓄力测试/资源/char_blue_1.png" id="1_4tuwj"]
+[ext_resource type="Script" path="res://游戏互动场景/对话气泡/脚本/dialog.gd" id="1_rmwbj"]
+[ext_resource type="Theme" uid="uid://c5qnus27enhds" path="res://场景/主菜单/资源/theme.tres" id="4_1rvcw"]
+[ext_resource type="Texture2D" uid="uid://drl3r78ftx1e" path="res://游戏互动场景/对话气泡/资源/粒子.png" id="4_5jlqs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqebx"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(0, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy6hy"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(56, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4etxb"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(112, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whkdj"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(168, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akjth"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(224, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woni8"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(280, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fycdg"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(336, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok1ip"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(392, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yxc7"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(0, 392, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stem5"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(56, 392, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s2iu"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(112, 392, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h40c8"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(168, 392, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn1vr"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(0, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhl7n"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(56, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op1u6"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(112, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibia3"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(168, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7f0s"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(224, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe0q6"]
+atlas = ExtResource("1_4tuwj")
+region = Rect2(280, 0, 56, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_inmwp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqebx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sy6hy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4etxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whkdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akjth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woni8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fycdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok1ip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yxc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stem5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s2iu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h40c8")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tn1vr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhl7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_op1u6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibia3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7f0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe0q6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_ycj0j"]
+offsets = PackedFloat32Array(0.00547945, 0.30411, 0.646575, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0.597683, 0.597683, 0.597683, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nekxn"]
+gradient = SubResource("Gradient_ycj0j")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_op4xm"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 150.0
+emission_ring_radius = 120.0
+emission_ring_inner_radius = 0.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -400.0
+radial_accel_max = -200.0
+color_ramp = SubResource("GradientTexture1D_nekxn")
+
+[node name="Dialog" type="Node2D"]
+script = ExtResource("1_rmwbj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(-300, -74)
+scale = Vector2(6.00893, 6.00893)
+sprite_frames = SubResource("SpriteFrames_inmwp")
+animation = &"dead"
+autoplay = "idle"
+
+[node name="Button1" type="Button" parent="CharacterBody2D"]
+offset_left = -300.0
+offset_top = -124.0
+offset_right = 54.0
+offset_bottom = -17.0
+theme = ExtResource("4_1rvcw")
+theme_type_variation = &"BubbleButton"
+text = "Hello！！"
+
+[node name="Boom1" type="GPUParticles2D" parent="CharacterBody2D/Button1"]
+visible = false
+position = Vector2(173, 48)
+scale = Vector2(1.90863, 1.55051)
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_op4xm")
+texture = ExtResource("4_5jlqs")
+
+[node name="Button2" type="Button" parent="CharacterBody2D"]
+offset_left = 142.0
+offset_top = -24.0
+offset_right = 496.0
+offset_bottom = 83.0
+theme = ExtResource("4_1rvcw")
+theme_type_variation = &"BubbleButton"
+text = "Hello！！"
+
+[node name="Boom2" type="GPUParticles2D" parent="CharacterBody2D/Button2"]
+visible = false
+position = Vector2(173, 48)
+scale = Vector2(1.90863, 1.55051)
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_op4xm")
+texture = ExtResource("4_5jlqs")
+
+[connection signal="pressed" from="CharacterBody2D/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="CharacterBody2D/Button2" to="." method="_on_button_2_pressed"]
