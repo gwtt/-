@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://f712vlbae13i"]
+
+[ext_resource type="Texture2D" uid="uid://dklc7ygpalqv3" path="res://全局/鼠标指针/资源/握住.png" id="1_va3lm"]
+[ext_resource type="Texture2D" uid="uid://vf6mrjqnkh4i" path="res://全局/鼠标指针/资源/摊开.png" id="2_o87fg"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_va3lm")
+}],
+"loop": true,
+"name": &"点击",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o87fg")
+}],
+"loop": true,
+"name": &"默认",
+"speed": 5.0
+}]
