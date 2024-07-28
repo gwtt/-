@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bjal8ninc35o7"]
+
+[ext_resource type="Texture2D" uid="uid://cs7wfywb4lvk8" path="res://游戏互动场景/对话气泡/资源/气泡.png" id="1_nwf0t"]
+
+[resource]
+texture = ExtResource("1_nwf0t")
+texture_margin_bottom = 30.0
+region_rect = Rect2(186, 350, 136, 98)

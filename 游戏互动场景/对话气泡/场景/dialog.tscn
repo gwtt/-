@@ -1,9 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://sp7gnoe0ytht"]
+[gd_scene load_steps=23 format=3 uid="uid://sp7gnoe0ytht"]
 
 [ext_resource type="Texture2D" uid="uid://c2mcv8k6xwhso" path="res://游戏互动场景/蓄力测试/资源/char_blue_1.png" id="1_4tuwj"]
 [ext_resource type="Script" path="res://游戏互动场景/对话气泡/脚本/dialog.gd" id="1_rmwbj"]
-[ext_resource type="Theme" uid="uid://c5qnus27enhds" path="res://场景/主菜单/资源/theme.tres" id="4_1rvcw"]
-[ext_resource type="Texture2D" uid="uid://drl3r78ftx1e" path="res://游戏互动场景/对话气泡/资源/粒子.png" id="4_5jlqs"]
+[ext_resource type="PackedScene" uid="uid://dv72gtnbi3pm6" path="res://游戏互动场景/对话气泡/场景/bubble.tscn" id="3_bjxhc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lqebx"]
 atlas = ExtResource("1_4tuwj")
@@ -144,26 +143,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_ycj0j"]
-offsets = PackedFloat32Array(0.00547945, 0.30411, 0.646575, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0.597683, 0.597683, 0.597683, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_nekxn"]
-gradient = SubResource("Gradient_ycj0j")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_op4xm"]
-particle_flag_align_y = true
-particle_flag_disable_z = true
-emission_shape = 6
-emission_ring_axis = Vector3(0, 0, 1)
-emission_ring_height = 150.0
-emission_ring_radius = 120.0
-emission_ring_inner_radius = 0.0
-gravity = Vector3(0, 0, 0)
-radial_accel_min = -400.0
-radial_accel_max = -200.0
-color_ramp = SubResource("GradientTexture1D_nekxn")
-
 [node name="Dialog" type="Node2D"]
 script = ExtResource("1_rmwbj")
 
@@ -178,39 +157,8 @@ sprite_frames = SubResource("SpriteFrames_inmwp")
 animation = &"dead"
 autoplay = "idle"
 
-[node name="Button1" type="Button" parent="CharacterBody2D"]
-offset_left = -300.0
-offset_top = -124.0
-offset_right = 54.0
-offset_bottom = -17.0
-theme = ExtResource("4_1rvcw")
-theme_type_variation = &"BubbleButton"
-text = "Hello！！"
+[node name="Bubble1" parent="CharacterBody2D" instance=ExtResource("3_bjxhc")]
+position = Vector2(416, 109)
 
-[node name="Boom1" type="GPUParticles2D" parent="CharacterBody2D/Button1"]
-visible = false
-position = Vector2(173, 48)
-scale = Vector2(1.90863, 1.55051)
-amount = 200
-process_material = SubResource("ParticleProcessMaterial_op4xm")
-texture = ExtResource("4_5jlqs")
-
-[node name="Button2" type="Button" parent="CharacterBody2D"]
-offset_left = 142.0
-offset_top = -24.0
-offset_right = 496.0
-offset_bottom = 83.0
-theme = ExtResource("4_1rvcw")
-theme_type_variation = &"BubbleButton"
-text = "Hello！！"
-
-[node name="Boom2" type="GPUParticles2D" parent="CharacterBody2D/Button2"]
-visible = false
-position = Vector2(173, 48)
-scale = Vector2(1.90863, 1.55051)
-amount = 200
-process_material = SubResource("ParticleProcessMaterial_op4xm")
-texture = ExtResource("4_5jlqs")
-
-[connection signal="pressed" from="CharacterBody2D/Button1" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="CharacterBody2D/Button2" to="." method="_on_button_2_pressed"]
+[node name="Bubble2" parent="CharacterBody2D" instance=ExtResource("3_bjxhc")]
+position = Vector2(-91, -66)

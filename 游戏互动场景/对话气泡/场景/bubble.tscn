@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dv72gtnbi3pm6"]
+
+[ext_resource type="Script" path="res://游戏互动场景/对话气泡/脚本/bubble.gd" id="1_rbw1u"]
+[ext_resource type="Texture2D" uid="uid://drl3r78ftx1e" path="res://游戏互动场景/对话气泡/资源/粒子.png" id="2_e141e"]
+[ext_resource type="Theme" uid="uid://cbg77ev71pcap" path="res://游戏互动场景/对话气泡/资源/bubble_theme.tres" id="2_g38xp"]
+
+[sub_resource type="Gradient" id="Gradient_pqcvp"]
+offsets = PackedFloat32Array(0.00547945, 0.30411, 0.646575, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0.597683, 0.597683, 0.597683, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nekxn"]
+gradient = SubResource("Gradient_pqcvp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rnlr2"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 150.0
+emission_ring_radius = 120.0
+emission_ring_inner_radius = 0.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -400.0
+radial_accel_max = -200.0
+color_ramp = SubResource("GradientTexture1D_nekxn")
+
+[node name="Bubble" type="Node2D"]
+script = ExtResource("1_rbw1u")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -176.0
+offset_top = -53.0
+offset_right = 178.0
+offset_bottom = 54.0
+theme = ExtResource("2_g38xp")
+theme_type_variation = &"BubbleButton"
+
+[node name="Boom" type="GPUParticles2D" parent="Button"]
+visible = false
+position = Vector2(173, 48)
+scale = Vector2(1.90863, 1.55051)
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_rnlr2")
+texture = ExtResource("2_e141e")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
