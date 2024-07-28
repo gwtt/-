@@ -17,14 +17,14 @@ var screen_resolution_dictionary = {
 var sound_scape:int = 6:
 	set(value):
 		if value > 10:
-			sound_scape =  1
+			sound_scape = 0
 		else:
 			sound_scape =  value
 #音乐 todo还要加个信号判断
 var music:int = 2:
 	set(value):
 		if value > 10:
-			music =  1
+			music =  0
 		else:
 			music =  value
 #是否全屏

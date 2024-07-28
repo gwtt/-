@@ -1,0 +1,185 @@
+[gd_scene load_steps=13 format=3 uid="uid://3xny5hkx7g1b"]
+
+[ext_resource type="Texture2D" uid="uid://tgakd6oaw5y0" path="res://场景/主菜单/资源/黄.png" id="2_awyte"]
+[ext_resource type="Theme" uid="uid://c5qnus27enhds" path="res://场景/主菜单/资源/theme.tres" id="3_powus"]
+[ext_resource type="Script" path="res://场景/主菜单/代码/StartButton.gd" id="4_bhkjb"]
+[ext_resource type="Texture2D" uid="uid://d1rj5oqblt3ut" path="res://场景/主菜单/资源/白.png" id="4_lh0r4"]
+[ext_resource type="Texture2D" uid="uid://m8qq8beyjswl" path="res://场景/主菜单/资源/箭头.png" id="5_7lyvb"]
+[ext_resource type="Script" path="res://场景/主菜单/代码/设置箭头返回.gd" id="6_flygc"]
+[ext_resource type="Theme" uid="uid://csrygy4s61w6x" path="res://场景/主菜单/资源/设置按钮主题.tres" id="6_wi7pi"]
+[ext_resource type="Script" path="res://场景/主菜单/代码/分辨率设置.gd" id="7_722gu"]
+[ext_resource type="Script" path="res://场景/主菜单/代码/全屏设置.gd" id="8_4ojc0"]
+[ext_resource type="Script" path="res://场景/主菜单/代码/音乐设置.gd" id="9_4ed5n"]
+[ext_resource type="Script" path="res://场景/主菜单/代码/音效设置.gd" id="10_uobkp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sy3gv"]
+bg_color = Color(0, 0, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="初始界面" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/初始界面"]
+layout_mode = 2
+texture = ExtResource("2_awyte")
+expand_mode = 1
+
+[node name="TopMarginContainer" type="MarginContainer" parent="Control/初始界面"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Control/初始界面/TopMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Florence"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/初始界面"]
+custom_minimum_size = Vector2(0, 400)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/初始界面/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("3_powus")
+theme_override_constants/separation = 20
+
+[node name="StartGame" type="Button" parent="Control/初始界面/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "开始游戏"
+script = ExtResource("4_bhkjb")
+
+[node name="Setting" type="Button" parent="Control/初始界面/MarginContainer/VBoxContainer" node_paths=PackedStringArray("target_node")]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "设置"
+script = ExtResource("4_bhkjb")
+target_node = NodePath("../../../../设置界面")
+
+[node name="quit" type="Button" parent="Control/初始界面/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "退出"
+script = ExtResource("4_bhkjb")
+
+[node name="设置界面" type="PanelContainer" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/设置界面"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_lh0r4")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/设置界面"]
+layout_mode = 2
+
+[node name="第一切割" type="VBoxContainer" parent="Control/设置界面/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Control/设置界面/HBoxContainer/第一切割"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = SubResource("StyleBoxFlat_sy3gv")
+text = "设置"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/设置界面/HBoxContainer/第一切割"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="回去箭头" type="TextureButton" parent="Control/设置界面/HBoxContainer/第一切割/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture_normal = ExtResource("5_7lyvb")
+stretch_mode = 0
+script = ExtResource("6_flygc")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/设置界面/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 20
+
+[node name="第二切割" type="VBoxContainer" parent="Control/设置界面/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_wi7pi")
+theme_override_constants/separation = 40
+
+[node name="分辨率设置" type="Button" parent="Control/设置界面/HBoxContainer/MarginContainer/第二切割"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "画面:1920X1080"
+script = ExtResource("7_722gu")
+
+[node name="全屏设置" type="Button" parent="Control/设置界面/HBoxContainer/MarginContainer/第二切割"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "全屏：关"
+script = ExtResource("8_4ojc0")
+
+[node name="音乐设置" type="Button" parent="Control/设置界面/HBoxContainer/MarginContainer/第二切割"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "音乐：2"
+script = ExtResource("9_4ed5n")
+
+[node name="音效设置" type="Button" parent="Control/设置界面/HBoxContainer/MarginContainer/第二切割"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "音效：6"
+script = ExtResource("10_uobkp")
