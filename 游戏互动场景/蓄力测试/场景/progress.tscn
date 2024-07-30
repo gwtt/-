@@ -158,13 +158,15 @@ autoplay = "idle"
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = 27.0
-offset_top = -195.0
-offset_right = 67.0
-offset_bottom = -155.0
+offset_left = 48.0
+offset_top = -211.0
+offset_right = 88.0
+offset_bottom = -171.0
 scale = Vector2(7.02375, 9.36685)
 max_value = 1.0
 step = 0.0
+value = 1.0
 fill_mode = 3
+nine_patch_stretch = true
 texture_progress = ExtResource("1_1c1vq")
 metadata/_edit_use_anchors_ = true

@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://sp7gnoe0ytht"]
+[gd_scene load_steps=24 format=3 uid="uid://sp7gnoe0ytht"]
 
 [ext_resource type="Texture2D" uid="uid://c2mcv8k6xwhso" path="res://游戏互动场景/蓄力测试/资源/char_blue_1.png" id="1_4tuwj"]
 [ext_resource type="Script" path="res://游戏互动场景/对话气泡/脚本/dialog.gd" id="1_rmwbj"]
-[ext_resource type="PackedScene" uid="uid://bbm57dwff3qv1" path="res://游戏互动场景/对话气泡/场景/bubble.tscn" id="3_bjxhc"]
+[ext_resource type="Theme" uid="uid://csrygy4s61w6x" path="res://场景/主菜单/资源/设置按钮主题.tres" id="3_8uivj"]
+[ext_resource type="Texture2D" uid="uid://bq1prqse4hugt" path="res://游戏互动场景/对话气泡/资源/UI_Flat_Scrollbar_02.png" id="4_5sr30"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lqebx"]
 atlas = ExtResource("1_4tuwj")
@@ -157,8 +158,23 @@ sprite_frames = SubResource("SpriteFrames_inmwp")
 animation = &"dead"
 autoplay = "idle"
 
-[node name="Bubble1" parent="CharacterBody2D" instance=ExtResource("3_bjxhc")]
-position = Vector2(416, 109)
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_left = -935.0
+offset_top = -517.0
+offset_right = -587.0
+offset_bottom = -410.0
+theme = ExtResource("3_8uivj")
+text = "开始游戏"
 
-[node name="Bubble2" parent="CharacterBody2D" instance=ExtResource("3_bjxhc")]
-position = Vector2(-91, -66)
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -604.0
+offset_top = 100.0
+offset_right = -564.0
+offset_bottom = 140.0
+scale = Vector2(30.3294, 11.6367)
+max_value = 1.0
+step = 0.0
+nine_patch_stretch = true
+texture_progress = ExtResource("4_5sr30")
+
+[connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]
