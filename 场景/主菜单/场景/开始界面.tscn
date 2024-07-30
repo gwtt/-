@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://3xny5hkx7g1b"]
 
 [ext_resource type="Texture2D" uid="uid://tgakd6oaw5y0" path="res://场景/主菜单/资源/黄.png" id="2_awyte"]
-[ext_resource type="Theme" path="res://游戏互动场景/对话气泡/资源/bubble_theme.tres" id="2_ur4dt"]
+[ext_resource type="Theme" path="res://游戏互动场景/对话气泡/资源/bubble_2.tres" id="2_ur4dt"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/StartGame.gd" id="3_12ed7"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/Setting.gd" id="3_f1r4u"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/quit.gd" id="3_o5efq"]
