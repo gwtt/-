@@ -7,4 +7,4 @@
 [node name="走路过场" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_42fib")
 autoplay = "default"
-frame_progress = 0.592275
+frame_progress = 0.862448
