@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://bypafsry0k3r4"]
+
+[ext_resource type="Texture2D" uid="uid://dfdggtga626gg" path="res://场景/第一章/资源/转场/转场1.png" id="1_u1hxe"]
+[ext_resource type="Texture2D" uid="uid://pnu0k4kny4yf" path="res://场景/第一章/资源/转场/转场2.png" id="2_7etk5"]
+[ext_resource type="Texture2D" uid="uid://cg0kxif647ug8" path="res://场景/第一章/资源/转场/转场3.png" id="3_k8m8o"]
+[ext_resource type="Texture2D" uid="uid://o0nxm7527ooy" path="res://场景/第一章/资源/转场/转场4.png" id="4_ji6qo"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u1hxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7etk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k8m8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ji6qo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]

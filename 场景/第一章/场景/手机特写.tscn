@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb87csg8bsa6r"]
+
+[ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_6rgk5"]
+[ext_resource type="Texture2D" uid="uid://dfaqsj0pc4k56" path="res://场景/第一章/资源/手机特写/手机放大版.png" id="2_31ue8"]
+
+[node name="手机特写" type="Node2D"]
+
+[node name="白色框" type="Sprite2D" parent="."]
+texture = ExtResource("1_6rgk5")
+
+[node name="手机" type="Sprite2D" parent="白色框"]
+texture = ExtResource("2_31ue8")

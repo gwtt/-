@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://e6vhc8dl8ud4"]
+
+[ext_resource type="SpriteFrames" uid="uid://bypafsry0k3r4" path="res://场景/第一章/资源/转场/转场动画.tres" id="1_42fib"]
+
+[node name="转场" type="Node2D"]
+
+[node name="走路过场" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_42fib")
+autoplay = "default"
+frame_progress = 0.592275

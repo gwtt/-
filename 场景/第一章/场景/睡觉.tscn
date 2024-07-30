@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbmr8rbryybdt"]
+
+[ext_resource type="Texture2D" uid="uid://do4aup5gbxrcg" path="res://场景/第一章/资源/睡觉/睡觉1.png" id="1_2u4gf"]
+[ext_resource type="Texture2D" uid="uid://cmdfwyhfmsvba" path="res://场景/第一章/资源/睡觉/睡觉1(手机.png" id="2_j0m8n"]
+
+[node name="睡觉" type="Node2D"]
+
+[node name="睡觉人" type="Sprite2D" parent="."]
+texture = ExtResource("1_2u4gf")
+
+[node name="睡觉手机" type="Sprite2D" parent="睡觉人"]
+texture = ExtResource("2_j0m8n")
