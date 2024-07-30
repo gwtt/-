@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://1knl7cvi0jju"]
+[gd_scene load_steps=5 format=3 uid="uid://1knl7cvi0jju"]
+
+[ext_resource type="Texture2D" uid="uid://bujnyyeegbql5" path="res://场景/第一章/资源/刮胡子/刮胡子.png" id="1_hc5h8"]
+[ext_resource type="Texture2D" uid="uid://csmmaybbmv42w" path="res://场景/第一章/资源/刮胡子/刮胡子小.png" id="2_yudkl"]
+[ext_resource type="Texture2D" uid="uid://tpsb0ceielc4" path="res://场景/第一章/资源/刮胡子/刮胡子（手.png" id="3_0ie30"]
+[ext_resource type="Texture2D" uid="uid://6c6l2nwg5kny" path="res://场景/第一章/资源/刮胡子/胡子.png" id="4_i2gbt"]
 
 [node name="刮胡子" type="Node2D"]
+
+[node name="人" type="Sprite2D" parent="."]
+texture = ExtResource("1_hc5h8")
+
+[node name="胡子特写" type="Sprite2D" parent="."]
+texture = ExtResource("2_yudkl")
+
+[node name="刮胡子的手" type="Sprite2D" parent="."]
+texture = ExtResource("3_0ie30")
+
+[node name="胡子" type="Sprite2D" parent="."]
+texture = ExtResource("4_i2gbt")
