@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbm57dwff3qv1"]
+[gd_scene load_steps=6 format=3 uid="uid://bbm57dwff3qv1"]
 
 [ext_resource type="Script" path="res://游戏互动场景/对话气泡/脚本/bubble.gd" id="1_rbw1u"]
 [ext_resource type="Texture2D" uid="uid://drl3r78ftx1e" path="res://游戏互动场景/对话气泡/资源/粒子.png" id="2_e141e"]
-[ext_resource type="Theme" path="res://游戏互动场景/对话气泡/资源/bubble_theme.tres" id="2_g38xp"]
 
 [sub_resource type="Gradient" id="Gradient_pqcvp"]
 offsets = PackedFloat32Array(0.00547945, 0.30411, 0.646575, 1)
@@ -32,7 +31,6 @@ offset_left = -176.0
 offset_top = -53.0
 offset_right = 178.0
 offset_bottom = 54.0
-theme = ExtResource("2_g38xp")
 theme_type_variation = &"BubbleButton"
 
 [node name="Boom" type="GPUParticles2D" parent="Button"]

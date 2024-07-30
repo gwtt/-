@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://2ttbduhg6tf8"]
+
+[ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_mkakg"]
+[ext_resource type="Texture2D" uid="uid://cwl6dgy8tgqn8" path="res://场景/第一章/资源/面试/面试.png" id="2_6ufe5"]
+
+[node name="面试" type="Node2D"]
+
+[node name="白色框" type="Sprite2D" parent="."]
+texture = ExtResource("1_mkakg")
+
+[node name="面试" type="Sprite2D" parent="白色框"]
+texture = ExtResource("2_6ufe5")
