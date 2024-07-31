@@ -1,11 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://1knl7cvi0jju"]
+[gd_scene load_steps=10 format=3 uid="uid://1knl7cvi0jju"]
 
 [ext_resource type="Texture2D" uid="uid://bujnyyeegbql5" path="res://场景/第一章/资源/刮胡子/刮胡子.png" id="1_hc5h8"]
 [ext_resource type="Texture2D" uid="uid://csmmaybbmv42w" path="res://场景/第一章/资源/刮胡子/刮胡子小.png" id="2_yudkl"]
 [ext_resource type="Texture2D" uid="uid://tpsb0ceielc4" path="res://场景/第一章/资源/刮胡子/刮胡子（手.png" id="3_0ie30"]
+[ext_resource type="Script" path="res://场景/第一章/代码/hand.gd" id="3_d780l"]
 [ext_resource type="Texture2D" uid="uid://6c6l2nwg5kny" path="res://场景/第一章/资源/刮胡子/胡子.png" id="4_i2gbt"]
+[ext_resource type="Shader" path="res://场景/第一章/代码/paint.gdshader" id="5_skdu8"]
+[ext_resource type="Script" path="res://场景/第一章/代码/Cover.gd" id="6_1ix0j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qn81q"]
+shader = ExtResource("5_skdu8")
+shader_parameter/erase_points = null
+shader_parameter/erase_point_count = 0
+shader_parameter/brush_size = 20.0
+shader_parameter/scale_ratio = null
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xkjo3"]
+radius = 24.994
+height = 170.317
 
 [node name="刮胡子" type="Node2D"]
+position = Vector2(887, 540)
 
 [node name="人" type="Sprite2D" parent="."]
 texture = ExtResource("1_hc5h8")
@@ -13,8 +28,21 @@ texture = ExtResource("1_hc5h8")
 [node name="胡子特写" type="Sprite2D" parent="."]
 texture = ExtResource("2_yudkl")
 
-[node name="刮胡子的手" type="Sprite2D" parent="."]
+[node name="胡子" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_qn81q")
+texture = ExtResource("4_i2gbt")
+script = ExtResource("6_1ix0j")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_d780l")
+
+[node name="刮胡子的手" type="Sprite2D" parent="Area2D"]
+position = Vector2(-4, 0)
 texture = ExtResource("3_0ie30")
 
-[node name="胡子" type="Sprite2D" parent="."]
-texture = ExtResource("4_i2gbt")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(202, 108)
+rotation = -0.261799
+shape = SubResource("CapsuleShape2D_xkjo3")
+
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]

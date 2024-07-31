@@ -33,7 +33,7 @@ position = Vector2(4191, 0)
 position = Vector2(5626, 0)
 
 [node name="地铁" parent="场景管理器" instance=ExtResource("2_nlxbj")]
-position = Vector2(6972, 0)
+position = Vector2(6980, -89)
 
 [node name="转场3" parent="场景管理器" instance=ExtResource("3_fxn2h")]
 position = Vector2(8839, 0)
