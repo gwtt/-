@@ -10,7 +10,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qn81q"]
 shader = ExtResource("5_skdu8")
-shader_parameter/erase_points = null
+shader_parameter/erase_points = PackedVector2Array()
 shader_parameter/erase_point_count = 0
 shader_parameter/brush_size = 20.0
 shader_parameter/scale_ratio = null

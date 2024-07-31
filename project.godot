@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 BaseSetting="*res://全局/游戏基本设置/BaseSetting.gd"
 MouseIcon="*res://全局/鼠标指针/场景/mouse_icon.tscn"
 BackGroundMusic="*res://全局/背景音乐/场景/BackGroundMusic.tscn"
+GlobalGameManager="*res://全局/游戏场景管理/GlobalGameManager.gd"
 
 [display]
 

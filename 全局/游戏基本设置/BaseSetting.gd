@@ -49,6 +49,9 @@ func set_screen_resolution(index:int) -> Vector2i:
 	DisplayServer.window_set_size(screen_resolution)
 	return screen_resolution
 
+func get_screen_resolution() -> Vector2i:
+	return screen_resolution
+
 #设置是否全屏
 func set_full_screen():
 	is_full_screen = !is_full_screen
