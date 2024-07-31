@@ -1,12 +1,62 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb87csg8bsa6r"]
+[gd_scene load_steps=10 format=3 uid="uid://cb87csg8bsa6r"]
 
 [ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_6rgk5"]
 [ext_resource type="Texture2D" uid="uid://dfaqsj0pc4k56" path="res://场景/第一章/资源/手机特写/手机放大版.png" id="2_31ue8"]
+[ext_resource type="Script" path="res://场景/第一章/代码/MobilePhone.gd" id="2_nhj4c"]
+[ext_resource type="Texture2D" uid="uid://lthwdrbhoepb" path="res://场景/第一章/资源/手机特写/手机1.png" id="2_x81ne"]
+[ext_resource type="Texture2D" uid="uid://ct47a2bcpof6o" path="res://场景/第一章/资源/手机特写/手机2.png" id="3_ranrt"]
+[ext_resource type="Texture2D" uid="uid://ciajmwb5eginp" path="res://场景/第一章/资源/手机特写/手机3.png" id="4_sfh8w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f6dfs"]
+load_path = "res://.godot/imported/手机0.png-b35871ed0245520322f73b51195972f3.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nxxs3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_f6dfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x81ne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ranrt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sfh8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x81ne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_31ue8")
+}],
+"loop": true,
+"name": &"shock",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i0ptn"]
+radius = 55.5788
 
 [node name="手机特写" type="Node2D"]
+position = Vector2(853, 530)
 
 [node name="白色框" type="Sprite2D" parent="."]
 texture = ExtResource("1_6rgk5")
 
-[node name="手机" type="Sprite2D" parent="白色框"]
-texture = ExtResource("2_31ue8")
+[node name="手机区域" type="Area2D" parent="白色框"]
+script = ExtResource("2_nhj4c")
+
+[node name="手机振动" type="AnimatedSprite2D" parent="白色框/手机区域"]
+position = Vector2(32, -11)
+sprite_frames = SubResource("SpriteFrames_nxxs3")
+animation = &"shock"
+autoplay = "shock"
+frame_progress = 0.822351
+
+[node name="闹钟" type="CollisionShape2D" parent="白色框/手机区域"]
+position = Vector2(55, 65)
+shape = SubResource("CircleShape2D_i0ptn")
+
+[connection signal="input_event" from="白色框/手机区域" to="白色框/手机区域" method="_on_input_event"]

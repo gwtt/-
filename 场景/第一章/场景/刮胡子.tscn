@@ -30,19 +30,22 @@ texture = ExtResource("2_yudkl")
 
 [node name="胡子" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_qn81q")
+position = Vector2(22, 328)
 texture = ExtResource("4_i2gbt")
+offset = Vector2(-22, -328)
 script = ExtResource("6_1ix0j")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="手区域" type="Area2D" parent="."]
 script = ExtResource("3_d780l")
 
-[node name="刮胡子的手" type="Sprite2D" parent="Area2D"]
-position = Vector2(-4, 0)
+[node name="刮胡子的手" type="Sprite2D" parent="手区域"]
+position = Vector2(49, -65)
 texture = ExtResource("3_0ie30")
+offset = Vector2(-53, 65)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(202, 108)
+[node name="手形状" type="CollisionShape2D" parent="手区域"]
+position = Vector2(202, 107)
 rotation = -0.261799
 shape = SubResource("CapsuleShape2D_xkjo3")
 
-[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]
+[connection signal="input_event" from="手区域" to="手区域" method="_on_input_event"]

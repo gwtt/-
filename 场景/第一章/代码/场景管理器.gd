@@ -31,9 +31,6 @@ func change_node():
 	if childern[now_index].is_in_group("转场"):
 		await get_tree().create_timer(move_time).timeout
 		GlobalGameManager.emit_complete_game()
-		
-
-
 
 func _on_button_pressed():
 	GlobalGameManager.emit_complete_game()

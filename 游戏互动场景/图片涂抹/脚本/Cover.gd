@@ -28,7 +28,6 @@ func add_erase_point(position):
 	erase_points.append(position)
 	shader_material.set_shader_parameter("erase_points", erase_points)
 	shader_material.set_shader_parameter("erase_point_count", erase_points.size())
-	
 
 # 检查点是否已经存在
 func point_exists(position):
