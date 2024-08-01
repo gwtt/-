@@ -17,6 +17,7 @@ scale = Vector2(100, 100)
 texture = ExtResource("1_lh6ov")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 
 [node name="场景管理器" type="Node2D" parent="."]
 script = ExtResource("1_xh1fq")

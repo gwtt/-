@@ -6,7 +6,7 @@ var OFFSET = Vector2.ZERO
 
 func _process(delta):
 	if is_drag:
-		self.position = get_global_mouse_position() + OFFSET
+		self.global_position = get_global_mouse_position() + OFFSET
 	
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:

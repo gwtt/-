@@ -12,16 +12,17 @@ var is_full = false
 func _ready():
 	init_window = Vector2(DisplayServer.window_get_size())
 	shader_material = material
-	shader_material.set_shader_parameter("viewport_ratio", Vector2(1,1))
 
 func _process(delta):
 	temp = Vector2(DisplayServer.window_get_size())
 	normalized_pos = temp / init_window
 	shader_material.set_shader_parameter("scale_ratio", normalized_pos)
 	if is_full:
+		var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 		#逐渐透明
-		create_tween().tween_property(hand,"modulate",Color(1,1,1,0),1)
-		await get_tree().create_timer(2).timeout
+		tween.tween_property(hand,"modulate",Color(1,1,1,0),1)
+		tween.tween_property(self,"modulate",Color(1,1,1,0),1)
+		await get_tree().create_timer(1).timeout
 		hand.queue_free()
 		self.queue_free()
 		GlobalGameManager.emit_complete_game()
@@ -30,26 +31,30 @@ func _input(event):
 	if event is InputEventMouseMotion or event is InputEventScreenTouch:
 		if event.pressure > 0 and !is_full:
 			add_erase_point(hand.global_position)
-			if erase_points.size() == 31:
+			print(hand.global_position)
+			if erase_points.size() == 500:
 				is_full = true
 
-func add_erase_point(position):
-	if point_exists(position):
+func add_erase_point(now_position):
+	print(is_within_allowed_area(now_position))
+	
+	if point_exists(now_position):
 		return
-	if is_within_allowed_area(position):
-		erase_points.append(position)
+	if is_within_allowed_area(now_position):
+		now_position = Vector2(now_position.x + init_window.x/2,now_position.y + init_window.y/2)
+		erase_points.append(now_position)
 		shader_material.set_shader_parameter("erase_points", erase_points)
 		shader_material.set_shader_parameter("erase_point_count", erase_points.size())
 
 # 检查点是否已经存在
-func point_exists(position):
+func point_exists(now_position):
 	for point in erase_points:
-		if point.distance_to(position) < MIN_DISTANCE_THRESHOLD:
+		if point.distance_to(now_position) < MIN_DISTANCE_THRESHOLD:
 			return true
 	return false
 
-func is_within_allowed_area(position):
-	if self.global_position.x-150 <= position.x and position.x <= self.global_position.x+150 and self.global_position.y-50 <= position.y and position.y <= self.global_position.y+50:
+func is_within_allowed_area(now_position):
+	if self.global_position.x-150 <= now_position.x and now_position.x <= self.global_position.x+150 and self.global_position.y-50 <= now_position.y and now_position.y <= self.global_position.y+50:
 		return true
 	else:
 		return false

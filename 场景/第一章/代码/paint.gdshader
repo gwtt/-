@@ -1,12 +1,11 @@
 shader_type canvas_item;
 
 
-uniform vec2 erase_points[4000];
+uniform vec2 erase_points[2000];
 uniform int erase_point_count = 0;
 uniform float brush_size = 30.0;
 uniform vec2 scale_ratio;
 void fragment() {
-	vec2 tex_size = vec2(textureSize(TEXTURE, 0));
     vec4 tex_color = texture(TEXTURE, UV);
     for (int i = 0; i < erase_point_count; i++) {
 		vec2 erase_uv = erase_points[i] * scale_ratio;

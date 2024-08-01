@@ -20,7 +20,6 @@ radius = 24.994
 height = 170.317
 
 [node name="刮胡子" type="Node2D"]
-position = Vector2(887, 540)
 
 [node name="人" type="Sprite2D" parent="."]
 texture = ExtResource("1_hc5h8")
