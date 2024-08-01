@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://场景/第一章/代码/hand.gd" id="3_d780l"]
 [ext_resource type="Texture2D" uid="uid://6c6l2nwg5kny" path="res://场景/第一章/资源/刮胡子/胡子.png" id="4_i2gbt"]
 [ext_resource type="Shader" path="res://场景/第一章/代码/paint.gdshader" id="5_skdu8"]
-[ext_resource type="Script" path="res://场景/第一章/代码/Cover.gd" id="6_1ix0j"]
+[ext_resource type="Script" path="res://场景/第一章/代码/shave.gd" id="5_ugly7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qn81q"]
 shader = ExtResource("5_skdu8")
@@ -32,7 +32,7 @@ material = SubResource("ShaderMaterial_qn81q")
 position = Vector2(22, 328)
 texture = ExtResource("4_i2gbt")
 offset = Vector2(-22, -328)
-script = ExtResource("6_1ix0j")
+script = ExtResource("5_ugly7")
 
 [node name="手区域" type="Area2D" parent="."]
 script = ExtResource("3_d780l")
