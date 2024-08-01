@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://3xny5hkx7g1b"]
+[gd_scene load_steps=20 format=3 uid="uid://3xny5hkx7g1b"]
 
 [ext_resource type="Texture2D" uid="uid://tgakd6oaw5y0" path="res://场景/主菜单/资源/黄.png" id="2_awyte"]
+[ext_resource type="Theme" uid="uid://c5qnus27enhds" path="res://场景/主菜单/资源/theme.tres" id="2_x0v6c"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/StartGame.gd" id="3_12ed7"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/Setting.gd" id="3_f1r4u"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/quit.gd" id="3_o5efq"]
@@ -63,6 +64,7 @@ layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+theme = ExtResource("2_x0v6c")
 theme_override_constants/margin_left = 80
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 10
@@ -113,6 +115,7 @@ alignment = 0
 script = ExtResource("3_o5efq")
 
 [node name="设置界面" type="PanelContainer" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -204,6 +207,7 @@ text = "音效：6"
 script = ExtResource("10_uobkp")
 
 [node name="关于界面" type="PanelContainer" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
