@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8e6b0ykdghf7"]
+
+[ext_resource type="Script" path="res://场景/第一章/代码/过渡开始动画.gd" id="1_i3rcu"]
+[ext_resource type="Texture2D" uid="uid://tgakd6oaw5y0" path="res://场景/主菜单/资源/黄.png" id="1_u15qr"]
+
+[node name="过渡开始动画" type="Node2D"]
+script = ExtResource("1_i3rcu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("1_u15qr")
