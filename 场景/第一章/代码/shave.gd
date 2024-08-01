@@ -31,17 +31,19 @@ func _input(event):
 	if event is InputEventMouseMotion or event is InputEventScreenTouch:
 		if event.pressure > 0 and !is_full:
 			add_erase_point(hand.global_position)
-			if erase_points.size() == 500:
+			if erase_points.size() == 32:
 				is_full = true
 
 func add_erase_point(now_position):
-	if point_exists(now_position):
+	var check_position = Vector2(now_position.x + init_window.x/2,now_position.y + init_window.y/2)
+	if point_exists(check_position):
 		return
 	if is_within_allowed_area(now_position):
 		now_position = Vector2(now_position.x + init_window.x/2,now_position.y + init_window.y/2)
 		erase_points.append(now_position)
 		shader_material.set_shader_parameter("erase_points", erase_points)
 		shader_material.set_shader_parameter("erase_point_count", erase_points.size())
+		print(erase_points.size())
 
 # 检查点是否已经存在
 func point_exists(now_position):

@@ -1,5 +1,4 @@
 extends BaseButtonStart
-
 const first_chapter_path = "res://场景/第一章/场景/主场景.tscn"
 @export var wait_time:float = 1
 func _on_button_up():
