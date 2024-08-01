@@ -1,12 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://2ttbduhg6tf8"]
+[gd_scene load_steps=4 format=3 uid="uid://2ttbduhg6tf8"]
 
+[ext_resource type="Script" path="res://场景/第一章/代码/Interview.gd" id="1_ch774"]
 [ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_mkakg"]
 [ext_resource type="Texture2D" uid="uid://cwl6dgy8tgqn8" path="res://场景/第一章/资源/面试/面试.png" id="2_6ufe5"]
 
 [node name="面试" type="Node2D"]
+script = ExtResource("1_ch774")
 
 [node name="白色框" type="Sprite2D" parent="."]
 texture = ExtResource("1_mkakg")
 
 [node name="面试" type="Sprite2D" parent="白色框"]
 texture = ExtResource("2_6ufe5")
+
+[node name="开始按钮" type="Button" parent="."]
+offset_left = -33.0
+offset_top = 320.0
+offset_right = 55.0
+offset_bottom = 351.0
+text = "开始面试吧"
+
+[connection signal="pressed" from="开始按钮" to="." method="_on_开始按钮_pressed"]

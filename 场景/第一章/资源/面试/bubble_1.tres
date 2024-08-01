@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxTexture" load_steps=3 format=3 uid="uid://6uok35o1tnic"]
+
+[ext_resource type="Texture2D" uid="uid://cs7wfywb4lvk8" path="res://游戏互动场景/对话气泡/资源/气泡.png" id="1_v6l20"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muwdf"]
+atlas = ExtResource("1_v6l20")
+region = Rect2(18, 51, 144, 87)
+
+[resource]
+texture = SubResource("AtlasTexture_muwdf")
+texture_margin_left = 20.0
+texture_margin_top = 5.0
+texture_margin_right = 10.0
+texture_margin_bottom = 5.0

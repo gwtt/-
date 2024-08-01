@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbm57dwff3qv1"]
+[gd_scene load_steps=7 format=3 uid="uid://c1cxtkuwkq0l4"]
 
-[ext_resource type="Script" path="res://游戏互动场景/对话气泡/脚本/bubble.gd" id="1_rbw1u"]
-[ext_resource type="Texture2D" uid="uid://drl3r78ftx1e" path="res://游戏互动场景/对话气泡/资源/粒子.png" id="2_e141e"]
+[ext_resource type="Script" path="res://场景/第一章/代码/interview_bubble.gd" id="1_28bd4"]
+[ext_resource type="Theme" uid="uid://bnl8ihidyqqkn" path="res://场景/第一章/资源/面试/bubble_theme.tres" id="2_7qv7s"]
+[ext_resource type="Texture2D" uid="uid://drl3r78ftx1e" path="res://游戏互动场景/对话气泡/资源/粒子.png" id="2_pidog"]
 
 [sub_resource type="Gradient" id="Gradient_pqcvp"]
 offsets = PackedFloat32Array(0.00547945, 0.30411, 0.646575, 1)
@@ -24,13 +25,14 @@ radial_accel_max = -200.0
 color_ramp = SubResource("GradientTexture1D_nekxn")
 
 [node name="Bubble" type="Node2D"]
-script = ExtResource("1_rbw1u")
+script = ExtResource("1_28bd4")
 
 [node name="Button" type="Button" parent="."]
 offset_left = -176.0
 offset_top = -53.0
 offset_right = 178.0
 offset_bottom = 54.0
+theme = ExtResource("2_7qv7s")
 theme_type_variation = &"BubbleButton"
 
 [node name="Boom" type="GPUParticles2D" parent="Button"]
@@ -39,7 +41,7 @@ position = Vector2(173, 48)
 scale = Vector2(1.90863, 1.55051)
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_rnlr2")
-texture = ExtResource("2_e141e")
+texture = ExtResource("2_pidog")
 
 [node name="Timer" type="Timer" parent="Button"]
 wait_time = 5.0
