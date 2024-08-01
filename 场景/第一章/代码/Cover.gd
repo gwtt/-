@@ -31,13 +31,10 @@ func _input(event):
 	if event is InputEventMouseMotion or event is InputEventScreenTouch:
 		if event.pressure > 0 and !is_full:
 			add_erase_point(hand.global_position)
-			print(hand.global_position)
 			if erase_points.size() == 500:
 				is_full = true
 
 func add_erase_point(now_position):
-	print(is_within_allowed_area(now_position))
-	
 	if point_exists(now_position):
 		return
 	if is_within_allowed_area(now_position):
