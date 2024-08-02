@@ -25,8 +25,8 @@ func _process(delta):
 	shader_material.set_shader_parameter("scale_ratio", normalized_pos)
 	if is_full and !is_done:
 		is_done = true
-		beard.material.set_shader_parameter("outline_color",Color(0,0.75,0.81,1))
-		beard.material.set_shader_parameter("outline_width",5.0)
+		shave.material.set_shader_parameter("outline_color",Color(0.81,0.94,0,1))
+		shave.material.set_shader_parameter("outline_width",5.0)
 		world_environment.environment.set_glow_intensity(20.0)
 		shave.stop()
 		var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)

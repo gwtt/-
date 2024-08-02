@@ -1,40 +1,41 @@
-[gd_scene load_steps=16 format=3 uid="uid://1knl7cvi0jju"]
+[gd_scene load_steps=17 format=3 uid="uid://1knl7cvi0jju"]
 
-[ext_resource type="Texture2D" uid="uid://doskvat5kxvq4" path="res://场景/第一章/资源/刮胡子/刮胡子0.png" id="2_5b4j3"]
+[ext_resource type="Texture2D" uid="uid://duii6u81y4xgj" path="res://场景/第一章/资源/刮胡子/白色框.png" id="1_w0c7y"]
 [ext_resource type="Texture2D" uid="uid://csmmaybbmv42w" path="res://场景/第一章/资源/刮胡子/刮胡子小.png" id="2_yudkl"]
 [ext_resource type="Texture2D" uid="uid://tpsb0ceielc4" path="res://场景/第一章/资源/刮胡子/刮胡子（手.png" id="3_0ie30"]
-[ext_resource type="Script" path="res://场景/第一章/代码/hand.gd" id="3_d780l"]
-[ext_resource type="Texture2D" uid="uid://doeadncl2jtad" path="res://场景/第一章/资源/刮胡子/刮胡子1.png" id="3_qq4i5"]
-[ext_resource type="Shader" path="res://场景/第一章/代码/bling.gdshader" id="4_h7u6g"]
+[ext_resource type="Script" path="res://场景/第一章/代码/Hand.gd" id="3_d780l"]
+[ext_resource type="Texture2D" uid="uid://b0i605w6h33jk" path="res://场景/第一章/资源/刮胡子/刮胡子10.png" id="3_t3cfw"]
+[ext_resource type="Texture2D" uid="uid://is3vkk5ir5uy" path="res://场景/第一章/资源/刮胡子/刮胡子11.png" id="4_cpyu5"]
+[ext_resource type="Shader" path="res://场景/第一章/代码/Bling.gdshader" id="4_h7u6g"]
 [ext_resource type="Texture2D" uid="uid://6c6l2nwg5kny" path="res://场景/第一章/资源/刮胡子/胡子.png" id="4_i2gbt"]
-[ext_resource type="Texture2D" uid="uid://bcame5j43j70a" path="res://场景/第一章/资源/刮胡子/刮胡子2.png" id="4_wyklg"]
-[ext_resource type="Shader" path="res://场景/第一章/代码/paint.gdshader" id="5_skdu8"]
-[ext_resource type="Script" path="res://场景/第一章/代码/shave.gd" id="5_ugly7"]
+[ext_resource type="Texture2D" uid="uid://rdv2b1mq76qq" path="res://场景/第一章/资源/刮胡子/刮胡子12.png" id="5_co1d5"]
+[ext_resource type="Shader" path="res://场景/第一章/代码/Paint.gdshader" id="5_skdu8"]
+[ext_resource type="Script" path="res://场景/第一章/代码/Shave.gd" id="5_ugly7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_78xq4"]
+shader = ExtResource("4_h7u6g")
+shader_parameter/outline_width = 1.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k7885"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_5b4j3")
+"texture": ExtResource("3_t3cfw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_qq4i5")
+"texture": ExtResource("4_cpyu5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_5b4j3")
+"texture": ExtResource("3_t3cfw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_wyklg")
+"texture": ExtResource("5_co1d5")
 }],
 "loop": true,
 "name": &"shave",
 "speed": 5.0
 }]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kjxu1"]
-shader = ExtResource("4_h7u6g")
-shader_parameter/outline_width = 0.0
-shader_parameter/outline_color = Color(1, 1, 1, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qn81q"]
 shader = ExtResource("5_skdu8")
@@ -54,14 +55,20 @@ glow_intensity = 0.0
 
 [node name="刮胡子" type="Node2D"]
 
+[node name="白色框" type="Sprite2D" parent="."]
+texture = ExtResource("1_w0c7y")
+offset = Vector2(-37, -61)
+
 [node name="刮胡子过程" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 39)
+material = SubResource("ShaderMaterial_78xq4")
 sprite_frames = SubResource("SpriteFrames_k7885")
 animation = &"shave"
+frame_progress = 0.746138
+offset = Vector2(-41, -75)
 
 [node name="胡子特写" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_kjxu1")
 texture = ExtResource("2_yudkl")
+offset = Vector2(-9, 0)
 
 [node name="胡子" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_qn81q")

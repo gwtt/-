@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doskvat5kxvq4"
-path="res://.godot/imported/刮胡子0.png-dbcb07d78844aff836d14654c68d85b4.ctex"
+uid="uid://duii6u81y4xgj"
+path="res://.godot/imported/白色框.png-72d5994bbd3e64abfe1790a77f0b30f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://场景/第一章/资源/刮胡子/刮胡子0.png"
-dest_files=["res://.godot/imported/刮胡子0.png-dbcb07d78844aff836d14654c68d85b4.ctex"]
+source_file="res://场景/第一章/资源/刮胡子/白色框.png"
+dest_files=["res://.godot/imported/白色框.png-72d5994bbd3e64abfe1790a77f0b30f3.ctex"]
 
 [params]
 
