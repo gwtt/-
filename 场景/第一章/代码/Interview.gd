@@ -1,4 +1,4 @@
-extends Node2D
+extends GameInit
 
 var bubble_scene = preload("res://场景/第一章/场景/对话气泡.tscn")
 var bubble_init_array : Array

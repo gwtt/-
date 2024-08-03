@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk2hx4eobs6ax"]
+[gd_scene load_steps=4 format=3 uid="uid://dk2hx4eobs6ax"]
 
+[ext_resource type="Script" path="res://场景/第一章/代码/地铁.gd" id="1_88qid"]
 [ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_s5fx3"]
 [ext_resource type="Texture2D" uid="uid://ca87qaw2ukntu" path="res://场景/第一章/资源/地铁/地铁.png" id="2_0s03x"]
 
 [node name="地铁" type="Node2D"]
+script = ExtResource("1_88qid")
 
 [node name="白色底框" type="Sprite2D" parent="."]
 texture = ExtResource("1_s5fx3")

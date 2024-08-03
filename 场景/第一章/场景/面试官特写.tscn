@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7unto4mab7mp"]
+[gd_scene load_steps=4 format=3 uid="uid://b7unto4mab7mp"]
 
+[ext_resource type="Script" path="res://场景/第一章/代码/面试官特写.gd" id="1_3qm1a"]
 [ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_r0wws"]
 [ext_resource type="Texture2D" uid="uid://b6jm08dce2mxd" path="res://场景/第一章/资源/面试/面试官.png" id="2_fv648"]
 
 [node name="面试官特写" type="Node2D"]
+script = ExtResource("1_3qm1a")
 
 [node name="白色框" type="Sprite2D" parent="."]
 texture = ExtResource("1_r0wws")

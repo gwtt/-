@@ -13,6 +13,7 @@ var screen_resolution_dictionary = {
 	10: Vector2i(3840,2160)
 }
 signal music_change()
+signal sound_scape_change()
 #音效 todo还要加个信号判断
 var sound_scape:int = 6:
 	set(value):
@@ -20,6 +21,7 @@ var sound_scape:int = 6:
 			sound_scape = 0
 		else:
 			sound_scape =  value
+		emit_signal("sound_scape_change",sound_scape)
 #音乐 todo还要加个信号判断
 var music:int = 2:
 	set(value):
