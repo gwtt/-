@@ -1,11 +1,14 @@
 extends GameInit
 
-
-# Called when the node enters the scene tree for the first time.
+@onready var 主角 = $"白色框/主角"
+var timer:Timer
 func _ready():
-	pass # Replace with function body.
+	timer = Timer.new() 
+	timer.wait_time = 1.0
+	timer.timeout.connect(_眨眼)
+	add_child(timer)
+	timer.start()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _眨眼():
+	主角.play("眨眼")
