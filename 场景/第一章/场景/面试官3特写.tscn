@@ -12,3 +12,4 @@ texture = ExtResource("2_jhwbi")
 
 [node name="面试官" type="Sprite2D" parent="白色框"]
 texture = ExtResource("3_63qgc")
+script = ExtResource("1_i4n1y")

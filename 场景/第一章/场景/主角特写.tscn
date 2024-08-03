@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://b44ep1vs8hibg"]
 
-[ext_resource type="Script" path="res://场景/第一章/代码/面试官特写.gd" id="1_6bpt3"]
+[ext_resource type="Script" path="res://场景/第一章/代码/主角特写.gd" id="1_r6pic"]
 [ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="2_lgirp"]
 [ext_resource type="SpriteFrames" uid="uid://bcudkpah22us7" path="res://场景/第一章/资源/主角特写/主角面试眨眼.tres" id="3_b712y"]
 
 [node name="主角特写" type="Node2D"]
-script = ExtResource("1_6bpt3")
+position = Vector2(1021, 523)
+script = ExtResource("1_r6pic")
 
 [node name="白色框" type="Sprite2D" parent="."]
-position = Vector2(964, 530)
 texture = ExtResource("2_lgirp")
 
 [node name="主角" type="AnimatedSprite2D" parent="白色框"]

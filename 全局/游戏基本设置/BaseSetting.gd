@@ -14,6 +14,8 @@ var screen_resolution_dictionary = {
 }
 signal music_change()
 signal sound_scape_change()
+var move_time:float = 1.0
+var origin_time:float = 1.0
 #音效 todo还要加个信号判断
 var sound_scape:int = 6:
 	set(value):

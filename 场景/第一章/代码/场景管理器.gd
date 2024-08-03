@@ -8,8 +8,11 @@ var current_position:Vector2 = Vector2(0,0)
 var move_postion:Vector2
 var childern:Array[Node]
 #离去时间
-@export var move_time:float = 1.0
+var move_time:float = 1.0
+var origin_time:float = 1.0
 func _ready():
+	move_time = BaseSetting.move_time
+	origin_time = BaseSetting.origin_time
 	childern = get_children()
 	#调整位置，每个图片根据分辨率放到对应的位置
 	var i = 0
@@ -24,6 +27,10 @@ func change_node():
 	while temp < childern.size():
 		childern[temp].position = Vector2(childern[temp].position.x - BaseSetting.get_screen_resolution().x,0)
 		temp = temp + 1
+	if childern[now_index].is_in_group("转场") || childern[now_index+1].is_in_group("转场"):
+		move_time = origin_time / 2
+	else:
+		move_time = origin_time
 	var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(childern[now_index],"position",move_postion,move_time)
 	now_index=now_index+1
@@ -31,8 +38,10 @@ func change_node():
 	if childern[now_index].is_in_group("转场"):
 		await get_tree().create_timer(move_time).timeout
 		GlobalGameManager.emit_complete_game()
-	else:
-		childern[now_index]._init_game()
+	if childern[now_index].is_in_group("面试"):
+		await get_tree().create_timer(move_time * 2).timeout
+		GlobalGameManager.emit_complete_game()
+	childern[now_index]._init_game()
 func _on_button_pressed():
 	GlobalGameManager.emit_complete_game()
 
