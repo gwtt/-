@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://imgsmfcv3hmj"]
+
+[ext_resource type="SpriteFrames" uid="uid://d00ltw8hraso4" path="res://场景/第一章/资源/倒下/倒下.tres" id="1_ffwwq"]
+[ext_resource type="Script" path="res://场景/第一章/代码/倒下.gd" id="1_h76qe"]
+[ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_sqo2a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0jqr"]
+size = Vector2(127, 510)
+
+[node name="倒下" type="Node2D"]
+position = Vector2(953, 523)
+script = ExtResource("1_h76qe")
+
+[node name="白色框" type="Sprite2D" parent="."]
+texture = ExtResource("1_sqo2a")
+
+[node name="主角" type="AnimatedSprite2D" parent="白色框"]
+sprite_frames = ExtResource("1_ffwwq")
+animation = &"倒下"
+
+[node name="Area2D" type="Area2D" parent="白色框/主角"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="白色框/主角/Area2D"]
+position = Vector2(-227.5, 115)
+shape = SubResource("RectangleShape2D_v0jqr")
+
+[connection signal="input_event" from="白色框/主角/Area2D" to="." method="_on_area_2d_input_event"]

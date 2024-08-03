@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://d00ltw8hraso4"]
+
+[ext_resource type="Texture2D" uid="uid://d03001xoak1gx" path="res://场景/第一章/资源/倒下/倒下1.png" id="1_5fhrm"]
+[ext_resource type="Texture2D" uid="uid://70yksovtspsf" path="res://场景/第一章/资源/倒下/倒下2.png" id="2_fps15"]
+[ext_resource type="Texture2D" uid="uid://bi5v8jfabf76a" path="res://场景/第一章/资源/倒下/倒下3.png" id="3_4hbxy"]
+[ext_resource type="Texture2D" uid="uid://dduqsjty8c7l2" path="res://场景/第一章/资源/倒下/倒下4.png" id="4_wrwtq"]
+[ext_resource type="Texture2D" uid="uid://bxhpopdvf4gt" path="res://场景/第一章/资源/倒下/倒下5.png" id="5_oxxcr"]
+[ext_resource type="Texture2D" uid="uid://gev34kv2qwvx" path="res://场景/第一章/资源/倒下/倒下6.png" id="6_22mkx"]
+[ext_resource type="Texture2D" uid="uid://dexuwu0r61dq5" path="res://场景/第一章/资源/倒下/倒下7.png" id="7_34276"]
+[ext_resource type="Texture2D" uid="uid://dgdt8okn5cmqn" path="res://场景/第一章/资源/倒下/倒下8.png" id="8_qewip"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5fhrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fps15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4hbxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wrwtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oxxcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_22mkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_34276")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qewip")
+}],
+"loop": false,
+"name": &"倒下",
+"speed": 8.0
+}]
