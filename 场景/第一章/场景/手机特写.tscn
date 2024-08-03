@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://lthwdrbhoepb" path="res://场景/第一章/资源/手机特写/手机1.png" id="2_x81ne"]
 [ext_resource type="Texture2D" uid="uid://ct47a2bcpof6o" path="res://场景/第一章/资源/手机特写/手机2.png" id="3_ranrt"]
 [ext_resource type="Texture2D" uid="uid://ciajmwb5eginp" path="res://场景/第一章/资源/手机特写/手机3.png" id="4_sfh8w"]
-[ext_resource type="AudioStream" path="res://场景/第一章/资源/手机特写/闹钟响声.tres" id="7_71fmy"]
-[ext_resource type="AudioStream" path="res://场景/第一章/资源/手机特写/闹钟关闭.tres" id="8_pu44v"]
+[ext_resource type="AudioStream" uid="uid://be8uwrcp2hmny" path="res://场景/第一章/资源/手机特写/闹钟响声.tres" id="7_71fmy"]
+[ext_resource type="AudioStream" uid="uid://bg4ij3fumnhmm" path="res://场景/第一章/资源/手机特写/闹钟关闭.tres" id="8_pu44v"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f6dfs"]
 load_path = "res://.godot/imported/手机0.png-b35871ed0245520322f73b51195972f3.ctex"

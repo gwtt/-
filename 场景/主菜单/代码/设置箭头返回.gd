@@ -13,7 +13,6 @@ func _ready():
 	connect("mouse_entered", _on_button_mouse_enter)
 
 func _on_button_mouse_enter():
-	print("hello")
 	if !origin_position:
 		origin_position = self.position
 func on_button_down():
