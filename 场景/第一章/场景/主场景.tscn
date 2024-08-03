@@ -34,9 +34,6 @@ script = ExtResource("1_xh1fq")
 [node name="手机特写" parent="场景管理器" instance=ExtResource("3_ynpn6")]
 position = Vector2(1549, 0)
 
-[node name="转场" parent="场景管理器" groups=["转场"] instance=ExtResource("3_fxn2h")]
-position = Vector2(2803, 0)
-
 [node name="刮胡子" parent="场景管理器" instance=ExtResource("5_826ln")]
 position = Vector2(4232, 0)
 
@@ -62,31 +59,28 @@ position = Vector2(10698, -2036)
 position = Vector2(9445, -2027)
 
 [node name="闹钟变动" parent="场景管理器" instance=ExtResource("12_kf3q2")]
+start_time = 540
+target_time = 630
 
 [node name="空" parent="场景管理器" instance=ExtResource("13_x7xg7")]
-
-[node name="主角特写2" parent="场景管理器" groups=["面试"] instance=ExtResource("11_gdgkt")]
-position = Vector2(13469, -2554)
 
 [node name="面试官特写2" parent="场景管理器" groups=["面试"] instance=ExtResource("12_bk844")]
 position = Vector2(14792, -2540)
 
 [node name="闹钟变动2" parent="场景管理器" instance=ExtResource("12_kf3q2")]
+start_time = 630
+target_time = 810
 
 [node name="空2" parent="场景管理器" instance=ExtResource("13_x7xg7")]
-
-[node name="主角特写3" parent="场景管理器" groups=["面试"] instance=ExtResource("11_gdgkt")]
-position = Vector2(7377, -5274)
 
 [node name="面试官特写3" parent="场景管理器" groups=["面试"] instance=ExtResource("13_6cudj")]
 position = Vector2(8677, -5237)
 
 [node name="闹钟变动3" parent="场景管理器" instance=ExtResource("12_kf3q2")]
+start_time = 900
+target_time = 990
 
 [node name="空3" parent="场景管理器" instance=ExtResource("13_x7xg7")]
-
-[node name="主角特写4" parent="场景管理器" groups=["面试"] instance=ExtResource("11_gdgkt")]
-position = Vector2(12609, -5387)
 
 [node name="面试官特写4" parent="场景管理器" groups=["面试"] instance=ExtResource("14_k2hsk")]
 position = Vector2(12895, -5097)
