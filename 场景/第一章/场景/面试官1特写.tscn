@@ -12,3 +12,55 @@ texture = ExtResource("2_0i7ec")
 
 [node name="面试官" type="Sprite2D" parent="白色框"]
 texture = ExtResource("3_htsms")
+
+[node name="最终位置" type="Node" parent="."]
+
+[node name="气泡位置1" type="Control" parent="最终位置"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -335.0
+offset_top = -174.0
+offset_right = -295.0
+offset_bottom = -134.0
+
+[node name="气泡位置2" type="Control" parent="最终位置"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -11.0
+offset_top = -346.0
+offset_right = 29.0
+offset_bottom = -306.0
+
+[node name="气泡位置3" type="Control" parent="最终位置"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 328.0
+offset_top = -221.0
+offset_right = 368.0
+offset_bottom = -181.0
+
+[node name="初始位置" type="Node" parent="."]
+
+[node name="气泡位置1" type="Control" parent="初始位置"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -335.0
+offset_top = 655.0
+offset_right = -295.0
+offset_bottom = 695.0
+
+[node name="气泡位置2" type="Control" parent="初始位置"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -11.0
+offset_top = 655.0
+offset_right = 29.0
+offset_bottom = 695.0
+
+[node name="气泡位置3" type="Control" parent="初始位置"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 328.0
+offset_top = 655.0
+offset_right = 368.0
+offset_bottom = 695.0

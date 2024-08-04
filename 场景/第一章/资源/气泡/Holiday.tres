@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cvtf460hshdim"]
+
+[ext_resource type="Texture2D" uid="uid://bggsgc1mwbxe2" path="res://场景/第一章/资源/气泡/假期气泡.png" id="1_1cex3"]
+
+[resource]
+texture = ExtResource("1_1cex3")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://4hfcahxemsud"]
+
+[ext_resource type="Script" path="res://场景/第一章/代码/气泡.gd" id="1_3vh6u"]
+[ext_resource type="Texture2D" uid="uid://b660kpv6q5gq4" path="res://场景/第一章/资源/气泡/公文包气泡.png" id="2_ou4wo"]
+[ext_resource type="Texture2D" uid="uid://cfibq45eu611" path="res://场景/第一章/资源/气泡/工资气泡.png" id="3_anr1i"]
+[ext_resource type="Texture2D" uid="uid://dmr7xlq5xatvh" path="res://场景/第一章/资源/气泡/气泡爆炸.png" id="3_p7nef"]
+
+[node name="气泡" type="Node2D"]
+script = ExtResource("1_3vh6u")
+
+[node name="气泡" type="Sprite2D" parent="."]
+position = Vector2(490, 353)
+texture = ExtResource("2_ou4wo")
+
+[node name="气泡2" type="TextureButton" parent="."]
+offset_left = 767.0
+offset_top = 218.0
+offset_right = 1067.0
+offset_bottom = 518.0
+texture_normal = ExtResource("3_anr1i")
+
+[node name="气泡爆炸" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(932, 374)
+texture = ExtResource("3_p7nef")
+
+[connection signal="pressed" from="气泡2" to="." method="_on_气泡2_pressed"]

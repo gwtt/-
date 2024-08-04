@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1cxtkuwkq0l4"]
+[gd_scene load_steps=7 format=3 uid="uid://homealgsl5of"]
 
 [ext_resource type="Script" path="res://场景/第一章/代码/Interview_bubble.gd" id="1_ftpbe"]
 [ext_resource type="Theme" uid="uid://bnl8ihidyqqkn" path="res://场景/第一章/资源/面试/bubble_theme.tres" id="2_7qv7s"]

@@ -56,7 +56,7 @@ position = Vector2(10327, -3246)
 [node name="主角特写" parent="场景管理器" groups=["面试"] instance=ExtResource("11_gdgkt")]
 position = Vector2(10698, -2036)
 
-[node name="面试官特写" parent="场景管理器" groups=["面试"] instance=ExtResource("10_kucm7")]
+[node name="面试官特写" parent="场景管理器" instance=ExtResource("10_kucm7")]
 position = Vector2(9445, -2027)
 
 [node name="闹钟变动" parent="场景管理器" instance=ExtResource("12_kf3q2")]

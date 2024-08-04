@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://4hfcahxemsud"]
+
+[ext_resource type="Script" path="res://场景/第一章/代码/气泡.gd" id="1_3vh6u"]
+[ext_resource type="Theme" uid="uid://bvpstf0l4c5cd" path="res://场景/第一章/资源/气泡/Bubble_theme.tres" id="2_ju437"]
+[ext_resource type="Texture2D" uid="uid://dmr7xlq5xatvh" path="res://场景/第一章/资源/气泡/气泡爆炸.png" id="3_p7nef"]
+
+[node name="气泡" type="Node2D"]
+script = ExtResource("1_3vh6u")
+
+[node name="气泡" type="Button" parent="."]
+offset_left = 766.0
+offset_top = 211.0
+offset_right = 774.0
+offset_bottom = 219.0
+scale = Vector2(38.541, 38.541)
+theme = ExtResource("2_ju437")
+theme_type_variation = &"SalaryBubble"
+
+[node name="气泡爆炸" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(932, 374)
+texture = ExtResource("3_p7nef")
+
+[connection signal="pressed" from="气泡" to="." method="_on_气泡_pressed"]

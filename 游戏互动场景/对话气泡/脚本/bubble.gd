@@ -4,7 +4,6 @@ extends Node2D
 @onready var boom = $Button/Boom
 @onready var timer = $Button/Timer
 
-
 var StartPos : Vector2
 var EndPos : Vector2
 var StartMod : Color
@@ -31,7 +30,6 @@ func _button_appear():
 	create_tween().tween_property(button,"modulate",StartMod,1.5)
 	button.set_text(bubble_word_dictionary[randi_range(1,6)])
 	button.set_theme_type_variation(bubble_theme_dictionary[randi_range(1,3)])
-	
 
 func _on_button_pressed():
 	button.set_disabled(true)

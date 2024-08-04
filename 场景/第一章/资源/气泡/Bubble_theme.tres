@@ -1,0 +1,39 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bvpstf0l4c5cd"]
+
+[ext_resource type="StyleBox" uid="uid://dkjuvyiobshd8" path="res://场景/第一章/资源/气泡/Bag.tres" id="1_v4r3f"]
+[ext_resource type="StyleBox" uid="uid://cvtf460hshdim" path="res://场景/第一章/资源/气泡/Holiday.tres" id="2_3npta"]
+[ext_resource type="StyleBox" uid="uid://dxls8kanqybgk" path="res://场景/第一章/资源/气泡/Salary.tres" id="3_ms6op"]
+[ext_resource type="StyleBox" uid="uid://bs0f4o4ohxmco" path="res://场景/第一章/资源/气泡/Social.tres" id="4_m01ek"]
+[ext_resource type="StyleBox" uid="uid://dtcvpq16oe3x7" path="res://场景/第一章/资源/气泡/Time.tres" id="5_xuvt7"]
+
+[resource]
+BagBubble/base_type = &"Button"
+BagBubble/styles/disabled = ExtResource("1_v4r3f")
+BagBubble/styles/focus = ExtResource("1_v4r3f")
+BagBubble/styles/hover = ExtResource("1_v4r3f")
+BagBubble/styles/normal = ExtResource("1_v4r3f")
+BagBubble/styles/pressed = ExtResource("1_v4r3f")
+HolidayBubble/base_type = &"Button"
+HolidayBubble/styles/disabled = ExtResource("2_3npta")
+HolidayBubble/styles/focus = ExtResource("2_3npta")
+HolidayBubble/styles/hover = ExtResource("2_3npta")
+HolidayBubble/styles/normal = ExtResource("2_3npta")
+HolidayBubble/styles/pressed = ExtResource("2_3npta")
+SalaryBubble/base_type = &"Button"
+SalaryBubble/styles/disabled = ExtResource("3_ms6op")
+SalaryBubble/styles/focus = ExtResource("3_ms6op")
+SalaryBubble/styles/hover = ExtResource("3_ms6op")
+SalaryBubble/styles/normal = ExtResource("3_ms6op")
+SalaryBubble/styles/pressed = ExtResource("3_ms6op")
+SocialBubble/base_type = &"Button"
+SocialBubble/styles/disabled = ExtResource("4_m01ek")
+SocialBubble/styles/focus = ExtResource("4_m01ek")
+SocialBubble/styles/hover = ExtResource("4_m01ek")
+SocialBubble/styles/normal = ExtResource("4_m01ek")
+SocialBubble/styles/pressed = ExtResource("4_m01ek")
+TimeBubble/base_type = &"Button"
+TimeBubble/styles/disabled = ExtResource("5_xuvt7")
+TimeBubble/styles/focus = ExtResource("5_xuvt7")
+TimeBubble/styles/hover = ExtResource("5_xuvt7")
+TimeBubble/styles/normal = ExtResource("5_xuvt7")
+TimeBubble/styles/pressed = ExtResource("5_xuvt7")

@@ -15,4 +15,6 @@ texture = ExtResource("2_lgirp")
 position = Vector2(-289, 894)
 sprite_frames = ExtResource("3_b712y")
 animation = &"眨眼"
+frame = 2
+frame_progress = 1.0
 offset = Vector2(289, -894)
