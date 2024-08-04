@@ -11,7 +11,7 @@ extends GameInit
 	set(value):
 		now_time = value
 		change_text()
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	now_time = start_time
 

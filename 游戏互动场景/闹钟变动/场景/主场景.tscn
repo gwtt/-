@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3ysbd6ahi3d0"]
+
+[ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_tddnp"]
+[ext_resource type="Script" path="res://场景/第一章/代码/场景管理器.gd" id="2_b1o1n"]
+[ext_resource type="PackedScene" uid="uid://b2wtv65qtpq7j" path="res://场景/第一章/场景/闹钟变动.tscn" id="12_lm0wm"]
+[ext_resource type="PackedScene" uid="uid://caoxigeygyi14" path="res://场景/第一章/场景/空.tscn" id="13_gmu3a"]
+[ext_resource type="PackedScene" uid="uid://b8e6b0ykdghf7" path="res://场景/第一章/场景/过渡开始动画.tscn" id="18_y11po"]
+
+[node name="主场景" type="Node2D"]
+
+[node name="背景" type="Sprite2D" parent="."]
+scale = Vector2(100, 100)
+texture = ExtResource("1_tddnp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="场景管理器" type="Node2D" parent="." groups=["转场"]]
+script = ExtResource("2_b1o1n")
+
+[node name="空2" parent="场景管理器" instance=ExtResource("13_gmu3a")]
+
+[node name="闹钟变动" parent="场景管理器" instance=ExtResource("12_lm0wm")]
+start_time = 540
+target_time = 630
+
+[node name="空" parent="场景管理器" instance=ExtResource("13_gmu3a")]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 774.0
+offset_top = 449.0
+offset_right = 814.0
+offset_bottom = 480.0
+text = "测试"
+
+[node name="过渡开始动画" parent="." instance=ExtResource("18_y11po")]
+visible = false
+
+[connection signal="pressed" from="Button" to="场景管理器" method="_on_button_pressed"]
