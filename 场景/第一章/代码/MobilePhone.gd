@@ -16,5 +16,4 @@ func _on_手机区域_input_event(viewport, event, shape_idx):
 			mobilephone.material.set_shader_parameter("shake_move_speed",0)
 			mobilephone.material.set_shader_parameter("shake_speed",0)
 			mobilephone.material.set_shader_parameter("shake_size",0)
-			await get_tree().create_timer(BaseSetting.move_time).timeout
 			GlobalGameManager.emit_complete_game()
