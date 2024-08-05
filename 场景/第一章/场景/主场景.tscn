@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://ey51frgnnmre"]
+[gd_scene load_steps=20 format=3 uid="uid://ey51frgnnmre"]
 
 [ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_lh6ov"]
 [ext_resource type="Script" path="res://场景/第一章/代码/场景管理器.gd" id="1_xh1fq"]
 [ext_resource type="PackedScene" uid="uid://cbmr8rbryybdt" path="res://场景/第一章/场景/睡觉.tscn" id="2_lsiit"]
 [ext_resource type="PackedScene" uid="uid://dk2hx4eobs6ax" path="res://场景/第一章/场景/地铁.tscn" id="2_nlxbj"]
+[ext_resource type="PackedScene" uid="uid://cv1uocxfadplp" path="res://场景/第一章/场景/章节场景.tscn" id="3_fvr3m"]
 [ext_resource type="PackedScene" uid="uid://e6vhc8dl8ud4" path="res://场景/第一章/场景/转场.tscn" id="3_fxn2h"]
 [ext_resource type="PackedScene" uid="uid://cb87csg8bsa6r" path="res://场景/第一章/场景/手机特写.tscn" id="3_ynpn6"]
 [ext_resource type="PackedScene" uid="uid://1knl7cvi0jju" path="res://场景/第一章/场景/刮胡子.tscn" id="5_826ln"]
@@ -30,7 +31,10 @@ texture = ExtResource("1_lh6ov")
 [node name="场景管理器" type="Node2D" parent="." groups=["转场"]]
 script = ExtResource("1_xh1fq")
 
+[node name="章节场景" parent="场景管理器" instance=ExtResource("3_fvr3m")]
+
 [node name="睡觉" parent="场景管理器" instance=ExtResource("2_lsiit")]
+position = Vector2(2847, -1610)
 
 [node name="手机特写" parent="场景管理器" instance=ExtResource("3_ynpn6")]
 position = Vector2(1549, 0)

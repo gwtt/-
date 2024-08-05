@@ -7,9 +7,9 @@
 script = ExtResource("1_i3rcu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,3 +20,7 @@ grow_vertical = 2
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 texture = ExtResource("1_u15qr")
+
+[node name="返回菜单" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
