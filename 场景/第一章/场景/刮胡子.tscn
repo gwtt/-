@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://duii6u81y4xgj" path="res://场景/第一章/资源/刮胡子/白色框.png" id="1_w0c7y"]
 [ext_resource type="Texture2D" uid="uid://csmmaybbmv42w" path="res://场景/第一章/资源/刮胡子/刮胡子小.png" id="2_yudkl"]
 [ext_resource type="Texture2D" uid="uid://tpsb0ceielc4" path="res://场景/第一章/资源/刮胡子/刮胡子（手.png" id="3_0ie30"]
-[ext_resource type="Script" path="res://场景/第一章/代码/Hand.gd" id="3_d780l"]
+[ext_resource type="Script" path="res://场景/第一章/代码/hand.gd" id="3_d780l"]
 [ext_resource type="Shader" path="res://场景/第一章/代码/bling.gdshader" id="3_pl2w6"]
 [ext_resource type="Texture2D" uid="uid://b0i605w6h33jk" path="res://场景/第一章/资源/刮胡子/刮胡子10.png" id="3_t3cfw"]
 [ext_resource type="Texture2D" uid="uid://6c6l2nwg5kny" path="res://场景/第一章/资源/刮胡子/胡子.png" id="4_i2gbt"]
