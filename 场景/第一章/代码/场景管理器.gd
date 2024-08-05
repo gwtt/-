@@ -10,6 +10,8 @@ var childern:Array[Node]
 #离去时间
 var move_time:float = 1.0
 var origin_time:float = 1.0
+@onready var button = $"../过"
+
 func _ready():
 	move_time = BaseSetting.move_time
 	origin_time = BaseSetting.origin_time
@@ -42,6 +44,6 @@ func change_node():
 		await get_tree().create_timer(move_time * 2).timeout
 		GlobalGameManager.emit_complete_game()
 	childern[now_index]._init_game()
-func _on_button_pressed():
-	GlobalGameManager.emit_complete_game()
 
+func _on_过_pressed():
+	GlobalGameManager.emit_complete_game()

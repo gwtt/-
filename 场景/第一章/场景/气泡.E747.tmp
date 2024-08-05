@@ -1,22 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://4hfcahxemsud"]
+[gd_scene load_steps=4 format=3 uid="uid://4hfcahxemsud"]
 
 [ext_resource type="Script" path="res://场景/第一章/代码/气泡.gd" id="1_3vh6u"]
-[ext_resource type="Shader" path="res://场景/第一章/代码/Wobbly.gdshader" id="2_h0no8"]
 [ext_resource type="Theme" uid="uid://bvpstf0l4c5cd" path="res://场景/第一章/资源/气泡/Bubble_theme.tres" id="2_ju437"]
 [ext_resource type="Texture2D" uid="uid://dmr7xlq5xatvh" path="res://场景/第一章/资源/气泡/气泡爆炸.png" id="3_p7nef"]
-[ext_resource type="Texture2D" uid="uid://v071x54aegtx" path="res://场景/第一章/资源/面试/twist.tres" id="3_wdm8l"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g34cm"]
-shader = ExtResource("2_h0no8")
-shader_parameter/speed = null
-shader_parameter/intensity = null
-shader_parameter/disp_tex = ExtResource("3_wdm8l")
 
 [node name="气泡" type="Node2D"]
+position = Vector2(459, 205)
 script = ExtResource("1_3vh6u")
 
 [node name="气泡" type="Button" parent="."]
-material = SubResource("ShaderMaterial_g34cm")
 offset_left = -4.0
 offset_top = -2.00002
 offset_right = 4.0
@@ -33,4 +25,12 @@ scale = Vector2(0.0269199, 0.0269199)
 texture = ExtResource("3_p7nef")
 offset = Vector2(8.66627, 2.16657)
 
+[node name="Button" type="Button" parent="."]
+offset_left = 283.0
+offset_top = 53.0
+offset_right = 337.0
+offset_bottom = 84.0
+text = "11111"
+
 [connection signal="pressed" from="气泡" to="." method="_on_气泡_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
