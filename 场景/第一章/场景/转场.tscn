@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://e6vhc8dl8ud4"]
+[gd_scene load_steps=3 format=3 uid="uid://e6vhc8dl8ud4"]
 
 [ext_resource type="SpriteFrames" uid="uid://bypafsry0k3r4" path="res://场景/第一章/资源/转场/转场动画.tres" id="1_42fib"]
+[ext_resource type="Script" path="res://全局/GameInit.gd" id="1_i43j5"]
 
 [node name="转场" type="Node2D"]
+script = ExtResource("1_i43j5")
 
 [node name="走路过场" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_42fib")
