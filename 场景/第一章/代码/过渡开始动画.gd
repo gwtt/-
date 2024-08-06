@@ -5,6 +5,7 @@ extends Node2D
 
 func _ready():
 	panel_container.visible=true
+	await get_tree().create_timer(wait_time).timeout
 	var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(panel_container,"modulate",Color(1,1,1,0),wait_time)
 	await get_tree().create_timer(wait_time).timeout

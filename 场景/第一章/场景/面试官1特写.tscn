@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://场景/第一章/代码/面试官特写.gd" id="1_oxonk"]
 [ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="2_0i7ec"]
 [ext_resource type="Texture2D" uid="uid://b6jm08dce2mxd" path="res://场景/第一章/资源/面试/面试官.png" id="3_htsms"]
-[ext_resource type="PackedScene" uid="uid://4hfcahxemsud" path="res://场景/第一章/场景/气泡.tscn" id="4_fo1jx"]
+[ext_resource type="PackedScene" uid="uid://dwjgcgw54xbm" path="res://场景/第一章/场景/气泡.tscn" id="4_fo1jx"]
 
 [node name="面试官特写" type="Node2D"]
 script = ExtResource("1_oxonk")

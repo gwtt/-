@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy1l6jyoc4tdb"]
+
+[ext_resource type="Theme" uid="uid://bxuuh5m4jdtr2" path="res://场景/第一章/资源/按钮转场/转场按钮样式.tres" id="1_oufkl"]
+[ext_resource type="Texture2D" uid="uid://c4y6mivgst1nc" path="res://场景/主菜单/资源/箭头.png" id="2_g2oss"]
+[ext_resource type="Script" path="res://场景/第一章/代码/转场按钮.gd" id="3_emca0"]
+
+[node name="按钮转场界面" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 150.0
+theme = ExtResource("1_oufkl")
+texture_normal = ExtResource("2_g2oss")
+script = ExtResource("3_emca0")

@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://场景/主菜单/代码/Setting.gd" id="3_f1r4u"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/quit.gd" id="3_o5efq"]
 [ext_resource type="Texture2D" uid="uid://d1rj5oqblt3ut" path="res://场景/主菜单/资源/白.png" id="4_lh0r4"]
-[ext_resource type="Texture2D" uid="uid://m8qq8beyjswl" path="res://场景/主菜单/资源/箭头.png" id="5_7lyvb"]
+[ext_resource type="Texture2D" uid="uid://c4y6mivgst1nc" path="res://场景/主菜单/资源/箭头.png" id="5_7lyvb"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/abort.gd" id="5_mw00k"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/设置箭头返回.gd" id="6_flygc"]
 [ext_resource type="Theme" uid="uid://csrygy4s61w6x" path="res://场景/主菜单/资源/设置按钮主题.tres" id="6_wi7pi"]
@@ -115,7 +115,6 @@ alignment = 0
 script = ExtResource("3_o5efq")
 
 [node name="设置界面" type="PanelContainer" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -163,6 +162,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 texture_normal = ExtResource("5_7lyvb")
 stretch_mode = 0
+flip_h = true
 script = ExtResource("6_flygc")
 start_panel = NodePath("../../../../../初始界面")
 own_panel = NodePath("../../../..")
@@ -207,7 +207,6 @@ text = "音效：6"
 script = ExtResource("10_uobkp")
 
 [node name="关于界面" type="PanelContainer" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -249,6 +248,7 @@ text = "关于"
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("16_jj0p3")
+theme_override_constants/margin_left = 0
 theme_override_constants/margin_right = 60
 
 [node name="Label" type="Label" parent="Control/关于界面/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
@@ -267,6 +267,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 texture_normal = ExtResource("5_7lyvb")
 stretch_mode = 0
+flip_h = true
 script = ExtResource("6_flygc")
 start_panel = NodePath("../../../../../../初始界面")
 own_panel = NodePath("../../../../..")

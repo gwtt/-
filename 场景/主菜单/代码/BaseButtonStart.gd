@@ -1,5 +1,5 @@
 class_name BaseButtonStart extends Button
-
+#开始界面的按钮
 var origin_position
 @export var change_position:Vector2 = Vector2(30,0)
 #选择哪个页面切换

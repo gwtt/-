@@ -10,7 +10,7 @@ var childern:Array[Node]
 #离去时间
 var move_time:float = 1.0
 var origin_time:float = 1.0
-@onready var button = $"../过"
+
 
 func _ready():
 	move_time = BaseSetting.move_time
@@ -43,7 +43,8 @@ func change_node():
 	if childern[now_index].is_in_group("面试"):
 		await get_tree().create_timer(move_time * 2).timeout
 		GlobalGameManager.emit_complete_game()
+	if childern[now_index].is_in_group("需要按钮场景"):
+		await get_tree().create_timer(move_time).timeout
+		GlobalGameManager.emit_transition_button()
 	childern[now_index]._init_game()
 
-func _on_过_pressed():
-	GlobalGameManager.emit_complete_game()
