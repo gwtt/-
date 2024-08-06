@@ -33,7 +33,11 @@ func change_node():
 		move_time = origin_time / 2
 	else:
 		move_time = origin_time
-	var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+	var tween = create_tween().set_parallel(true).set_ease(Tween.EASE_OUT)
+	if childern[now_index+1].is_in_group("转场") or childern[now_index].is_in_group("转场"):
+		tween.set_trans(Tween.TRANS_LINEAR)
+	else:
+		tween.set_trans(Tween.TRANS_BACK)
 	tween.tween_property(childern[now_index],"position",move_postion,move_time)
 	now_index=now_index+1
 	tween.tween_property(childern[now_index],"position",current_position,move_time)

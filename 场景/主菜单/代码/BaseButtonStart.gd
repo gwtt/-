@@ -35,7 +35,7 @@ func _on_button_up():
 	self.position = origin_position
 	if target_node:
 		if is_press:
-			var tween = create_tween().set_parallel(true).set_ease(Tween.EASE_IN_OUT)
+			var tween = create_tween().set_parallel(true).set_ease(Tween.EASE_OUT)
 			tween.tween_property(start_panel,"modulate",Color(1, 1, 1, 0),0.2)
 			tween.tween_property(target_node,"modulate",Color(1, 1, 1, 1),0.2)
 			tween.tween_property(start_panel,"visible",false,0.2)
