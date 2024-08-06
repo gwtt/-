@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwjgcgw54xbm"]
+[gd_scene load_steps=9 format=3 uid="uid://dwjgcgw54xbm"]
 
 [ext_resource type="Script" path="res://场景/第一章/代码/气泡.gd" id="1_3vh6u"]
 [ext_resource type="Shader" path="res://场景/第一章/代码/Wobbly.gdshader" id="2_h0no8"]
 [ext_resource type="Theme" uid="uid://bvpstf0l4c5cd" path="res://场景/第一章/资源/气泡/Bubble_theme.tres" id="2_ju437"]
 [ext_resource type="Texture2D" uid="uid://dmr7xlq5xatvh" path="res://场景/第一章/资源/气泡/气泡爆炸.png" id="3_p7nef"]
-[ext_resource type="Texture2D" path="res://场景/第一章/资源/面试/twist.tres" id="3_wdm8l"]
+[ext_resource type="Texture2D" uid="uid://v071x54aegtx" path="res://场景/第一章/资源/面试/twist.tres" id="3_wdm8l"]
+[ext_resource type="AudioStream" uid="uid://c2t3obmo6rhq8" path="res://场景/第一章/资源/气泡/气泡破裂.wav" id="6_dtsgf"]
+[ext_resource type="AudioStream" uid="uid://de4g12xh04563" path="res://场景/第一章/资源/气泡/石头.MP3" id="7_idrof"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g34cm"]
 shader = ExtResource("2_h0no8")
@@ -32,5 +34,13 @@ position = Vector2(4.16353, 4.1389)
 scale = Vector2(0.0269199, 0.0269199)
 texture = ExtResource("3_p7nef")
 offset = Vector2(8.66627, 2.16657)
+
+[node name="气泡破裂" type="AudioStreamPlayer" parent="气泡"]
+stream = ExtResource("6_dtsgf")
+volume_db = 8.0
+
+[node name="石头破裂" type="AudioStreamPlayer" parent="气泡"]
+stream = ExtResource("7_idrof")
+volume_db = 5.0
 
 [connection signal="pressed" from="气泡" to="." method="_on_气泡_pressed"]

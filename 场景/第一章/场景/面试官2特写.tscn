@@ -15,19 +15,19 @@ texture = ExtResource("1_r0wws")
 texture = ExtResource("3_bl4yi")
 
 [node name="气泡最终位置1" type="Node2D" parent="."]
-position = Vector2(-338, 17)
+position = Vector2(-317, 17)
 
 [node name="气泡最终位置2" type="Node2D" parent="."]
-position = Vector2(-167, -350)
+position = Vector2(-130, -339)
 
 [node name="气泡最终位置3" type="Node2D" parent="."]
-position = Vector2(300, -47)
+position = Vector2(296, -143)
 
 [node name="气泡1" parent="." instance=ExtResource("4_cypb1")]
-position = Vector2(-355, 655)
+position = Vector2(-238, 860)
 
 [node name="气泡2" parent="." instance=ExtResource("4_cypb1")]
 position = Vector2(88, 658)
 
 [node name="气泡3" parent="." instance=ExtResource("4_cypb1")]
-position = Vector2(328, 655)
+position = Vector2(394, 785)
