@@ -84,6 +84,7 @@ size_flags_vertical = 0
 text = "开始游戏"
 alignment = 0
 script = ExtResource("3_12ed7")
+wait_time = 0.5
 
 [node name="Setting" type="Button" parent="Control/初始界面/MarginContainer/VBoxContainer" node_paths=PackedStringArray("target_node")]
 custom_minimum_size = Vector2(300, 50)
@@ -359,7 +360,6 @@ horizontal_alignment = 2
 
 [node name="遮罩动画" type="PanelContainer" parent="Control"]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

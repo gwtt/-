@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ey51frgnnmre"]
+[gd_scene load_steps=21 format=3 uid="uid://ey51frgnnmre"]
 
 [ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_lh6ov"]
 [ext_resource type="Script" path="res://场景/第一章/代码/场景管理器.gd" id="1_xh1fq"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://drs55batm307e" path="res://场景/第一章/场景/面试官3特写.tscn" id="13_6cudj"]
 [ext_resource type="PackedScene" uid="uid://cq3hf550ywr11" path="res://场景/第一章/场景/面试官4特写.tscn" id="14_k2hsk"]
 [ext_resource type="PackedScene" uid="uid://imgsmfcv3hmj" path="res://场景/第一章/场景/倒下.tscn" id="17_pxwa0"]
+[ext_resource type="PackedScene" uid="uid://dposlh33hw777" path="res://场景/第一章/场景/菜单按钮.tscn" id="20_3rdqj"]
 [ext_resource type="PackedScene" uid="uid://dy1l6jyoc4tdb" path="res://场景/第一章/场景/按钮转场界面.tscn" id="20_vhpx8"]
 
 [node name="主场景" type="Node2D"]
@@ -98,7 +99,13 @@ position = Vector2(20194, -354)
 [node name="过渡开始动画" parent="." instance=ExtResource("10_wdtqn")]
 
 [node name="按钮转场界面" parent="." instance=ExtResource("20_vhpx8")]
-offset_left = 762.0
-offset_top = 359.0
-offset_right = 762.0
-offset_bottom = 359.0
+offset_left = 805.0
+offset_top = 390.0
+offset_right = 805.0
+offset_bottom = 390.0
+
+[node name="菜单按钮" parent="." instance=ExtResource("20_3rdqj")]
+offset_left = -953.0
+offset_top = -546.0
+offset_right = -953.0
+offset_bottom = -546.0

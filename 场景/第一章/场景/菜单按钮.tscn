@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://dposlh33hw777"]
+
+[ext_resource type="Texture2D" uid="uid://bcjty46s4f4hu" path="res://场景/第一章/资源/按钮转场/菜单.png" id="1_kjmqc"]
+[ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_uwkeh"]
+[ext_resource type="Script" path="res://场景/第一章/代码/Panel.gd" id="2_2chhx"]
+[ext_resource type="Script" path="res://场景/第一章/代码/确认按钮.gd" id="2_qpdct"]
+[ext_resource type="Script" path="res://场景/第一章/代码/返回按钮.gd" id="4_4m0uy"]
+[ext_resource type="Script" path="res://场景/第一章/代码/菜单.gd" id="4_ccao0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mr6id"]
+texture = ExtResource("1_uwkeh")
+
+[node name="菜单按钮" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1100, 300)
+offset_left = 410.0
+offset_top = 390.0
+offset_right = 1510.0
+offset_bottom = 690.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_mr6id")
+script = ExtResource("2_2chhx")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -108.0
+offset_right = 196.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "确认返回菜单吗?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="确认按钮" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 167.0
+offset_right = 479.0
+offset_bottom = 220.0
+theme_override_font_sizes/font_size = 32
+text = "确认"
+script = ExtResource("2_qpdct")
+ratio = 1.2
+wait_time = 0.2
+
+[node name="返回按钮" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 167.0
+offset_right = 696.0
+offset_bottom = 220.0
+theme_override_font_sizes/font_size = 32
+text = "返回"
+script = ExtResource("4_4m0uy")
+ratio = 1.2
+wait_time = 0.2
+
+[node name="菜单" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_bottom = 150.0
+grow_horizontal = 0
+texture_normal = ExtResource("1_kjmqc")
+script = ExtResource("4_ccao0")

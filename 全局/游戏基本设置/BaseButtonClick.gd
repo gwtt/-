@@ -1,4 +1,4 @@
-class_name BaseButtonClick extends TextureButton
+class_name BaseButtonClick extends BaseButton
 
 @export var change_position:Vector2 = Vector2(0,5)
 var origin_position
