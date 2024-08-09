@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://cv1uocxfadplp"]
+[gd_scene load_steps=2 format=3 uid="uid://cv1uocxfadplp"]
+
+[ext_resource type="Script" path="res://全局/GameInit.gd" id="1_tk6jh"]
 
 [node name="章节场景" type="Node2D"]
+script = ExtResource("1_tk6jh")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 15

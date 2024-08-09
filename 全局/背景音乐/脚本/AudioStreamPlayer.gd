@@ -21,10 +21,8 @@ func _ready():
 
 func change_background_music_volume(index):
 	var bus_index = AudioServer.get_bus_index("Master")
-	var current_volume = AudioServer.get_bus_volume_db(bus_index)
 	AudioServer.set_bus_volume_db(bus_index, screen_resolution_dictionary.get(index)) 
 
 func change_sound_scape_volume(index):
 	var bus_index = AudioServer.get_bus_index("音效")
-	var current_volume = AudioServer.get_bus_volume_db(bus_index)
 	AudioServer.set_bus_volume_db(bus_index, screen_resolution_dictionary.get(index)) 

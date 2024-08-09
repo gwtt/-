@@ -30,10 +30,6 @@ func change_node():
 	while temp < childern.size():
 		childern[temp].position = Vector2(childern[temp].position.x - BaseSetting.get_screen_resolution().x,0)
 		temp = temp + 1
-	#if childern[now_index].is_in_group("转场") || childern[now_index+1].is_in_group("转场"):
-		#move_time = origin_time / 2
-	#else:
-		#move_time = origin_time
 	var tween = create_tween().set_parallel(true).set_ease(Tween.EASE_OUT)
 	if childern[now_index+1].is_in_group("转场") or childern[now_index].is_in_group("转场"):
 		tween.set_trans(Tween.TRANS_LINEAR)
@@ -42,6 +38,8 @@ func change_node():
 	tween.tween_property(childern[now_index],"position",move_postion,move_time)
 	now_index=now_index+1
 	tween.tween_property(childern[now_index],"position",current_position,move_time)
+	if now_index >= 1:
+		childern[now_index-1]._after_game()
 	childern[now_index]._init_game()
 	if childern[now_index].is_in_group("转场"):
 		await get_tree().create_timer(move_time).timeout

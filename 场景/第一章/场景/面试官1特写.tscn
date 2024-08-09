@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwjgcgw54xbm" path="res://场景/第一章/场景/气泡.tscn" id="4_fo1jx"]
 
 [node name="面试官特写2" type="Node2D"]
+position = Vector2(970, 534)
 script = ExtResource("1_oxonk")
 
 [node name="白色框" type="Sprite2D" parent="."]
@@ -24,10 +25,10 @@ position = Vector2(-11, -346)
 position = Vector2(336, -168)
 
 [node name="气泡1" parent="." instance=ExtResource("4_fo1jx")]
-position = Vector2(-307, 892)
+position = Vector2(-272, 954)
 
 [node name="气泡2" parent="." instance=ExtResource("4_fo1jx")]
-position = Vector2(-11, 655)
+position = Vector2(35, 706)
 
 [node name="气泡3" parent="." instance=ExtResource("4_fo1jx")]
-position = Vector2(349, 816)
+position = Vector2(387, 895)

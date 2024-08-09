@@ -4,7 +4,8 @@ extends Panel
 @export var wait_time:float = 0.5
 var origin_position
 var target_position
-
+func _ready():
+	self.visible = false
 func init():
 	if origin_position == null:
 		origin_position = self.global_position

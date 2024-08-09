@@ -39,6 +39,5 @@ position = Vector2(0, -8)
 position = Vector2(68, 17)
 shape = SubResource("RectangleShape2D_wlv3s")
 
-[connection signal="body_entered" from="白色框/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="白色框/简历/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="input_event" from="白色框/简历/Area2D" to="." method="_on_area_2d_input_event"]

@@ -33,6 +33,7 @@ glow_enabled = true
 glow_intensity = 0.0
 
 [node name="刮胡子" type="Node2D"]
+position = Vector2(1020, 563)
 script = ExtResource("1_shrmb")
 
 [node name="白色框" type="Sprite2D" parent="."]
@@ -56,6 +57,7 @@ offset = Vector2(-22, -328)
 script = ExtResource("5_ugly7")
 
 [node name="手区域" type="Area2D" parent="."]
+position = Vector2(489, -18)
 script = ExtResource("3_d780l")
 
 [node name="刮胡子的手" type="Sprite2D" parent="手区域"]

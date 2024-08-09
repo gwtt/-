@@ -24,10 +24,10 @@ position = Vector2(-251, -325)
 position = Vector2(317, -91)
 
 [node name="气泡1" parent="." instance=ExtResource("4_ka0if")]
-position = Vector2(-287, 819)
+position = Vector2(-340, 1122)
 
 [node name="气泡2" parent="." instance=ExtResource("4_ka0if")]
-position = Vector2(78, 661)
+position = Vector2(-251, 705)
 
 [node name="气泡3" parent="." instance=ExtResource("4_ka0if")]
-position = Vector2(358, 744)
+position = Vector2(317, 939)
