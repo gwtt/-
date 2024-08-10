@@ -6,9 +6,12 @@ extends Button
 
 var tween_rot: Tween
 var tween_hover: Tween
+var tween_flip: Tween
+var is_flip = false
 
 @onready var shadow = $Shadow
 @onready var card_texture: TextureRect = $CardTexture
+@onready var card_back: TextureRect = $CardBack
 
 func _ready() -> void:
 	#调整格式
@@ -34,9 +37,9 @@ func _on_gui_input(event: InputEvent) -> void:
 
 	var rot_x: float = rad_to_deg(lerp_angle(-angle_x_max, angle_x_max, lerp_val_x))
 	var rot_y: float = rad_to_deg(lerp_angle(angle_y_max, -angle_y_max, lerp_val_y))
-	
-	card_texture.material.set_shader_parameter("x_rot", rot_y)
-	card_texture.material.set_shader_parameter("y_rot", rot_x)
+	if !is_flip:
+		card_texture.material.set_shader_parameter("x_rot", rot_y)
+		card_texture.material.set_shader_parameter("y_rot", rot_x)
 
 func _on_mouse_entered() -> void:
 	#设置缩放
@@ -50,11 +53,20 @@ func _on_mouse_exited() -> void:
 	if tween_rot and tween_rot.is_running():
 		tween_rot.kill()
 	tween_rot = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).set_parallel(true)
-	tween_rot.tween_property(card_texture.material, "shader_parameter/x_rot", 0.0, 0.5)
-	tween_rot.tween_property(card_texture.material, "shader_parameter/y_rot", 0.0, 0.5)
-	
+	if !is_flip:
+		tween_rot.tween_property(card_texture.material, "shader_parameter/x_rot", 0.0, 0.5)
+		tween_rot.tween_property(card_texture.material, "shader_parameter/y_rot", 0.0, 0.5)
 	#重置缩放
 	if tween_hover and tween_hover.is_running():
 		tween_hover.kill()
 	tween_hover = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 	tween_hover.tween_property(self, "scale", Vector2.ONE, 0.55)
+
+func _on_mouse_pressed():
+	is_flip = true
+	if tween_flip and tween_flip.is_running():
+		tween_flip.kill()
+	tween_flip = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+	tween_flip.tween_property(card_texture.material, "shader_parameter/y_rot", 90, 0.05)
+	tween_flip.tween_property(card_back.material, "shader_parameter/y_rot", 0, 0.5)
+		

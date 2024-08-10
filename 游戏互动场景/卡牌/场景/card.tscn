@@ -1,9 +1,31 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccpeukrdsfbkm"]
+[gd_scene load_steps=13 format=3 uid="uid://ccpeukrdsfbkm"]
 
 [ext_resource type="Texture2D" uid="uid://cskh758f74ngv" path="res://游戏互动场景/卡牌/资源/Tiles_A_white.png" id="1_3sp1f"]
 [ext_resource type="Shader" path="res://游戏互动场景/卡牌/脚本/fake_3D.gdshader" id="1_7h7yf"]
-[ext_resource type="Shader" path="res://游戏互动场景/卡牌/脚本/dissolve.gdshader" id="1_8jfk0"]
 [ext_resource type="Script" path="res://游戏互动场景/卡牌/脚本/card.gd" id="1_borcn"]
+[ext_resource type="Texture2D" uid="uid://kqo5rp4tgbfj" path="res://游戏互动场景/卡牌/资源/back.png" id="5_c8obt"]
+
+[sub_resource type="Shader" id="Shader_e36w1"]
+code = "shader_type canvas_item;
+
+uniform sampler2D dissolve_texture : source_color;
+uniform float dissolve_value : hint_range(0,1);
+uniform float burn_size: hint_range(0.0, 1.0, 0.01);
+uniform vec4 burn_color: source_color;
+
+void fragment(){
+    vec4 main_texture = texture(TEXTURE, UV);
+    vec4 noise_texture = texture(dissolve_texture, UV);
+	
+	// This is needed to avoid keeping a small burn_color dot with dissolve being 0 or 1
+	// is there another way to do it?
+	float burn_size_step = burn_size * step(0.001, dissolve_value) * step(dissolve_value, 0.999);
+	float threshold = smoothstep(noise_texture.x-burn_size_step, noise_texture.x, dissolve_value);
+	float border = smoothstep(noise_texture.x, noise_texture.x + burn_size_step, dissolve_value);
+	
+	COLOR.a *= threshold;
+	COLOR.rgb = mix(burn_color.rgb, main_texture.rgb, border);
+}"
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_kntej"]
 seed = -15
@@ -15,7 +37,7 @@ noise = SubResource("FastNoiseLite_kntej")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ph3s"]
 resource_local_to_scene = true
-shader = ExtResource("1_8jfk0")
+shader = SubResource("Shader_e36w1")
 shader_parameter/dissolve_value = 1.0
 shader_parameter/burn_size = 0.03
 shader_parameter/burn_color = Color(1.5, 0.924, 0, 1)
@@ -23,13 +45,22 @@ shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_bboy4")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7aqjh"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vuxmx"]
+shader = ExtResource("1_7h7yf")
+shader_parameter/rect_size = Vector2(152, 207)
+shader_parameter/fov = 90.0
+shader_parameter/cull_back = false
+shader_parameter/y_rot = -90.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cho03"]
 resource_local_to_scene = true
 shader = ExtResource("1_7h7yf")
 shader_parameter/rect_size = Vector2(152, 207)
 shader_parameter/fov = 90.0
 shader_parameter/cull_back = true
-shader_parameter/y_rot = 0.0
+shader_parameter/y_rot = 1.71e-05
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
@@ -66,6 +97,17 @@ grow_vertical = 2
 texture = ExtResource("1_3sp1f")
 expand_mode = 1
 
+[node name="CardBack" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_vuxmx")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_c8obt")
+expand_mode = 1
+
 [node name="CardTexture" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_cho03")
 layout_mode = 1
@@ -87,3 +129,4 @@ disabled = true
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_mouse_pressed"]
