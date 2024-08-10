@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://rdvoh1xe8yly"]
+
+[ext_resource type="Script" path="res://场景/第一章/代码/手机消息场景.gd" id="1_5tf4b"]
+[ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="2_7ffe5"]
+[ext_resource type="Texture2D" uid="uid://ck16gsu8qlc5m" path="res://场景/第一章/资源/手机消息场景/出消息的手机.png" id="3_y1tox"]
+[ext_resource type="Texture2D" uid="uid://dj3pb57ro55we" path="res://场景/第一章/资源/手机消息场景/插画.png" id="4_eww0x"]
+[ext_resource type="Texture2D" uid="uid://ds3kuh53irbb5" path="res://场景/第一章/资源/手机消息场景/出消息的手机1.png" id="5_l343e"]
+
+[node name="手机消息场景" type="Node2D"]
+position = Vector2(1004, 513)
+script = ExtResource("1_5tf4b")
+
+[node name="白色框" type="Sprite2D" parent="."]
+texture = ExtResource("2_7ffe5")
+
+[node name="手机消息框" type="Sprite2D" parent="白色框"]
+texture = ExtResource("3_y1tox")
+
+[node name="蒙板" type="Sprite2D" parent="白色框"]
+clip_children = 2
+scale = Vector2(0.17379, 0.266935)
+texture = ExtResource("4_eww0x")
+
+[node name="消息" type="Sprite2D" parent="白色框/蒙板"]
+position = Vector2(-14.3852, -2494.99)
+scale = Vector2(5.75406, 3.74622)
+texture = ExtResource("5_l343e")
