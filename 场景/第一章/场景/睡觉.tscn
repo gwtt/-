@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbmr8rbryybdt"]
+[gd_scene load_steps=6 format=3 uid="uid://cbmr8rbryybdt"]
 
 [ext_resource type="Texture2D" uid="uid://do4aup5gbxrcg" path="res://场景/第一章/资源/睡觉/睡觉1.png" id="1_2u4gf"]
 [ext_resource type="Script" path="res://场景/第一章/代码/睡觉.gd" id="1_jbg3u"]
 [ext_resource type="Texture2D" uid="uid://cmdfwyhfmsvba" path="res://场景/第一章/资源/睡觉/睡觉1(手机.png" id="2_j0m8n"]
+[ext_resource type="Shader" path="res://场景/第一章/代码/手机特写.gdshader" id="3_4f3cl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u412f"]
+shader = ExtResource("3_4f3cl")
+shader_parameter/shake_move_speed = 40.581
+shader_parameter/shake_move_direction = Vector2(0.2, 0.2)
+shader_parameter/shake_move_size = Vector2(1, 1)
+shader_parameter/pattern = 0
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_size = 1.0
 
 [node name="睡觉" type="Node2D"]
 script = ExtResource("1_jbg3u")
@@ -11,4 +21,5 @@ script = ExtResource("1_jbg3u")
 texture = ExtResource("1_2u4gf")
 
 [node name="睡觉手机" type="Sprite2D" parent="睡觉人"]
+material = SubResource("ShaderMaterial_u412f")
 texture = ExtResource("2_j0m8n")

@@ -17,6 +17,8 @@ texture = ExtResource("1_sqo2a")
 [node name="主角" type="AnimatedSprite2D" parent="白色框"]
 sprite_frames = ExtResource("1_ffwwq")
 animation = &"倒下"
+frame = 7
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="白色框/主角"]
 

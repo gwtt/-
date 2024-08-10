@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://iut42sax5g42"]
+
+[ext_resource type="Texture2D" uid="uid://byhby716cgeq5" path="res://场景/第一章/资源/地铁/点赞ui.png" id="1_3acjm"]
+[ext_resource type="Script" path="res://场景/第一章/代码/内容.gd" id="1_aqaub"]
+[ext_resource type="Script" path="res://场景/第一章/代码/赞.gd" id="2_30hu8"]
+[ext_resource type="Texture2D" uid="uid://xtrh5vasi4ue" path="res://场景/第一章/资源/地铁/点赞ui1.png" id="3_a5eq1"]
+[ext_resource type="Texture2D" uid="uid://dpfs1myk2yhp5" path="res://场景/第一章/资源/地铁/点踩ui.png" id="4_bbj3n"]
+[ext_resource type="Script" path="res://场景/第一章/代码/踩.gd" id="5_ulbi6"]
+[ext_resource type="Texture2D" uid="uid://c6p4k6tmw38jm" path="res://场景/第一章/资源/地铁/点踩ui1.png" id="6_cmyb5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a6jfp"]
+radius = 26.4764
+
+[node name="内容" type="Node2D"]
+position = Vector2(936, 497)
+script = ExtResource("1_aqaub")
+
+[node name="赞" type="CharacterBody2D" parent="."]
+position = Vector2(-45, 0)
+input_pickable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="赞"]
+shape = SubResource("CircleShape2D_a6jfp")
+
+[node name="赞" type="Sprite2D" parent="赞"]
+texture = ExtResource("1_3acjm")
+script = ExtResource("2_30hu8")
+"赞图无颜色" = ExtResource("1_3acjm")
+"赞图有颜色" = ExtResource("3_a5eq1")
+
+[node name="踩" type="CharacterBody2D" parent="."]
+position = Vector2(44, 0)
+input_pickable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="踩"]
+shape = SubResource("CircleShape2D_a6jfp")
+
+[node name="赞" type="Sprite2D" parent="踩"]
+texture = ExtResource("4_bbj3n")
+script = ExtResource("5_ulbi6")
+"踩图无颜色" = ExtResource("4_bbj3n")
+"踩图有颜色" = ExtResource("6_cmyb5")
+
+[connection signal="input_event" from="赞" to="赞/赞" method="_on_character_body_2d_input_event"]
+[connection signal="input_event" from="踩" to="踩/赞" method="_on_踩_input_event"]

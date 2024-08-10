@@ -5,6 +5,7 @@ signal complete_game
 signal transition_button
 signal back_to_menu
 func emit_complete_game():
+	print("完成游戏")
 	emit_signal("complete_game")
 
 func emit_transition_button():
