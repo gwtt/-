@@ -10,7 +10,7 @@ var childern:Array[Node]
 #离去时间
 var move_time:float = 1.0
 var origin_time:float = 1.0
-@onready var ____ = $"../菜单按钮"
+
 
 
 func _ready():

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dk2hx4eobs6ax"]
+[gd_scene load_steps=7 format=3 uid="uid://dk2hx4eobs6ax"]
 
 [ext_resource type="Script" path="res://场景/第一章/代码/地铁.gd" id="1_88qid"]
 [ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_s5fx3"]
 [ext_resource type="Texture2D" uid="uid://ca87qaw2ukntu" path="res://场景/第一章/资源/地铁/地铁.png" id="2_0s03x"]
 [ext_resource type="Shader" path="res://场景/第一章/代码/地铁.gdshader" id="3_l5n2y"]
+[ext_resource type="PackedScene" uid="uid://jvl4x36ribnc" path="res://场景/第一章/场景/手机内容.tscn" id="5_lsc6g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xxv37"]
 shader = ExtResource("3_l5n2y")
@@ -11,13 +12,17 @@ shader_parameter/strength = 20.0
 shader_parameter/speed = 2.0
 
 [node name="地铁" type="Node2D"]
-position = Vector2(506, 551)
+position = Vector2(923, 518)
 script = ExtResource("1_88qid")
 
 [node name="白色底框" type="Sprite2D" parent="."]
 clip_children = 2
+position = Vector2(-311, 0)
 texture = ExtResource("1_s5fx3")
 
 [node name="地铁人图" type="Sprite2D" parent="白色底框"]
 material = SubResource("ShaderMaterial_xxv37")
 texture = ExtResource("2_0s03x")
+
+[node name="手机内容" parent="." instance=ExtResource("5_lsc6g")]
+position = Vector2(508, 0)

@@ -1,0 +1,101 @@
+[gd_scene load_steps=10 format=3 uid="uid://jvl4x36ribnc"]
+
+[ext_resource type="Texture2D" uid="uid://b8hjcicsiss45" path="res://场景/第一章/资源/地铁/手机内容 (1).png" id="1_gstur"]
+[ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_xo7mf"]
+[ext_resource type="Script" path="res://场景/第一章/代码/手机内容.gd" id="2_qe2hh"]
+[ext_resource type="Texture2D" uid="uid://clgkedwo5h5tc" path="res://场景/第一章/资源/地铁/手机 (1).png" id="11_a8xsa"]
+[ext_resource type="PackedScene" uid="uid://iut42sax5g42" path="res://场景/第一章/场景/内容.tscn" id="11_cvc51"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbcxo"]
+size = Vector2(500, 740)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40r6w"]
+size = Vector2(494, 201)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hw4b3"]
+size = Vector2(494, 193)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7qs7"]
+size = Vector2(504, 1274)
+
+[node name="手机内容" type="Node2D"]
+position = Vector2(969, 551)
+
+[node name="蒙板" type="Sprite2D" parent="."]
+clip_children = 2
+position = Vector2(0.594598, -7.76523)
+rotation = -3.14159
+scale = Vector2(0.524379, 0.812192)
+texture = ExtResource("1_xo7mf")
+
+[node name="触摸屏幕" type="Area2D" parent="蒙板"]
+position = Vector2(4.94791, -12.0233)
+rotation = 3.14159
+scale = Vector2(1.90702, 1.23124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="蒙板/触摸屏幕"]
+position = Vector2(2, -5)
+shape = SubResource("RectangleShape2D_xbcxo")
+
+[node name="上限" type="Area2D" parent="蒙板"]
+position = Vector2(-35.0992, 1126.87)
+rotation = 3.14159
+scale = Vector2(1.90702, 1.23124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="蒙板/上限"]
+position = Vector2(-21, -192)
+shape = SubResource("RectangleShape2D_40r6w")
+
+[node name="下限" type="Area2D" parent="蒙板"]
+position = Vector2(-57.9841, -1503.05)
+rotation = 3.14159
+scale = Vector2(1.90702, 1.23124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="蒙板/下限"]
+position = Vector2(-21, -104.5)
+shape = SubResource("RectangleShape2D_hw4b3")
+
+[node name="手机内容" type="Sprite2D" parent="蒙板"]
+position = Vector2(1.1338, -332.145)
+rotation = 3.14159
+scale = Vector2(1.90702, 1.23124)
+texture = ExtResource("1_gstur")
+script = ExtResource("2_qe2hh")
+
+[node name="内容" parent="蒙板/手机内容" instance=ExtResource("11_cvc51")]
+position = Vector2(-118, -222)
+
+[node name="内容2" parent="蒙板/手机内容" instance=ExtResource("11_cvc51")]
+position = Vector2(127, -183)
+
+[node name="内容3" parent="蒙板/手机内容" instance=ExtResource("11_cvc51")]
+position = Vector2(-121, 193)
+
+[node name="内容4" parent="蒙板/手机内容" instance=ExtResource("11_cvc51")]
+position = Vector2(126, 167)
+
+[node name="内容5" parent="蒙板/手机内容" instance=ExtResource("11_cvc51")]
+position = Vector2(-117, 613)
+
+[node name="内容6" parent="蒙板/手机内容" instance=ExtResource("11_cvc51")]
+position = Vector2(124, 617)
+
+[node name="手机内容范围" type="Area2D" parent="蒙板/手机内容"]
+position = Vector2(-1.99998, -261)
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="蒙板/手机内容/手机内容范围"]
+position = Vector2(1.00012, 286)
+shape = SubResource("RectangleShape2D_v7qs7")
+
+[node name="手机框" type="Sprite2D" parent="."]
+clip_children = 2
+texture = ExtResource("11_a8xsa")
+
+[connection signal="input_event" from="蒙板/触摸屏幕" to="蒙板/手机内容" method="_on_area_2d_input_event"]
+[connection signal="area_entered" from="蒙板/上限" to="蒙板/手机内容" method="_on_上限_area_entered"]
+[connection signal="area_exited" from="蒙板/上限" to="蒙板/手机内容" method="_on_上限_area_exited"]
+[connection signal="area_entered" from="蒙板/下限" to="蒙板/手机内容" method="_on_下限_area_entered"]
+[connection signal="area_exited" from="蒙板/下限" to="蒙板/手机内容" method="_on_下限_area_exited"]
+[connection signal="body_entered" from="蒙板/手机内容/手机内容范围" to="蒙板/手机内容" method="_on_下限_body_entered"]
+[connection signal="body_exited" from="蒙板/手机内容/手机内容范围" to="蒙板/手机内容" method="_on_下限_body_exited"]
