@@ -56,7 +56,6 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		if !is_force_to:
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 				if is_up_limit:
-					print("hello1")
 					is_force_to = true
 					var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 					tween.tween_property(self,"global_position",Vector2(self.global_position.x,self.global_position.y+y),change_time)
@@ -66,7 +65,6 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 				if is_down_limit:
 					is_force_to = true
-					print("hello2")
 					var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 					tween.tween_property(self,"global_position",Vector2(self.global_position.x,self.global_position.y-y),change_time)
 					tween.tween_property(self,"is_force_to",false,change_time)	
