@@ -96,5 +96,3 @@ texture = ExtResource("11_a8xsa")
 [connection signal="area_exited" from="蒙板/上限" to="蒙板/手机内容" method="_on_上限_area_exited"]
 [connection signal="area_entered" from="蒙板/下限" to="蒙板/手机内容" method="_on_下限_area_entered"]
 [connection signal="area_exited" from="蒙板/下限" to="蒙板/手机内容" method="_on_下限_area_exited"]
-[connection signal="body_entered" from="蒙板/手机内容/手机内容范围" to="蒙板/手机内容" method="_on_下限_body_entered"]
-[connection signal="body_exited" from="蒙板/手机内容/手机内容范围" to="蒙板/手机内容" method="_on_下限_body_exited"]
