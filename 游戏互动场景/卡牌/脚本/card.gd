@@ -64,9 +64,16 @@ func _on_mouse_exited() -> void:
 
 func _on_mouse_pressed():
 	is_flip = true
+	self.set_disabled(true)
 	if tween_flip and tween_flip.is_running():
 		tween_flip.kill()
 	tween_flip = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 	tween_flip.tween_property(card_texture.material, "shader_parameter/y_rot", 90, 0.05)
 	tween_flip.tween_property(card_back.material, "shader_parameter/y_rot", 0, 0.5)
+	tween_flip.tween_interval(2)
+	tween_flip.tween_property(card_back.material, "shader_parameter/y_rot", -90, 0.05)
+	tween_flip.tween_property(card_texture.material, "shader_parameter/y_rot", 0, 0.5)
+	await get_tree().create_timer(3).timeout
+	is_flip = false
+	self.set_disabled(false)
 		

@@ -5,6 +5,7 @@ extends Node2D
 @onready var splash = $"气泡/气泡破裂"
 
 func _on_气泡_pressed():
+	bubble.set_disabled(true)
 	bubble.set_material(null)
 	var tween_bubble = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	tween_bubble.tween_property(bubble,"self_modulate",Color(1,1,1,0),0.3)
