@@ -7,11 +7,14 @@ extends Button
 var tween_rot: Tween
 var tween_hover: Tween
 var tween_flip: Tween
-var is_flip = false
+var tween_destroy: Tween
+
+var is_flip = true
 
 @onready var shadow = $Shadow
-@onready var card_texture: TextureRect = $CardTexture
-@onready var card_back: TextureRect = $CardBack
+@onready var card_texture = $CardTexture
+@onready var card_back = $CardBack
+@onready var root = $".."
 
 func _ready() -> void:
 	#调整格式
@@ -20,7 +23,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	handle_shadow(delta)
-
+	
 func handle_shadow(delta: float) -> void:
 	var center: Vector2 = get_viewport_rect().size / 2.0
 	var distance: float = global_position.x - center.x
@@ -63,17 +66,35 @@ func _on_mouse_exited() -> void:
 	tween_hover.tween_property(self, "scale", Vector2.ONE, 0.55)
 
 func _on_mouse_pressed():
-	is_flip = true
 	self.set_disabled(true)
+	root.count_card += 1
+	if root.count_card == 2:
+		root._limit_child(true)
 	if tween_flip and tween_flip.is_running():
 		tween_flip.kill()
 	tween_flip = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
-	tween_flip.tween_property(card_texture.material, "shader_parameter/y_rot", 90, 0.05)
-	tween_flip.tween_property(card_back.material, "shader_parameter/y_rot", 0, 0.5)
-	tween_flip.tween_interval(2)
-	tween_flip.tween_property(card_back.material, "shader_parameter/y_rot", -90, 0.05)
+	tween_flip.tween_property(card_back.material, "shader_parameter/y_rot", 90, 0.05)
 	tween_flip.tween_property(card_texture.material, "shader_parameter/y_rot", 0, 0.5)
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2).timeout
 	is_flip = false
+	root._append_card(self)
+	
+func _flip():
+	if tween_flip and tween_flip.is_running():
+		tween_flip.kill()
+	tween_flip = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+	tween_flip.tween_property(card_texture.material, "shader_parameter/y_rot", -90, 0.05)
+	tween_flip.tween_property(card_back.material, "shader_parameter/y_rot", 0, 0.5)
+	is_flip = true
 	self.set_disabled(false)
-		
+	
+func _destroy():
+	card_texture.use_parent_material = true
+	if tween_destroy and tween_destroy.is_running():
+		tween_destroy.kill()
+	tween_destroy = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween_destroy.tween_property(material, "shader_parameter/dissolve_value", 0.0, 2.0).from(1.0)
+	tween_destroy.parallel().tween_property(shadow, "self_modulate:a", 0.0, 1.0)
+	
+func _if_can_not_pressed(boolean):
+	self.set_disabled(boolean)
