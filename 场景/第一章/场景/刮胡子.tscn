@@ -20,7 +20,7 @@ shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader = ExtResource("5_skdu8")
 shader_parameter/erase_points = PackedVector2Array()
 shader_parameter/erase_point_count = 0
-shader_parameter/brush_size = 20.0
+shader_parameter/brush_size = 40.0
 shader_parameter/scale_ratio = null
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xkjo3"]

@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@export var MIN_DISTANCE_THRESHOLD = 20
+@export var MIN_DISTANCE_THRESHOLD = 30
 var erase_points:PackedVector2Array #记录涂抹的点
 var shader_material:ShaderMaterial #材质
 var init_window #记录初始窗口大小
@@ -19,6 +19,7 @@ func _ready():
 	shader_material = material
 
 func _process(delta):
+	print(erase_points.size())
 	temp = Vector2(DisplayServer.window_get_size())
 	normalized_pos = temp / init_window
 	shader_material.set_shader_parameter("scale_ratio", normalized_pos)
@@ -40,7 +41,7 @@ func _input(event):
 	if event is InputEventMouseMotion or event is InputEventScreenTouch:
 		if event.pressure > 0 and !is_full:
 			add_erase_point(hand.global_position)
-			if erase_points.size() == 30:
+			if erase_points.size() == 17:
 				is_full = true
 
 func add_erase_point(now_position):
