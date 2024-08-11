@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dy1l6jyoc4tdb"]
+[gd_scene load_steps=5 format=3 uid="uid://dy1l6jyoc4tdb"]
 
 [ext_resource type="Theme" uid="uid://bxuuh5m4jdtr2" path="res://场景/第一章/资源/按钮转场/转场按钮样式.tres" id="1_oufkl"]
 [ext_resource type="Texture2D" uid="uid://c4y6mivgst1nc" path="res://场景/主菜单/资源/箭头.png" id="2_g2oss"]
 [ext_resource type="Script" path="res://场景/第一章/代码/转场按钮.gd" id="3_emca0"]
+[ext_resource type="AudioStream" uid="uid://5lrmv3w2fnbo" path="res://场景/第一章/资源/按钮转场/书籍翻页.MP3" id="4_kmkb4"]
 
 [node name="按钮转场界面" type="Control"]
 layout_mode = 3
@@ -19,3 +20,8 @@ offset_bottom = 150.0
 theme = ExtResource("1_oufkl")
 texture_normal = ExtResource("2_g2oss")
 script = ExtResource("3_emca0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kmkb4")
+volume_db = 20.0
+mix_target = 1

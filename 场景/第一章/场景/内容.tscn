@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://iut42sax5g42"]
+[gd_scene load_steps=10 format=3 uid="uid://iut42sax5g42"]
 
 [ext_resource type="Texture2D" uid="uid://byhby716cgeq5" path="res://场景/第一章/资源/地铁/点赞ui.png" id="1_3acjm"]
 [ext_resource type="Script" path="res://场景/第一章/代码/内容.gd" id="1_aqaub"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dpfs1myk2yhp5" path="res://场景/第一章/资源/地铁/点踩ui.png" id="4_bbj3n"]
 [ext_resource type="Script" path="res://场景/第一章/代码/踩.gd" id="5_ulbi6"]
 [ext_resource type="Texture2D" uid="uid://c6p4k6tmw38jm" path="res://场景/第一章/资源/地铁/点踩ui1.png" id="6_cmyb5"]
+[ext_resource type="AudioStream" uid="uid://ggag5nbg2wwk" path="res://场景/第一章/资源/地铁/点击声音.mp3" id="8_aldp3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a6jfp"]
 radius = 26.4764
@@ -40,6 +41,10 @@ texture = ExtResource("4_bbj3n")
 script = ExtResource("5_ulbi6")
 "踩图无颜色" = ExtResource("4_bbj3n")
 "踩图有颜色" = ExtResource("6_cmyb5")
+
+[node name="点击声音" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_aldp3")
+volume_db = 20.097
 
 [connection signal="input_event" from="赞" to="赞/赞" method="_on_character_body_2d_input_event"]
 [connection signal="input_event" from="踩" to="踩/赞" method="_on_踩_input_event"]

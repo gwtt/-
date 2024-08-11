@@ -14,7 +14,6 @@ extends GameInit
 
 func _ready():
 	now_time = start_time
-
 #改变文字
 func change_text():
 	时钟十位.text = str(now_time / 60  / 10)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://3xny5hkx7g1b"]
+[gd_scene load_steps=21 format=3 uid="uid://3xny5hkx7g1b"]
 
 [ext_resource type="Texture2D" uid="uid://tgakd6oaw5y0" path="res://场景/主菜单/资源/黄.png" id="2_awyte"]
 [ext_resource type="Theme" uid="uid://c5qnus27enhds" path="res://场景/主菜单/资源/theme.tres" id="2_x0v6c"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://场景/主菜单/代码/abort.gd" id="5_mw00k"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/设置箭头返回.gd" id="6_flygc"]
 [ext_resource type="Theme" uid="uid://csrygy4s61w6x" path="res://场景/主菜单/资源/设置按钮主题.tres" id="6_wi7pi"]
+[ext_resource type="AudioStream" uid="uid://5lrmv3w2fnbo" path="res://场景/第一章/资源/按钮转场/书籍翻页.MP3" id="7_3u4la"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/分辨率设置.gd" id="7_722gu"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/全屏设置.gd" id="8_4ojc0"]
 [ext_resource type="Script" path="res://场景/主菜单/代码/音乐设置.gd" id="9_4ed5n"]
@@ -115,6 +116,11 @@ text = "退出"
 alignment = 0
 script = ExtResource("3_o5efq")
 
+[node name="书籍翻页" type="AudioStreamPlayer" parent="Control/初始界面/MarginContainer/VBoxContainer"]
+stream = ExtResource("7_3u4la")
+volume_db = 16.0
+bus = &"音效"
+
 [node name="设置界面" type="PanelContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
@@ -156,7 +162,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 40
 
-[node name="回去箭头" type="TextureButton" parent="Control/设置界面/HBoxContainer/第一切割/MarginContainer" node_paths=PackedStringArray("start_panel", "own_panel")]
+[node name="回去箭头" type="TextureButton" parent="Control/设置界面/HBoxContainer/第一切割/MarginContainer" node_paths=PackedStringArray("start_panel", "own_panel", "书籍翻页")]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -167,6 +173,7 @@ flip_h = true
 script = ExtResource("6_flygc")
 start_panel = NodePath("../../../../../初始界面")
 own_panel = NodePath("../../../..")
+"书籍翻页" = NodePath("../../../../../初始界面/MarginContainer/VBoxContainer/书籍翻页")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/设置界面/HBoxContainer"]
 layout_mode = 2
@@ -261,7 +268,7 @@ text = "\"我的梦想是搁浅的孤船，瘦骨如柴，皲裂疲倦；斑驳�
 这款游戏是我们设计第一款游戏，灵感来源于Florence!"
 autowrap_mode = 2
 
-[node name="回去箭头" type="TextureButton" parent="Control/关于界面/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" node_paths=PackedStringArray("start_panel", "own_panel")]
+[node name="回去箭头" type="TextureButton" parent="Control/关于界面/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" node_paths=PackedStringArray("start_panel", "own_panel", "书籍翻页")]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -272,6 +279,7 @@ flip_h = true
 script = ExtResource("6_flygc")
 start_panel = NodePath("../../../../../../初始界面")
 own_panel = NodePath("../../../../..")
+"书籍翻页" = NodePath("../../../../../../初始界面/MarginContainer/VBoxContainer/书籍翻页")
 
 [node name="介绍" type="VBoxContainer" parent="Control/关于界面/MarginContainer/HBoxContainer"]
 layout_mode = 2

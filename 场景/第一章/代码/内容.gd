@@ -1,5 +1,6 @@
 extends Node2D
 @onready var 管理器 = $".."
+@onready var 点击声音 = $"点击声音"
 #是否点过了
 var flag = false
 var flag_good = false:
@@ -20,6 +21,7 @@ func press_good():
 		return
 	if flag_bad:
 		flag_bad = false
+	点击声音.play()
 	flag_good = true
 
 func press_bad():
@@ -30,4 +32,5 @@ func press_bad():
 		return
 	if flag_good:
 		flag_good = false
+	点击声音.play()
 	flag_bad = true	

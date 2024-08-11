@@ -35,7 +35,7 @@ script = ExtResource("1_xh1fq")
 
 [node name="章节场景" parent="场景管理器" groups=["需要按钮场景"] instance=ExtResource("3_fvr3m")]
 
-[node name="睡觉" parent="场景管理器" groups=["需要按钮场景"] instance=ExtResource("2_lsiit")]
+[node name="睡觉" parent="场景管理器" instance=ExtResource("2_lsiit")]
 position = Vector2(2847, -1610)
 
 [node name="手机特写" parent="场景管理器" instance=ExtResource("3_ynpn6")]

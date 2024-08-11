@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbmr8rbryybdt"]
+[gd_scene load_steps=7 format=3 uid="uid://cbmr8rbryybdt"]
 
 [ext_resource type="Texture2D" uid="uid://do4aup5gbxrcg" path="res://场景/第一章/资源/睡觉/睡觉1.png" id="1_2u4gf"]
 [ext_resource type="Script" path="res://场景/第一章/代码/睡觉.gd" id="1_jbg3u"]
@@ -14,6 +14,9 @@ shader_parameter/pattern = 0
 shader_parameter/shake_speed = 5.0
 shader_parameter/shake_size = 1.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrp0v"]
+size = Vector2(131.621, 255.864)
+
 [node name="睡觉" type="Node2D"]
 script = ExtResource("1_jbg3u")
 
@@ -23,3 +26,13 @@ texture = ExtResource("1_2u4gf")
 [node name="睡觉手机" type="Sprite2D" parent="睡觉人"]
 material = SubResource("ShaderMaterial_u412f")
 texture = ExtResource("2_j0m8n")
+
+[node name="手机区域" type="Area2D" parent="睡觉人/睡觉手机"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="睡觉人/睡觉手机/手机区域"]
+position = Vector2(-240, -35)
+rotation = 2.5953
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_nrp0v")
+
+[connection signal="input_event" from="睡觉人/睡觉手机/手机区域" to="." method="_on_手机区域_input_event"]

@@ -6,6 +6,9 @@ var origin_position
 @export var target_node:Control
 #初始界面
 @onready var start_panel = $"../../.."
+
+@onready var 书籍翻页:AudioStreamPlayer = $"../书籍翻页"
+
 func _on_button_mouse_enter():
 	if !origin_position:
 		origin_position = self.position
@@ -28,6 +31,7 @@ func _on_button_up():
 	self.position = origin_position
 	if target_node:
 		if is_press:
+			书籍翻页.play()
 			var tween = create_tween().set_parallel(true).set_ease(Tween.EASE_OUT)
 			tween.tween_property(start_panel,"modulate",Color(1, 1, 1, 0),0.2)
 			tween.tween_property(target_node,"modulate",Color(1, 1, 1, 1),0.2)
