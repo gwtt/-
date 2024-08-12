@@ -42,9 +42,9 @@ texture = ExtResource("2_yudkl")
 offset = Vector2(-9, 0)
 
 [node name="胡子" type="Sprite2D" parent="."]
-position = Vector2(-960, -538)
+position = Vector2(22, 328)
 texture = ExtResource("4_i2gbt")
-offset = Vector2(960, 538)
+offset = Vector2(-22, -328)
 script = ExtResource("5_ugly7")
 
 [node name="手区域" type="Area2D" parent="."]

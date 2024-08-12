@@ -1,28 +1,22 @@
 extends Sprite2D
 
-@export var MIN_DISTANCE_THRESHOLD = 30
-var erase_points:PackedVector2Array #记录涂抹的点
-var shader_material:ShaderMaterial #材质
-var init_window #记录初始窗口大小
-var temp
-var normalized_pos
+@export var brush_size = 20
+@export var MIN_DISTANCE_THRESHOLD = 20
+
 @onready var hand = $"../手区域/刮胡子的手"
-@onready var beard = $"../胡子特写"
 @onready var world_environment = $"../WorldEnvironment"
 @onready var shave = $"../刮胡子"
 
+var erase_points:PackedVector2Array #记录涂抹的点
+var cover_image:Image
 var is_full = false
 var is_done = false
 
 func _ready():
-	init_window = Vector2(DisplayServer.window_get_size())
-	shader_material = material
+	cover_image = texture.get_image()
+	cover_image.convert(Image.FORMAT_RGBA8)
 
 func _process(delta):
-	print(erase_points.size())
-	temp = Vector2(DisplayServer.window_get_size())
-	normalized_pos = temp / init_window
-	shader_material.set_shader_parameter("scale_ratio", normalized_pos)
 	if is_full and !is_done:
 		is_done = true
 		shave.material.set_shader_parameter("outline_color",Color(0.81,0.94,0,1))
@@ -40,19 +34,34 @@ func _process(delta):
 func _input(event):
 	if event is InputEventMouseMotion or event is InputEventScreenTouch:
 		if event.pressure > 0 and !is_full:
-			add_erase_point(hand.global_position)
-			if erase_points.size() == 17:
-				is_full = true
+			if is_within_allowed_area(hand.global_position):
+				erase_at(hand.global_position)
+				queue_redraw()
+				if erase_points.size() == 32:
+					is_full = true
 
-func add_erase_point(now_position):
-	var check_position = Vector2(now_position.x + init_window.x/2,now_position.y + init_window.y/2)
-	if point_exists(check_position):
-		return
-	if is_within_allowed_area(now_position):
-		now_position = Vector2(now_position.x + init_window.x/2,now_position.y + init_window.y/2)
-		erase_points.append(now_position)
-		shader_material.set_shader_parameter("erase_points", erase_points)
-		shader_material.set_shader_parameter("erase_point_count", erase_points.size())
+func erase_at(ps):
+	if point_exists(ps): return
+	for x in range(-brush_size,brush_size):
+		for y in range(-brush_size,brush_size):
+			if Vector2(x,y).length() <= brush_size:
+				var px = to_local(ps) + Vector2(x,y)
+				if px.x >= 0 and px.y >= 0 and px.x < cover_image.get_width() and px.y < cover_image.get_height():
+					cover_image.set_pixel(px.x,px.y,Color(0,0,0,0))
+	texture = ImageTexture.create_from_image(cover_image)
+	erase_points.append(ps)
+
+func _draw():
+	draw_texture(texture,Vector2.ZERO)
+
+func is_within_allowed_area(now_position):
+	if ((self.global_position.x+868 <= now_position.x) and
+		(now_position.x <= self.global_position.x+1095) or
+		(self.global_position.y+809 <= now_position.y) and
+		(now_position.y <= self.global_position.y+940)):
+		return true
+	else:
+		return false
 
 # 检查点是否已经存在
 func point_exists(now_position):
@@ -61,8 +70,3 @@ func point_exists(now_position):
 			return true
 	return false
 
-func is_within_allowed_area(now_position):
-	if self.global_position.x-150 <= now_position.x and now_position.x <= self.global_position.x+150 and self.global_position.y-50 <= now_position.y and now_position.y <= self.global_position.y+50:
-		return true
-	else:
-		return false
