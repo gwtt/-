@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtxihxe6nrhed"]
+
+[ext_resource type="Texture2D" uid="uid://cn6b3hm36ksf6" path="res://游戏互动场景/图片涂抹/资源/狐狸头像.png" id="2_cg8um"]
+[ext_resource type="Script" path="res://游戏互动场景/图片涂抹/脚本/测试.gd" id="3_f0gvi"]
+
+[node name="Paint" type="Node2D"]
+position = Vector2(809, 113)
+
+[node name="Cover" type="Sprite2D" parent="."]
+texture = ExtResource("2_cg8um")
+offset = Vector2(355, 340)
+script = ExtResource("3_f0gvi")
