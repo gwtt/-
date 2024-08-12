@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnt2kxrjtd1uv"]
+
+[ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_548rh"]
+[ext_resource type="Texture2D" uid="uid://bjkq0w6p0e3q4" path="res://场景/第一章/资源/坐公交车/坐在公交车上.png" id="2_1sjsw"]
+
+[node name="坐公交车" type="Node2D"]
+
+[node name="白色框" type="Sprite2D" parent="."]
+texture = ExtResource("1_548rh")
+
+[node name="坐公交车" type="Sprite2D" parent="白色框"]
+texture = ExtResource("2_1sjsw")

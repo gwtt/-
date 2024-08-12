@@ -32,7 +32,6 @@ texture = ExtResource("2_j0m8n")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="睡觉人/睡觉手机/手机区域"]
 position = Vector2(-240, -35)
 rotation = 2.5953
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nrp0v")
 
 [connection signal="input_event" from="睡觉人/睡觉手机/手机区域" to="." method="_on_手机区域_input_event"]

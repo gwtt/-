@@ -45,12 +45,12 @@ func _on_gui_input(event: InputEvent) -> void:
 		card_texture.material.set_shader_parameter("y_rot", rot_x)
 
 func _on_mouse_entered() -> void:
+	print("hello")
 	#设置缩放
 	if tween_hover and tween_hover.is_running():
 		tween_hover.kill()
 	tween_hover = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 	tween_hover.tween_property(self, "scale", Vector2(1.2, 1.2), 0.5)
-
 func _on_mouse_exited() -> void:
 	#重置旋转角度
 	if tween_rot and tween_rot.is_running():
