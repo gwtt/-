@@ -16,8 +16,8 @@ shader_parameter/outline_width = 1.0
 shader_parameter/outline_color = Color(1, 1, 1, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xkjo3"]
-radius = 24.994
-height = 170.317
+radius = 33.69
+height = 256.391
 
 [sub_resource type="Environment" id="Environment_ryuo3"]
 background_mode = 3
@@ -52,13 +52,13 @@ position = Vector2(489, -18)
 script = ExtResource("3_d780l")
 
 [node name="刮胡子的手" type="Sprite2D" parent="手区域"]
-position = Vector2(49, -65)
+position = Vector2(58, -55)
 texture = ExtResource("3_0ie30")
-offset = Vector2(-53, 65)
+offset = Vector2(-62, 55)
 
 [node name="手形状" type="CollisionShape2D" parent="手区域"]
-position = Vector2(202, 107)
-rotation = -0.261799
+position = Vector2(178, 78)
+rotation = -0.466003
 shape = SubResource("CapsuleShape2D_xkjo3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
