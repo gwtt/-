@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://3xny5hkx7g1b"]
+[gd_scene load_steps=22 format=3 uid="uid://3xny5hkx7g1b"]
 
 [ext_resource type="Texture2D" uid="uid://tgakd6oaw5y0" path="res://场景/主菜单/资源/黄.png" id="2_awyte"]
 [ext_resource type="Theme" uid="uid://c5qnus27enhds" path="res://场景/主菜单/资源/theme.tres" id="2_x0v6c"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://b3d2lm2ed45r3" path="res://场景/主菜单/资源/猫图像.png" id="15_ynm30"]
 [ext_resource type="Theme" uid="uid://bs6yb0awkxhbq" path="res://场景/主菜单/资源/label_theme.tres" id="16_jj0p3"]
 [ext_resource type="Texture2D" uid="uid://qnpsy2g0bxg8" path="res://场景/主菜单/资源/11头像.jpg" id="17_s6pua"]
+[ext_resource type="Texture2D" uid="uid://cffufmgnlkoec" path="res://场景/主菜单/资源/4.jpg" id="20_vnr17"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sy3gv"]
 bg_color = Color(0, 0, 0, 0)
@@ -357,6 +358,24 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "11，负责游戏玩法设计，部分代码。喜欢RPG游戏，MOBA游戏，探索开放世界"
+autowrap_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/关于界面/MarginContainer/HBoxContainer/介绍/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/关于界面/MarginContainer/HBoxContainer/介绍/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 2
+texture = ExtResource("20_vnr17")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Control/关于界面/MarginContainer/HBoxContainer/介绍/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Yiyu，负责游戏的内容绘制。喜欢空间场景设计，采用2D与3D方式表现设计。爱好自然与视觉创意表达。"
 autowrap_mode = 2
 
 [node name="Label" type="Label" parent="Control/关于界面/MarginContainer/HBoxContainer/介绍/MarginContainer/VBoxContainer"]
