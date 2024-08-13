@@ -123,6 +123,7 @@ volume_db = 16.0
 bus = &"音效"
 
 [node name="设置界面" type="PanelContainer" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -216,6 +217,7 @@ text = "音效：6"
 script = ExtResource("10_uobkp")
 
 [node name="关于界面" type="PanelContainer" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
