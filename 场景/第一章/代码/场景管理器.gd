@@ -50,5 +50,3 @@ func change_node():
 	if childern[now_index].is_in_group("需要按钮场景"):
 		await get_tree().create_timer(move_time).timeout
 		GlobalGameManager.emit_transition_button()
-
-

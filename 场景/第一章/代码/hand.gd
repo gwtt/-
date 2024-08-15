@@ -15,4 +15,3 @@ func _on_input_event(viewport, event, shape_idx):
 			is_drag = true
 		else:
 			is_drag = false
-

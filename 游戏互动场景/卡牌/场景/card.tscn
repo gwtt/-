@@ -52,11 +52,11 @@ offset_top = 308.0
 offset_right = 866.0
 offset_bottom = 515.0
 pivot_offset = Vector2(76, 103.5)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_7aqjh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7aqjh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7aqjh")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_7aqjh")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_7aqjh")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_7aqjh")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_7aqjh")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7aqjh")
 script = ExtResource("1_borcn")
 
 [node name="Shadow" type="TextureRect" parent="."]

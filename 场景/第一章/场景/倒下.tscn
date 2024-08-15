@@ -21,7 +21,6 @@ texture = ExtResource("1_sqo2a")
 position = Vector2(-13, 2)
 sprite_frames = ExtResource("1_ffwwq")
 animation = &"倒下"
-frame = 7
 
 [node name="Area2D" type="Area2D" parent="白色框/主角"]
 

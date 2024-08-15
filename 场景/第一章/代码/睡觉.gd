@@ -7,4 +7,3 @@ func _on_手机区域_input_event(viewport, event, shape_idx):
 		if event.is_pressed() and !flag:
 			flag = true
 			GlobalGameManager.emit_complete_game()
-
