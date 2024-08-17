@@ -12,4 +12,11 @@ func _game_process():
 func _after_game():
 	await get_tree().create_timer(BaseSetting.move_time).timeout
 	self.queue_free()
-	
+
+#完成游戏
+func complete_game():
+	GlobalGameManager.emit_complete_game()
+
+#展示场景转换按钮
+func show_button():
+	GlobalGameManager.emit_transition_button()
