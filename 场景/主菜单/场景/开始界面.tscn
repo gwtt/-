@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://3xny5hkx7g1b"]
+[gd_scene load_steps=23 format=3 uid="uid://3xny5hkx7g1b"]
 
 [ext_resource type="Texture2D" uid="uid://tgakd6oaw5y0" path="res://场景/主菜单/资源/黄.png" id="2_awyte"]
 [ext_resource type="Theme" uid="uid://c5qnus27enhds" path="res://场景/主菜单/资源/theme.tres" id="2_x0v6c"]
@@ -20,6 +20,7 @@
 [ext_resource type="Theme" uid="uid://bs6yb0awkxhbq" path="res://场景/主菜单/资源/label_theme.tres" id="16_jj0p3"]
 [ext_resource type="Texture2D" uid="uid://qnpsy2g0bxg8" path="res://场景/主菜单/资源/11头像.jpg" id="17_s6pua"]
 [ext_resource type="Texture2D" uid="uid://cffufmgnlkoec" path="res://场景/主菜单/资源/4.jpg" id="20_vnr17"]
+[ext_resource type="Texture2D" uid="uid://bjkq0w6p0e3q4" path="res://场景/第一章/资源/坐公交车/坐在公交车上.png" id="21_u2eo5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sy3gv"]
 bg_color = Color(0, 0, 0, 0)
@@ -401,3 +402,10 @@ modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 texture = ExtResource("2_awyte")
 expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 476.0
+offset_top = 24.0
+offset_right = 2396.0
+offset_bottom = 1104.0
+texture = ExtResource("21_u2eo5")
