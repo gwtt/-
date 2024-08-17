@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://roc81lmkgvun"]
+
+[ext_resource type="Texture2D" uid="uid://cn6b3hm36ksf6" path="res://游戏互动场景/图片涂抹/资源/狐狸头像.png" id="1_ne05r"]
+[ext_resource type="Script" path="res://游戏互动场景/背景视差/脚本/character_body_2d.gd" id="2_h3fc6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi00i"]
+
+[node name="场景视差" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("1_ne05r")
+centered = false
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_h3fc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_pi00i")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
