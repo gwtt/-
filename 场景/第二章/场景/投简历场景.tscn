@@ -1,12 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://br21ad8g0hbo4"]
+[gd_scene load_steps=8 format=3 uid="uid://br21ad8g0hbo4"]
 
-[ext_resource type="Texture2D" uid="uid://bxnjm7nl3xhrq" path="res://场景/第二章/资源/投简历/投简历.png" id="1_1h7bq"]
+[ext_resource type="Texture2D" uid="uid://b3gcxdj73mhuc" path="res://场景/第二章/资源/投简历/手机.png" id="1_6fyn5"]
+[ext_resource type="Texture2D" uid="uid://5ttdhv3ho5vh" path="res://场景/第二章/资源/投简历/投简历1.png" id="2_aqip5"]
 [ext_resource type="PackedScene" uid="uid://dgblplok2qmw6" path="res://场景/第二章/场景/投递内容.tscn" id="2_pcpas"]
+[ext_resource type="Texture2D" uid="uid://b2guht0ayvxgu" path="res://场景/第二章/资源/投简历/投简历2.png" id="3_jixm8"]
+[ext_resource type="Texture2D" uid="uid://sxu0bqpnjtgw" path="res://场景/第二章/资源/投简历/投简历5png.png" id="4_o5ix3"]
+[ext_resource type="Texture2D" uid="uid://b7bv3wlq8tnlb" path="res://场景/第二章/资源/投简历/投简历3.png" id="5_ka163"]
+[ext_resource type="Texture2D" uid="uid://b6we8y5knu1dl" path="res://场景/第二章/资源/投简历/投简历4.png" id="6_2as55"]
 
 [node name="投简历场景" type="Node2D"]
+position = Vector2(842, 553)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_1h7bq")
+[node name="手机" type="Sprite2D" parent="."]
+position = Vector2(4, 283)
+texture = ExtResource("1_6fyn5")
+
+[node name="投简历1" type="Sprite2D" parent="."]
+position = Vector2(-5, 19)
+texture = ExtResource("2_aqip5")
+
+[node name="左边按钮" type="TextureButton" parent="."]
+offset_left = -964.0
+offset_top = -530.0
+offset_right = 956.0
+offset_bottom = 550.0
+texture_normal = ExtResource("3_jixm8")
+texture_pressed = ExtResource("4_o5ix3")
+
+[node name="右边按钮" type="TextureButton" parent="."]
+offset_left = -954.0
+offset_top = -531.0
+offset_right = 966.0
+offset_bottom = 549.0
+texture_normal = ExtResource("5_ka163")
+texture_pressed = ExtResource("6_2as55")
 
 [node name="投递内容" parent="." instance=ExtResource("2_pcpas")]
-position = Vector2(2, 7)
+position = Vector2(10, 18)

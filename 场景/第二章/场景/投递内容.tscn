@@ -3,18 +3,18 @@
 [node name="投递内容" type="Node2D"]
 
 [node name="岗位" type="Label" parent="."]
-offset_left = -69.0
+offset_left = -74.0
 offset_top = -336.0
-offset_right = 61.0
+offset_right = 56.0
 offset_bottom = -253.0
 theme_override_font_sizes/font_size = 54
 text = "■■■■"
 horizontal_alignment = 1
 
 [node name="工资" type="Label" parent="."]
-offset_left = 79.0
+offset_left = 74.0
 offset_top = -333.0
-offset_right = 245.0
+offset_right = 240.0
 offset_bottom = -250.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 42
