@@ -24,13 +24,13 @@ position = Vector2(0.472, 0.806131)
 scale = Vector2(0.236, -0.161203)
 
 [node name="消失位置_跳过" type="Node2D" parent="."]
-position = Vector2(-1551, -2)
+position = Vector2(-703, 18)
 
 [node name="初始位置" type="Node2D" parent="."]
-position = Vector2(1570, 45)
+position = Vector2(678, 18)
 
 [node name="显示位置" type="Node2D" parent="."]
 position = Vector2(10, 18)
 
 [node name="消失位置_投递" type="Node2D" parent="."]
-position = Vector2(10, -1077)
+position = Vector2(10, -890)
