@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://dgblplok2qmw6"]
+[gd_scene load_steps=2 format=3 uid="uid://dgblplok2qmw6"]
+
+[ext_resource type="Script" path="res://场景/第二章/代码/投递内容.gd" id="1_u4gpl"]
 
 [node name="投递内容" type="Node2D"]
+script = ExtResource("1_u4gpl")
 
 [node name="岗位" type="Label" parent="."]
 offset_left = -74.0
@@ -8,8 +11,8 @@ offset_top = -336.0
 offset_right = 56.0
 offset_bottom = -253.0
 theme_override_font_sizes/font_size = 54
-text = "■■■■"
-horizontal_alignment = 1
+text = "■■■"
+vertical_alignment = 1
 
 [node name="工资" type="Label" parent="."]
 offset_left = 74.0
@@ -19,6 +22,17 @@ offset_bottom = -250.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 42
 text = "7千-1万"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="学历" type="Label" parent="."]
+offset_left = 110.0
+offset_top = -267.0
+offset_right = 276.0
+offset_bottom = -184.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "本科"
 horizontal_alignment = 1
 vertical_alignment = 1
 
