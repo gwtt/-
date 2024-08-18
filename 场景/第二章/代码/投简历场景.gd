@@ -1,4 +1,4 @@
-extends Node2D
+extends GameInit
 
 var move_time:float = 1
 var right_scale = Vector2(0.236,-0.161)

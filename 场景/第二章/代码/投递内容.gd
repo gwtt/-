@@ -1,4 +1,4 @@
-extends Node2D
+extends GameInit
 
 @onready var post: Label = $"岗位"
 @onready var salary: Label = $"工资"
@@ -37,12 +37,19 @@ func _on_左边按钮_pressed() -> void:
 	tween.tween_property(self,"global_position",parent.disappear_pass.global_position,move_time)
 	await get_tree().create_timer(1).timeout
 	self.queue_free()
+	parent.count += 1
+	if parent.count == 10:
+		GlobalGameManager.emit_complete_game()
 	parent.create_node()
-
+	
 func _on_右边按钮_pressed() -> void:
 	var tween = create_tween().set_ease(Tween.EASE_OUT)
 	var parent = get_node("../../")
 	tween.tween_property(self,"global_position",parent.disappear_post.global_position,move_time)
 	await get_tree().create_timer(1).timeout
 	self.queue_free()
-	parent.create_node()
+	parent.count += 1
+	print(parent.count)
+	if parent.count == 10:
+		GlobalGameManager.emit_complete_game()
+	parent.create_node()	
