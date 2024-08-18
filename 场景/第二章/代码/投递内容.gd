@@ -3,13 +3,14 @@ extends GameInit
 @onready var post: Label = $"岗位"
 @onready var salary: Label = $"工资"
 @onready var graduation: Label = $"学历"
+@onready var experience: Label = $"工作经验"
+@onready var holiday: Label = $"假期"
 
 var move_time:float = 1.0
 
 var post_dictionary = {
 	1: "■■■",
 	2: "■■",
-	3: "■■■■",
 }
 var salary_dictionary = {
 	1: "3-6千",
@@ -25,16 +26,31 @@ var graduation_dictionary = {
 	3: "硕士",
 	4: "博士",
 }
+var experience_dictionary = {
+	1: "1年以上",
+	2: "3年以上",
+	3: "5年以上",
+	4: "6月以上",
+}
+var holiday_dictionary = {
+	1: "小周单休",
+	2: "单休",
+	3: "双休",
+	4: "大周双休",
+	5: "上三休一",
+}
 
 func random_content():
-	post.set_text(post_dictionary[randi_range(1,3)])
+	post.set_text(post_dictionary[randi_range(1,2)])
 	salary.set_text(salary_dictionary[randi_range(1,6)])
 	graduation.set_text(graduation_dictionary[randi_range(1,4)])
+	experience.set_text(experience_dictionary[randi_range(1,4)])
+	holiday.set_text(holiday_dictionary[randi_range(1,5)])
 
 func _on_左边按钮_pressed() -> void:
 	var tween = create_tween().set_ease(Tween.EASE_OUT)
 	var parent = get_node("../../")
-	tween.tween_property(self,"global_position",parent.disappear_pass.global_position,move_time)
+	tween.tween_property(self,"global_position",parent.disappear_post.global_position,move_time)
 	await get_tree().create_timer(1).timeout
 	self.queue_free()
 	parent.count += 1
