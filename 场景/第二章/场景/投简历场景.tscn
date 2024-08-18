@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://br21ad8g0hbo4"]
+
+[ext_resource type="Texture2D" uid="uid://bxnjm7nl3xhrq" path="res://场景/第二章/资源/投简历/投简历.png" id="1_1h7bq"]
+
+[node name="投简历场景" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1h7bq")
