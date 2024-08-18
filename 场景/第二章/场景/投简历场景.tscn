@@ -6,3 +6,86 @@
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_1h7bq")
+
+[node name="岗位" type="Label" parent="."]
+offset_left = -66.0
+offset_top = -331.0
+offset_right = 46.0
+offset_bottom = -248.0
+theme_override_font_sizes/font_size = 54
+text = "XXX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="工资" type="Label" parent="."]
+offset_left = 79.0
+offset_top = -333.0
+offset_right = 245.0
+offset_bottom = -250.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "7千-1万"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -210.0
+offset_top = -157.0
+offset_right = 47.0
+offset_bottom = 244.0
+
+[node name="描述" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "职位描述:"
+vertical_alignment = 1
+
+[node name="横线" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "───────────────────"
+vertical_alignment = 1
+
+[node name="横线2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "───────────────"
+vertical_alignment = 1
+
+[node name="横线3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "───────"
+vertical_alignment = 1
+
+[node name="横线4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "──────────────────"
+vertical_alignment = 1
+
+[node name="横线5" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "─────"
+vertical_alignment = 1
+
+[node name="横线6" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "───────────"
+vertical_alignment = 1
+
+[node name="横线7" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "────────────"
+vertical_alignment = 1
