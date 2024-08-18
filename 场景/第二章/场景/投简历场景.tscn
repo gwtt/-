@@ -1,12 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://br21ad8g0hbo4"]
+[gd_scene load_steps=5 format=3 uid="uid://br21ad8g0hbo4"]
 
 [ext_resource type="Texture2D" uid="uid://b3gcxdj73mhuc" path="res://场景/第二章/资源/投简历/手机.png" id="1_6fyn5"]
 [ext_resource type="Script" path="res://场景/第二章/代码/投简历场景.gd" id="1_65ebx"]
 [ext_resource type="PackedScene" uid="uid://dgblplok2qmw6" path="res://场景/第二章/场景/投递内容.tscn" id="2_pcpas"]
-[ext_resource type="Texture2D" uid="uid://dtiba08pug4gr" path="res://场景/第二章/资源/投简历/投简历3 (1).png" id="4_2r6s2"]
-[ext_resource type="Texture2D" uid="uid://dd0p8afhevxn2" path="res://场景/第二章/资源/投简历/投简历5png (1).png" id="5_s2vsc"]
-[ext_resource type="Texture2D" uid="uid://dbxtux2y21tsg" path="res://场景/第二章/资源/投简历/投简历4 (1).png" id="6_nkrsd"]
-[ext_resource type="Texture2D" uid="uid://tep6ta4clwaf" path="res://场景/第二章/资源/投简历/投简历1 (1).png" id="7_52jxj"]
+[ext_resource type="Texture2D" uid="uid://dhc435dyqchah" path="res://场景/第二章/资源/投简历/mask.png" id="3_ra676"]
 
 [node name="投简历场景" type="Node2D"]
 position = Vector2(842, 553)
@@ -16,28 +13,15 @@ script = ExtResource("1_65ebx")
 position = Vector2(4, 283)
 texture = ExtResource("1_6fyn5")
 
-[node name="左边按钮" type="TextureButton" parent="."]
-offset_left = -245.0
-offset_top = 266.0
-offset_right = 5.0
-offset_bottom = 366.0
-texture_normal = ExtResource("4_2r6s2")
-texture_pressed = ExtResource("5_s2vsc")
+[node name="Mask" type="Sprite2D" parent="."]
+clip_children = 2
+position = Vector2(2, 22.0007)
+scale = Vector2(4.23729, -6.20338)
+texture = ExtResource("3_ra676")
 
-[node name="右边按钮" type="TextureButton" parent="."]
-offset_left = 2.0
-offset_top = 265.0
-offset_right = 252.0
-offset_bottom = 365.0
-texture_normal = ExtResource("4_2r6s2")
-texture_pressed = ExtResource("6_nkrsd")
-
-[node name="投递内容" parent="." instance=ExtResource("2_pcpas")]
-position = Vector2(10, 18)
-
-[node name="投简历1(1)" type="Sprite2D" parent="."]
-position = Vector2(-33, -244)
-texture = ExtResource("7_52jxj")
+[node name="投递内容" parent="Mask" instance=ExtResource("2_pcpas")]
+position = Vector2(0.472, 0.806131)
+scale = Vector2(0.236, -0.161203)
 
 [node name="消失位置_跳过" type="Node2D" parent="."]
 position = Vector2(-1551, -2)
@@ -50,6 +34,3 @@ position = Vector2(10, 18)
 
 [node name="消失位置_投递" type="Node2D" parent="."]
 position = Vector2(10, -1077)
-
-[connection signal="pressed" from="左边按钮" to="." method="_on_左边按钮_pressed"]
-[connection signal="pressed" from="右边按钮" to="." method="_on_右边按钮_pressed"]
