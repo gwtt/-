@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sxu0bqpnjtgw"
-path="res://.godot/imported/投简历5png.png-42c5cc207a517f606689345b802a6eb2.ctex"
+uid="uid://tep6ta4clwaf"
+path="res://.godot/imported/投简历1 (1).png-28cba0f0e5eda4f4f9bb4abfdecb33ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://场景/第二章/资源/投简历/投简历5png.png"
-dest_files=["res://.godot/imported/投简历5png.png-42c5cc207a517f606689345b802a6eb2.ctex"]
+source_file="res://场景/第二章/资源/投简历/投简历1 (1).png"
+dest_files=["res://.godot/imported/投简历1 (1).png-28cba0f0e5eda4f4f9bb4abfdecb33ff.ctex"]
 
 [params]
 
