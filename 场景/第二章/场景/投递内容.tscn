@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgblplok2qmw6"]
+[gd_scene load_steps=6 format=3 uid="uid://bdjtoakqbeck6"]
 
 [ext_resource type="Script" path="res://场景/第二章/代码/投递内容.gd" id="1_u4gpl"]
 [ext_resource type="Texture2D" uid="uid://dtiba08pug4gr" path="res://场景/第二章/资源/投简历/投简历3 (1).png" id="2_ncwnn"]
