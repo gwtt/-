@@ -9,33 +9,60 @@
 [node name="投递内容" type="Node2D"]
 script = ExtResource("1_u4gpl")
 
+[node name="投简历" type="Sprite2D" parent="."]
+position = Vector2(-26, -243)
+texture = ExtResource("5_ar2t3")
+
 [node name="岗位" type="Label" parent="."]
-offset_left = -69.0
-offset_top = -337.0
-offset_right = 61.0
-offset_bottom = -254.0
+offset_left = -63.0
+offset_top = -348.0
+offset_right = 67.0
+offset_bottom = -265.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 54
 text = "■■■"
 vertical_alignment = 1
 
 [node name="工资" type="Label" parent="."]
-offset_left = 74.0
-offset_top = -333.0
-offset_right = 240.0
-offset_bottom = -250.0
+offset_left = 70.0
+offset_top = -341.0
+offset_right = 236.0
+offset_bottom = -258.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 42
 text = "7千-1万"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="学历" type="Label" parent="."]
-offset_left = 110.0
-offset_top = -267.0
-offset_right = 276.0
-offset_bottom = -184.0
+[node name="工作经验" type="Label" parent="."]
+offset_left = -49.0
+offset_top = -250.0
+offset_right = 37.0
+offset_bottom = -208.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
+text = "3年以上"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="假期" type="Label" parent="."]
+offset_left = 124.0
+offset_top = -250.0
+offset_right = 220.0
+offset_bottom = -208.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "大周双休"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="学历" type="Label" parent="."]
+offset_left = 44.0
+offset_top = -250.0
+offset_right = 117.0
+offset_bottom = -208.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
 text = "本科"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -108,6 +135,9 @@ offset_top = 252.0
 offset_bottom = 352.0
 texture_normal = ExtResource("2_ncwnn")
 texture_pressed = ExtResource("3_o8sjw")
+texture_hover = ExtResource("3_o8sjw")
+texture_disabled = ExtResource("3_o8sjw")
+texture_focused = ExtResource("3_o8sjw")
 
 [node name="右边按钮" type="TextureButton" parent="."]
 offset_left = -4.0
@@ -116,10 +146,9 @@ offset_right = 246.0
 offset_bottom = 351.0
 texture_normal = ExtResource("2_ncwnn")
 texture_pressed = ExtResource("4_jqonq")
-
-[node name="投简历" type="Sprite2D" parent="."]
-position = Vector2(-42, -261)
-texture = ExtResource("5_ar2t3")
+texture_hover = ExtResource("4_jqonq")
+texture_disabled = ExtResource("4_jqonq")
+texture_focused = ExtResource("4_jqonq")
 
 [connection signal="pressed" from="左边按钮" to="." method="_on_左边按钮_pressed"]
 [connection signal="pressed" from="右边按钮" to="." method="_on_右边按钮_pressed"]
