@@ -13,18 +13,18 @@ var png_dict = {
 	7: preload("res://场景/第二章/资源/7.png"),
 	8: preload("res://场景/第二章/资源/8.png"),
 }
+var to_last:bool = false
 var now_rotation = 0
 var flag:bool = false
+var count = 4
 func _ready() -> void:
 	时钟转动.完成_两圈.connect(complete_one_circle)
 	时钟转动.回退_两圈.connect(back_one_circle)
 	
 func _process(delta: float) -> void:
-	now_rotation = int(时钟转动.total_rotation) % 720
-	if now == 8 and now_rotation >= 360:
-		flag = true
-	if flag:
+	if to_last:
 		return
+	now_rotation = int(时钟转动.total_rotation) % 720
 	if now_rotation < 360:
 		场景.self_modulate = Color(1,1,1,int(now_rotation) / 360.0)
 	else:
@@ -33,9 +33,18 @@ func _process(delta: float) -> void:
 func complete_one_circle():
 	if now == 8:
 		return
+	if now == 7 and flag == false:
+		走马灯()
+		flag = true
+		return
+	if now == 7 and count > 0 and flag == true:
+		count = count - 1
+		now = 0
 	now = now + 1
 	场景.texture = png_dict[now]
 	场景.self_modulate = Color(1,1,1,0)
+	if now == 8 and !to_last:
+		最后场景()
 	
 func back_one_circle():
 	if now == 1:
@@ -44,3 +53,18 @@ func back_one_circle():
 	now = now - 1
 	场景.texture = png_dict[now]
 	场景.self_modulate = Color(1,1,1,0)
+
+func 走马灯():
+	时钟转动.able_drag = false
+	时钟转动.分钟.rotation_degrees = 0.0
+	场景.texture = png_dict[1]
+	now = 1
+	场景.self_modulate = Color(1,1,1,0)
+	var tween = create_tween().set_parallel(false).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(时钟转动.分钟,"rotation_degrees",25200,10)
+
+func 最后场景():
+	to_last = true
+	var tween = create_tween().set_parallel(false).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_interval(1)
+	tween.tween_property(场景,"self_modulate",Color(1,1,1,1),1)
