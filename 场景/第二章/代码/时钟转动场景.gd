@@ -2,18 +2,20 @@ extends GameInit
 
 @onready var 时钟: Sprite2D = $"Sprite2D/时钟"
 @onready var 分钟: Sprite2D = $"Sprite2D/分钟"
-@export var 目标圈数:float
+@export var 目标圈数:float = 5.0
 @export var 当前圈数:float
-
+signal 完成_两圈
+signal 回退_两圈
 var dragging = false
 var mouse_start_angle = 0
 var origin_rotation:float = 0
 var total_rotation:float = 0
 func _ready() -> void:
 	origin_rotation = 分钟.rotation_degrees
-func _process(delta: float) -> void:
-	if 当前圈数 > 目标圈数:
-		complete_game()
+	
+#func _process(delta: float) -> void:
+	#if 当前圈数 > 目标圈数:
+		#complete_game()
 		
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -30,4 +32,15 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		origin_rotation = 分钟.rotation_degrees
 		
 func 时钟度数(total_rotation: float):
-	时钟.rotation_degrees = total_rotation * 30.0 / 360.0
+	时钟.rotation_degrees = total_rotation * 30.0 / 360.0 * 360.0 / 目标圈数
+	if int(total_rotation / 720.0) > 当前圈数:
+		print("完成两圈")
+		emit_signal("完成_两圈")
+	if int(total_rotation / 720.0) < 当前圈数:
+		print("回退两圈")
+		emit_signal("回退_两圈")
+	当前圈数 = int(total_rotation / 720.0)
+
+
+func _on_area_2d_mouse_exited() -> void:
+	dragging = false

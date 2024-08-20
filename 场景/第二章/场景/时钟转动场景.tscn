@@ -9,22 +9,23 @@
 size = Vector2(27, 95)
 
 [node name="时钟转动场景" type="Node2D"]
-position = Vector2(994, 594)
+position = Vector2(125, 153)
 script = ExtResource("1_so8ps")
 
-[node name="时钟" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_k5igr")
 
-[node name="时钟" type="Sprite2D" parent="时钟"]
+[node name="时钟" type="Sprite2D" parent="Sprite2D"]
 texture = ExtResource("3_vyekp")
 
-[node name="分钟" type="Sprite2D" parent="时钟"]
+[node name="分钟" type="Sprite2D" parent="Sprite2D"]
 texture = ExtResource("2_p0457")
 
-[node name="Area2D" type="Area2D" parent="时钟/分钟"]
+[node name="Area2D" type="Area2D" parent="Sprite2D/分钟"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="时钟/分钟/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/分钟/Area2D"]
 position = Vector2(0.5, -41.5)
 shape = SubResource("RectangleShape2D_31kb1")
 
-[connection signal="input_event" from="时钟/分钟/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="Sprite2D/分钟/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_exited" from="Sprite2D/分钟/Area2D" to="." method="_on_area_2d_mouse_exited"]

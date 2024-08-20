@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://44y3bp04ikfu"]
+
+[ext_resource type="Script" path="res://场景/第二章/代码/主角投简历场面.gd" id="1_1sjav"]
+[ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_t4flv"]
+[ext_resource type="Texture2D" uid="uid://ck6b8rmv17yga" path="res://场景/第二章/资源/1.png" id="2_lpc6b"]
+[ext_resource type="PackedScene" uid="uid://bqqjcdx203o66" path="res://场景/第二章/场景/时钟转动场景.tscn" id="3_13f2q"]
+
+[node name="主角投简历场面" type="Node2D"]
+script = ExtResource("1_1sjav")
+
+[node name="白色框" type="Sprite2D" parent="."]
+position = Vector2(692, 554)
+texture = ExtResource("1_t4flv")
+
+[node name="场景" type="Sprite2D" parent="白色框"]
+texture = ExtResource("2_lpc6b")
+
+[node name="时钟转动场景" parent="." instance=ExtResource("3_13f2q")]
+position = Vector2(1562, 554)
+"目标圈数" = 8.0
