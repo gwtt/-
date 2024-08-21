@@ -2,10 +2,11 @@ extends GameInit
 
 @onready var 时钟: Sprite2D = $"Sprite2D/时钟"
 @onready var 分钟: Sprite2D = $"Sprite2D/分钟"
-@export var 目标圈数:float = 5.0
+@export var 目标圈数:float = 4.0
 @export var 当前圈数:float
 signal 完成_两圈
 signal 回退_两圈
+var is_over = false
 var able_drag = true
 var dragging = false
 var mouse_start_angle = 0
@@ -15,6 +16,8 @@ func _ready() -> void:
 	origin_rotation = 分钟.rotation_degrees
 	
 func _process(delta: float) -> void:
+	if is_over:
+		return
 	total_rotation = total_rotation + 分钟.rotation_degrees - origin_rotation
 	origin_rotation = 分钟.rotation_degrees
 	时钟度数(total_rotation)

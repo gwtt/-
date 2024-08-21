@@ -65,6 +65,8 @@ func 走马灯():
 
 func 最后场景():
 	to_last = true
-	var tween = create_tween().set_parallel(false).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_interval(1)
+	await get_tree().create_timer(1.0).timeout
+	时钟转动.is_over = true
+	var tween = create_tween().set_parallel(true).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(场景,"self_modulate",Color(1,1,1,1),1)
+	tween.tween_property(时钟转动.时钟,"rotation_degrees",时钟转动.时钟.rotation_degrees + 180, 1)
