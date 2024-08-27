@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc8kcfxn821de"]
+[gd_scene load_steps=8 format=3 uid="uid://cc8kcfxn821de"]
 
 [ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_67tqk"]
+[ext_resource type="Script" path="res://场景/第二章/代码/主相机移动.gd" id="2_nch67"]
+[ext_resource type="Script" path="res://场景/第二章/代码/game_manager.gd" id="3_06uoy"]
+[ext_resource type="PackedScene" uid="uid://w53gihe0blhp" path="res://场景/第二章/场景/章节场景.tscn" id="4_1mda0"]
+[ext_resource type="PackedScene" uid="uid://44y3bp04ikfu" path="res://场景/第二章/场景/主角投简历场面.tscn" id="4_osxu2"]
+[ext_resource type="PackedScene" uid="uid://br21ad8g0hbo4" path="res://场景/第二章/场景/投简历场景.tscn" id="5_tdrjr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlvgi"]
+size = Vector2(1919.5, 1088)
 
 [node name="第二章主场景" type="Node2D"]
 
@@ -9,3 +17,22 @@ scale = Vector2(100, 100)
 texture = ExtResource("1_67tqk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_nch67")
+
+[node name="Area2D" type="Area2D" parent="Camera2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D"]
+position = Vector2(1.25, 0)
+shape = SubResource("RectangleShape2D_wlvgi")
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("3_06uoy")
+
+[node name="章节场景" parent="GameManager" instance=ExtResource("4_1mda0")]
+
+[node name="主角投简历场面" parent="GameManager" instance=ExtResource("4_osxu2")]
+
+[node name="投简历场景" parent="GameManager" instance=ExtResource("5_tdrjr")]
+position = Vector2(2601, 1712)
+
+[connection signal="input_event" from="Camera2D/Area2D" to="Camera2D" method="_on_area_2d_input_event"]

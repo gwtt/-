@@ -6,15 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://bqqjcdx203o66" path="res://场景/第二章/场景/时钟转动场景.tscn" id="3_13f2q"]
 
 [node name="主角投简历场面" type="Node2D"]
+position = Vector2(955, 540)
 script = ExtResource("1_1sjav")
 
 [node name="白色框" type="Sprite2D" parent="."]
-position = Vector2(692, 554)
+position = Vector2(-244, 0)
 texture = ExtResource("1_t4flv")
 
 [node name="场景" type="Sprite2D" parent="白色框"]
 texture = ExtResource("2_lpc6b")
 
 [node name="时钟转动场景" parent="." instance=ExtResource("3_13f2q")]
-position = Vector2(1562, 554)
+position = Vector2(575, 0)
 "目标圈数" = 8.0

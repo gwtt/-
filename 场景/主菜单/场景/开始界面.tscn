@@ -123,6 +123,20 @@ stream = ExtResource("7_3u4la")
 volume_db = 16.0
 bus = &"音效"
 
+[node name="RightContainer" type="MarginContainer" parent="Control/初始界面"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="纹理" type="TextureRect" parent="Control/初始界面/RightContainer"]
+custom_minimum_size = Vector2(900, 900)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("21_u2eo5")
+expand_mode = 1
+stretch_mode = 6
+
 [node name="设置界面" type="PanelContainer" parent="Control"]
 visible = false
 layout_mode = 1
@@ -402,10 +416,3 @@ modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 texture = ExtResource("2_awyte")
 expand_mode = 1
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = 476.0
-offset_top = 24.0
-offset_right = 2396.0
-offset_bottom = 1104.0
-texture = ExtResource("21_u2eo5")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game"
-run/main_scene="res://场景/主菜单/场景/开始界面.tscn"
+run/main_scene="res://场景/第二章/场景/第二章主场景.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
