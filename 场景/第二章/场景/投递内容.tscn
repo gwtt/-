@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdjtoakqbeck6"]
+[gd_scene load_steps=7 format=3 uid="uid://bdjtoakqbeck6"]
 
 [ext_resource type="Script" path="res://场景/第二章/代码/投递内容.gd" id="1_u4gpl"]
 [ext_resource type="Texture2D" uid="uid://dtiba08pug4gr" path="res://场景/第二章/资源/投简历/投简历3 (1).png" id="2_ncwnn"]
 [ext_resource type="Texture2D" uid="uid://dd0p8afhevxn2" path="res://场景/第二章/资源/投简历/投简历5png (1).png" id="3_o8sjw"]
 [ext_resource type="Texture2D" uid="uid://dbxtux2y21tsg" path="res://场景/第二章/资源/投简历/投简历4 (1).png" id="4_jqonq"]
 [ext_resource type="Texture2D" uid="uid://tep6ta4clwaf" path="res://场景/第二章/资源/投简历/投简历1 (1).png" id="5_ar2t3"]
+[ext_resource type="AudioStream" uid="uid://ggag5nbg2wwk" path="res://场景/第二章/资源/投简历/点击声音.mp3" id="6_kqdpb"]
 
 [node name="投递内容" type="Node2D"]
 script = ExtResource("1_u4gpl")
@@ -136,7 +137,6 @@ offset_bottom = 352.0
 texture_normal = ExtResource("2_ncwnn")
 texture_pressed = ExtResource("3_o8sjw")
 texture_hover = ExtResource("3_o8sjw")
-texture_disabled = ExtResource("3_o8sjw")
 texture_focused = ExtResource("3_o8sjw")
 
 [node name="右边按钮" type="TextureButton" parent="."]
@@ -147,8 +147,12 @@ offset_bottom = 351.0
 texture_normal = ExtResource("2_ncwnn")
 texture_pressed = ExtResource("4_jqonq")
 texture_hover = ExtResource("4_jqonq")
-texture_disabled = ExtResource("4_jqonq")
+texture_disabled = ExtResource("2_ncwnn")
 texture_focused = ExtResource("4_jqonq")
+
+[node name="点击声音" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_kqdpb")
+volume_db = 20.097
 
 [connection signal="pressed" from="左边按钮" to="." method="_on_左边按钮_pressed"]
 [connection signal="pressed" from="右边按钮" to="." method="_on_右边按钮_pressed"]
