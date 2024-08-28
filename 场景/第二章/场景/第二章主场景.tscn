@@ -30,9 +30,9 @@ script = ExtResource("3_06uoy")
 
 [node name="章节场景" parent="GameManager" instance=ExtResource("4_1mda0")]
 
-[node name="主角投简历场面" parent="GameManager" instance=ExtResource("4_osxu2")]
-
 [node name="投简历场景" parent="GameManager" instance=ExtResource("5_tdrjr")]
 position = Vector2(2601, 1712)
+
+[node name="主角投简历场面" parent="GameManager" groups=["游戏"] instance=ExtResource("4_osxu2")]
 
 [connection signal="input_event" from="Camera2D/Area2D" to="Camera2D" method="_on_area_2d_input_event"]

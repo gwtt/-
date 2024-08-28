@@ -70,3 +70,5 @@ func 最后场景():
 	var tween = create_tween().set_parallel(true).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(场景,"self_modulate",Color(1,1,1,1),1)
 	tween.tween_property(时钟转动.时钟,"rotation_degrees",时钟转动.时钟.rotation_degrees + 180, 1)
+	await get_tree().create_timer(1.0).timeout
+	GlobalGameManager.emit_complete_game()

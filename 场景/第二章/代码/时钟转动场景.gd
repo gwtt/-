@@ -33,7 +33,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			dragging = false
 			
 	if event is InputEventMouseMotion and dragging:
-		分钟.look_at(event.position)
+		分钟.look_at(get_global_mouse_position())
 		分钟.rotation_degrees += 90
 		
 		
