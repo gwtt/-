@@ -33,3 +33,7 @@ func _on_button_down():
 #需要重写
 func _on_button_up():
 	pass
+
+#懒加载数据
+func _after_init():
+	pass

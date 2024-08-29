@@ -17,3 +17,10 @@ func emit_back_to_menu():
 
 func emit_turn_to_next():
 	emit_signal("turn_to_next")
+
+func log_message(node_name,call:Callable):
+	print(node_name + "调用了" + call.get_method())
+	call.call()
+	
+func log_custom_message(message):
+	print(message)

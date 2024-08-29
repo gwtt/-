@@ -15,9 +15,9 @@ var screen_resolution_dictionary = {
 
 func _ready():
 	BaseSetting.music_change.connect(change_background_music_volume)
-	change_background_music_volume(BaseSetting.music)
+	change_background_music_volume(BaseSetting.data.music)
 	BaseSetting.sound_scape_change.connect(change_sound_scape_volume)
-	change_sound_scape_volume(BaseSetting.sound_scape)
+	change_sound_scape_volume(BaseSetting.data.sound_scape)
 
 func change_background_music_volume(index):
 	var bus_index = AudioServer.get_bus_index("Master")

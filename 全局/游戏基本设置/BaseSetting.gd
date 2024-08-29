@@ -14,52 +14,41 @@ var screen_resolution_dictionary = {
 }
 signal music_change()
 signal sound_scape_change()
-var move_time:float = 2.0
-var origin_time:float = 2.0
-#音效 todo还要加个信号判断
-var sound_scape:int = 6:
-	set(value):
-		if value > 10:
-			sound_scape = 0
-		else:
-			sound_scape =  value
-		emit_signal("sound_scape_change",sound_scape)
-#音乐 todo还要加个信号判断
-var music:int = 2:
-	set(value):
-		if value > 10:
-			music =  0
-		else:
-			music =  value
-		emit_signal("music_change",music)
-#是否全屏
-var is_full_screen:bool = false
-#默认分辨率
-var screen_resolution_index:int = 6
-var screen_resolution:Vector2 = screen_resolution_dictionary.get(6)
+signal data_change()
+var data:BaseData
 var screen_size:Vector2i
 func _ready():
-	#todo 读取文件配置相关，初始化数组
+	data = BaseData.new()
+	data_change.connect(save_data)
+	self.load_data()
 	screen_size = DisplayServer.screen_get_size()
-	pass
 
 #设置屏幕分辨率
 func set_screen_resolution(index:int) -> Vector2i:
 	var temp:Vector2i = screen_resolution_dictionary.get(index)
 	if temp.y > screen_size.y || index > 10:
 		index = 1
-	screen_resolution = screen_resolution_dictionary.get(index)
-	screen_resolution_index = index
-	DisplayServer.window_set_size(screen_resolution)
-	return screen_resolution
+	data.screen_resolution = data.screen_resolution_dictionary.get(index)
+	data.screen_resolution_index = index
+	DisplayServer.window_set_size(data.screen_resolution)
+	BaseSetting.emit_signal("data_change")
+	return data.screen_resolution
 
 func get_screen_resolution() -> Vector2i:
-	return screen_resolution
+	return data.screen_resolution
 
 #设置是否全屏
-func set_full_screen():
-	is_full_screen = !is_full_screen
-	if is_full_screen:
+func set_full_screen(is_full:bool):
+	data.is_full_screen = is_full
+	if data.is_full_screen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	BaseSetting.emit_signal("data_change")	
+	
+func save_data():
+	data.save_data()
+	
+func load_data():
+	data.load_data()
+	
