@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsbdan4cxmxw2"]
+
+[ext_resource type="Script" path="res://场景/第二章/代码/最后场景.gd" id="1_arsfq"]
+[ext_resource type="Texture2D" uid="uid://glorgwwv1878" path="res://场景/第二章/资源/最后场景/电灯开.png" id="1_nq1hp"]
+[ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="3_3repg"]
+[ext_resource type="Texture2D" uid="uid://bjv0k5ulph7wi" path="res://场景/第二章/资源/最后场景/8.png" id="4_8o7j5"]
+[ext_resource type="SpriteFrames" uid="uid://b3pixb1khgbbb" path="res://场景/第二章/资源/最后场景/眨眼.tres" id="5_u2g6f"]
+[ext_resource type="Texture2D" uid="uid://i3ldxbtfwymk" path="res://场景/第二章/资源/最后场景/闹钟 底.png" id="6_4yyfl"]
+[ext_resource type="Texture2D" uid="uid://dfa1rcddl8pxm" path="res://场景/第二章/资源/最后场景/闹钟 上面png.png" id="7_ferb5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdks8"]
+size = Vector2(292, 294)
+
+[node name="最后场景" type="Node2D"]
+script = ExtResource("1_arsfq")
+start_time = 690
+
+[node name="闹钟底" type="Sprite2D" parent="."]
+position = Vector2(-266, 0)
+texture = ExtResource("6_4yyfl")
+
+[node name="上面" type="Sprite2D" parent="闹钟底"]
+texture = ExtResource("7_ferb5")
+
+[node name="时钟十位" type="Label" parent="闹钟底/上面"]
+offset_left = -266.0
+offset_top = -99.0
+offset_right = -161.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 120
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="时钟个位" type="Label" parent="闹钟底/上面"]
+offset_left = -140.0
+offset_top = -99.0
+offset_right = -35.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 120
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="分钟十位" type="Label" parent="闹钟底/上面"]
+offset_left = 16.0
+offset_top = -99.0
+offset_right = 121.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 120
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="分钟个位" type="Label" parent="闹钟底/上面"]
+offset_left = 141.0
+offset_top = -99.0
+offset_right = 246.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 120
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="按钮" type="Sprite2D" parent="."]
+position = Vector2(564, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_nq1hp")
+
+[node name="Area2D" type="Area2D" parent="按钮"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="按钮/Area2D"]
+position = Vector2(0, 17)
+shape = SubResource("RectangleShape2D_hdks8")
+
+[node name="白色框" type="Sprite2D" parent="."]
+position = Vector2(-275, 0)
+texture = ExtResource("3_3repg")
+
+[node name="场景" type="Sprite2D" parent="白色框"]
+texture = ExtResource("4_8o7j5")
+
+[node name="眨眼" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-275, 0)
+sprite_frames = ExtResource("5_u2g6f")
+animation = &"new_animation"
+autoplay = "眨眼"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="input_event" from="按钮/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="按钮/Area2D" to="按钮" method="_on_area_2d_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmk5khohcy56p"
-path="res://.godot/imported/5.png-79ba9156f5336b869e773514346053af.ctex"
+uid="uid://dqjy4on68k2j3"
+path="res://.godot/imported/关掉闭眼.png-3f34ca797e2feb20382c63fb05611366.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://场景/第二章/资源/5.png"
-dest_files=["res://.godot/imported/5.png-79ba9156f5336b869e773514346053af.ctex"]
+source_file="res://场景/第二章/资源/最后场景/关掉闭眼.png"
+dest_files=["res://.godot/imported/关掉闭眼.png-3f34ca797e2feb20382c63fb05611366.ctex"]
 
 [params]
 

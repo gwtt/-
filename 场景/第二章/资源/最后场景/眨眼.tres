@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://b3pixb1khgbbb"]
+
+[ext_resource type="Texture2D" uid="uid://dqjy4on68k2j3" path="res://场景/第二章/资源/最后场景/关掉闭眼.png" id="1_6ku68"]
+[ext_resource type="Texture2D" uid="uid://bww8h21umq0u" path="res://场景/第二章/资源/最后场景/关掉睁眼.png" id="2_qwj71"]
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6ku68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qwj71")
+}],
+"loop": true,
+"name": &"眨眼",
+"speed": 1.0
+}]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://场景/第二章/代码/主角投简历场面.gd" id="1_1sjav"]
 [ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_t4flv"]
-[ext_resource type="Texture2D" uid="uid://ck6b8rmv17yga" path="res://场景/第二章/资源/1.png" id="2_lpc6b"]
+[ext_resource type="Texture2D" uid="uid://ck6b8rmv17yga" path="res://场景/第二章/资源/走马灯/1.png" id="2_lpc6b"]
 [ext_resource type="PackedScene" uid="uid://bqqjcdx203o66" path="res://场景/第二章/场景/时钟转动场景.tscn" id="3_13f2q"]
 
 [node name="主角投简历场面" type="Node2D"]

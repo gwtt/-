@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlhrecdi3ukhh"
-path="res://.godot/imported/6.png-d8d9ec0efab7600d020654434fb5b681.ctex"
+path="res://.godot/imported/6.png-6331379d24904057d2a743b334d5625a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://场景/第二章/资源/6.png"
-dest_files=["res://.godot/imported/6.png-d8d9ec0efab7600d020654434fb5b681.ctex"]
+source_file="res://场景/第二章/资源/走马灯/6.png"
+dest_files=["res://.godot/imported/6.png-6331379d24904057d2a743b334d5625a.ctex"]
 
 [params]
 

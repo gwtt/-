@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://beuc5vfot16dr"]
+
+[ext_resource type="Script" path="res://场景/第二章/代码/录取信息.gd" id="1_1saph"]
+[ext_resource type="Texture2D" uid="uid://n7gs35so00xg" path="res://场景/第二章/资源/最后场景/录取手机.png" id="2_6ltl5"]
+[ext_resource type="Texture2D" uid="uid://jif63f7gv4yu" path="res://场景/第二章/资源/最后场景/录取消息.png" id="3_uy116"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkrw7"]
+size = Vector2(411, 136)
+
+[sub_resource type="Gradient" id="Gradient_38qse"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sd40e"]
+gradient = SubResource("Gradient_38qse")
+use_hdr = true
+fill_from = Vector2(0, 0.987179)
+fill_to = Vector2(1, 1)
+
+[node name="录取信息" type="Node2D"]
+position = Vector2(960, 540)
+script = ExtResource("1_1saph")
+
+[node name="录取手机" type="Sprite2D" parent="."]
+texture = ExtResource("2_6ltl5")
+
+[node name="录取信息" type="Sprite2D" parent="录取手机"]
+position = Vector2(0, -235)
+texture = ExtResource("3_uy116")
+
+[node name="Label" type="Label" parent="录取手机/录取信息"]
+offset_left = -90.0
+offset_top = -47.0
+offset_right = 243.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 20
+text = "江北股份有限公司
+欢迎你成为公司家庭中的一员
+愿我们一同奋斗！"
+
+[node name="Area2D" type="Area2D" parent="录取手机/录取信息"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="录取手机/录取信息/Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_qkrw7")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0.499929, 13)
+scale = Vector2(8.45313, 14.3437)
+color = Color(0.366316, 0.288069, 0.502062, 1)
+blend_mode = 1
+texture = SubResource("GradientTexture2D_sd40e")
+
+[connection signal="input_event" from="录取手机/录取信息/Area2D" to="." method="_on_area_2d_input_event"]

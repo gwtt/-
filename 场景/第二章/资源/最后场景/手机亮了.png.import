@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck6b8rmv17yga"
-path="res://.godot/imported/1.png-0cd3a5f6b56145a69153a4e8dbce98d8.ctex"
+uid="uid://bpe7om05xvsvf"
+path="res://.godot/imported/手机亮了.png-14156e1cf9343b22407aa9c0d4bd8507.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://场景/第二章/资源/1.png"
-dest_files=["res://.godot/imported/1.png-0cd3a5f6b56145a69153a4e8dbce98d8.ctex"]
+source_file="res://场景/第二章/资源/最后场景/手机亮了.png"
+dest_files=["res://.godot/imported/手机亮了.png-14156e1cf9343b22407aa9c0d4bd8507.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cadkcblehekvi"
-path="res://.godot/imported/4.png-d60575d8aa524e6f717c16e06b688ce4.ctex"
+uid="uid://2cmt7s7vk4wp"
+path="res://.godot/imported/2.png-953bca305a6083be6d168f2f4fb72f46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://场景/第二章/资源/4.png"
-dest_files=["res://.godot/imported/4.png-d60575d8aa524e6f717c16e06b688ce4.ctex"]
+source_file="res://场景/第二章/资源/走马灯/2.png"
+dest_files=["res://.godot/imported/2.png-953bca305a6083be6d168f2f4fb72f46.ctex"]
 
 [params]
 

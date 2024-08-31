@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7pny0j0bqs3"]
+
+[ext_resource type="Script" path="res://场景/第二章/代码/手机亮了.gd" id="1_5xqrp"]
+[ext_resource type="Texture2D" uid="uid://bpe7om05xvsvf" path="res://场景/第二章/资源/最后场景/手机亮了.png" id="2_biq5a"]
+
+[node name="手机亮了" type="Node2D"]
+script = ExtResource("1_5xqrp")
+
+[node name="手机亮" type="Sprite2D" parent="."]
+texture = ExtResource("2_biq5a")

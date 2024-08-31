@@ -4,14 +4,13 @@ extends GameInit
 @onready var 时钟转动: Node2D = $"时钟转动场景"
 var now = 1
 var png_dict = {
-	1: preload("res://场景/第二章/资源/1.png"),
-	2: preload("res://场景/第二章/资源/2.png"),
-	3: preload("res://场景/第二章/资源/3.png"),
-	4: preload("res://场景/第二章/资源/4.png"),
-	5: preload("res://场景/第二章/资源/5.png"),
-	6: preload("res://场景/第二章/资源/6.png"),
-	7: preload("res://场景/第二章/资源/7.png"),
-	8: preload("res://场景/第二章/资源/8.png"),
+	1: preload("res://场景/第二章/资源/走马灯/1.png"),
+	2: preload("res://场景/第二章/资源/走马灯/2.png"),
+	3: preload("res://场景/第二章/资源/走马灯/3.png"),
+	4: preload("res://场景/第二章/资源/走马灯/4.png"),
+	5: preload("res://场景/第二章/资源/走马灯/5.png"),
+	6: preload("res://场景/第二章/资源/走马灯/6.png"),
+	7: preload("res://场景/第二章/资源/走马灯/7.png"),
 }
 var to_last:bool = false
 var now_rotation = 0
@@ -41,10 +40,12 @@ func complete_one_circle():
 		count = count - 1
 		now = 0
 	now = now + 1
-	场景.texture = png_dict[now]
-	场景.self_modulate = Color(1,1,1,0)
 	if now == 8 and !to_last:
 		最后场景()
+		return
+	场景.texture = png_dict[now]
+	场景.self_modulate = Color(1,1,1,0)
+
 	
 func back_one_circle():
 	if now == 1:
@@ -70,5 +71,5 @@ func 最后场景():
 	var tween = create_tween().set_parallel(true).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(场景,"self_modulate",Color(1,1,1,1),1)
 	tween.tween_property(时钟转动.时钟,"rotation_degrees",时钟转动.时钟.rotation_degrees + 180, 1)
-	await get_tree().create_timer(1.0).timeout
 	GlobalGameManager.emit_complete_game()
+	

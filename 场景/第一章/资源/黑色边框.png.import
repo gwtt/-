@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2cmt7s7vk4wp"
-path="res://.godot/imported/2.png-212bc73653c68a9ea3176c4ad77cf2ad.ctex"
+uid="uid://k6lg3ysaej56"
+path="res://.godot/imported/黑色边框.png-ee8e7cfd419890e33d742797f0afe1b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://场景/第二章/资源/2.png"
-dest_files=["res://.godot/imported/2.png-212bc73653c68a9ea3176c4ad77cf2ad.ctex"]
+source_file="res://场景/第一章/资源/黑色边框.png"
+dest_files=["res://.godot/imported/黑色边框.png-ee8e7cfd419890e33d742797f0afe1b6.ctex"]
 
 [params]
 

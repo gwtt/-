@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc8kcfxn821de"]
+[gd_scene load_steps=11 format=3 uid="uid://cc8kcfxn821de"]
 
 [ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_67tqk"]
 [ext_resource type="Script" path="res://场景/第二章/代码/主相机移动.gd" id="2_nch67"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://w53gihe0blhp" path="res://场景/第二章/场景/章节场景.tscn" id="4_1mda0"]
 [ext_resource type="PackedScene" uid="uid://44y3bp04ikfu" path="res://场景/第二章/场景/主角投简历场面.tscn" id="4_osxu2"]
 [ext_resource type="PackedScene" uid="uid://br21ad8g0hbo4" path="res://场景/第二章/场景/投简历场景.tscn" id="5_tdrjr"]
+[ext_resource type="PackedScene" uid="uid://dsbdan4cxmxw2" path="res://场景/第二章/场景/最后场景.tscn" id="7_amtv7"]
+[ext_resource type="PackedScene" uid="uid://c7pny0j0bqs3" path="res://场景/第二章/场景/手机亮了.tscn" id="8_3lkct"]
+[ext_resource type="PackedScene" uid="uid://beuc5vfot16dr" path="res://场景/第二章/场景/录取信息.tscn" id="9_bnh2k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlvgi"]
 size = Vector2(1919.5, 1088)
@@ -35,4 +38,13 @@ position = Vector2(2601, 1712)
 
 [node name="主角投简历场面" parent="GameManager" groups=["游戏"] instance=ExtResource("4_osxu2")]
 
+[node name="最后场景" parent="GameManager" instance=ExtResource("7_amtv7")]
+position = Vector2(2542, 3116)
+
+[node name="手机亮了" parent="GameManager" instance=ExtResource("8_3lkct")]
+
+[node name="录取信息" parent="GameManager" instance=ExtResource("9_bnh2k")]
+visible = false
+
 [connection signal="input_event" from="Camera2D/Area2D" to="Camera2D" method="_on_area_2d_input_event"]
+[connection signal="press_button" from="GameManager/最后场景" to="GameManager" method="_on_最后场景_press_button"]

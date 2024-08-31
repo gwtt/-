@@ -5,6 +5,7 @@ var now_index = 1
 var now_position:Vector2
 var game_state:Array
 @onready var camera_2d: Camera2D = $"../Camera2D"
+@onready var 背景: Sprite2D = $"../背景"
 
 func _ready():
 	GlobalGameManager.complete_game.connect(complete_game)
@@ -16,8 +17,9 @@ func _ready():
 		i = i + 1.5
 	now_position = childern[1].global_position
 func _process(delta: float) -> void:
-	if camera_2d.global_position.distance_to(now_position) < 10.0:
+	if camera_2d.global_position.distance_to(now_position) < 15.0:
 		camera_2d.limit = true
+		childern[now_index]._init_game()
 		camera_2d.global_position = now_position
 		now_index = now_index + 1
 		if now_index < childern.size():
@@ -25,3 +27,12 @@ func _process(delta: float) -> void:
 		
 func complete_game() -> void:
 	camera_2d.limit = false
+	move_to_next_scene()
+	
+func move_to_next_scene() -> void:
+	var tween = create_tween().set_parallel(false).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(camera_2d,"global_position",now_position,2)
+
+
+func _on_最后场景_press_button() -> void:
+	背景.modulate = Color(0,0,0,1)
