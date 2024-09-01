@@ -39,7 +39,7 @@ script = ExtResource("1_xh1fq")
 position = Vector2(2847, -1610)
 
 [node name="手机特写" parent="场景管理器" instance=ExtResource("3_ynpn6")]
-position = Vector2(1549, 0)
+position = Vector2(1549, -868)
 
 [node name="刮胡子" parent="场景管理器" instance=ExtResource("5_826ln")]
 position = Vector2(4232, 0)

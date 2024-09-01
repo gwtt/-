@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://beuc5vfot16dr"]
 
 [ext_resource type="Script" path="res://场景/第二章/代码/录取信息.gd" id="1_1saph"]
-[ext_resource type="Texture2D" uid="uid://n7gs35so00xg" path="res://场景/第二章/资源/最后场景/录取手机.png" id="2_6ltl5"]
-[ext_resource type="Texture2D" uid="uid://jif63f7gv4yu" path="res://场景/第二章/资源/最后场景/录取消息.png" id="3_uy116"]
+[ext_resource type="Texture2D" uid="uid://bg1r0clkenwl1" path="res://场景/第二章/资源/最后场景/录取手机.png" id="2_6ltl5"]
+[ext_resource type="Texture2D" uid="uid://drm22fo5h2obi" path="res://场景/第二章/资源/最后场景/录取消息.png" id="3_uy116"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkrw7"]
 size = Vector2(411, 136)
@@ -45,7 +45,7 @@ shape = SubResource("RectangleShape2D_qkrw7")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0.499929, 13)
 scale = Vector2(8.45313, 14.3437)
-color = Color(0.366316, 0.288069, 0.502062, 1)
+color = Color(0.425397, 0.301652, 0.273439, 1)
 blend_mode = 1
 texture = SubResource("GradientTexture2D_sd40e")
 

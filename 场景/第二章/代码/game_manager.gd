@@ -19,7 +19,8 @@ func _ready():
 func _process(delta: float) -> void:
 	if camera_2d.global_position.distance_to(now_position) < 15.0:
 		camera_2d.limit = true
-		childern[now_index]._init_game()
+		if now_index < childern.size():
+			childern[now_index]._init_game()
 		camera_2d.global_position = now_position
 		now_index = now_index + 1
 		if now_index < childern.size():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cc8kcfxn821de"]
+[gd_scene load_steps=13 format=3 uid="uid://cc8kcfxn821de"]
 
 [ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_67tqk"]
 [ext_resource type="Script" path="res://场景/第二章/代码/主相机移动.gd" id="2_nch67"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dsbdan4cxmxw2" path="res://场景/第二章/场景/最后场景.tscn" id="7_amtv7"]
 [ext_resource type="PackedScene" uid="uid://c7pny0j0bqs3" path="res://场景/第二章/场景/手机亮了.tscn" id="8_3lkct"]
 [ext_resource type="PackedScene" uid="uid://beuc5vfot16dr" path="res://场景/第二章/场景/录取信息.tscn" id="9_bnh2k"]
+[ext_resource type="PackedScene" uid="uid://dposlh33hw777" path="res://场景/第一章/场景/菜单按钮.tscn" id="10_71bkd"]
+[ext_resource type="PackedScene" uid="uid://b8e6b0ykdghf7" path="res://场景/第一章/场景/过渡开始动画.tscn" id="11_xprnf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlvgi"]
 size = Vector2(1919.5, 1088)
@@ -44,7 +46,11 @@ position = Vector2(2542, 3116)
 [node name="手机亮了" parent="GameManager" instance=ExtResource("8_3lkct")]
 
 [node name="录取信息" parent="GameManager" instance=ExtResource("9_bnh2k")]
-visible = false
+position = Vector2(877, 1914)
+
+[node name="菜单按钮" parent="." instance=ExtResource("10_71bkd")]
+
+[node name="过渡开始动画" parent="." instance=ExtResource("11_xprnf")]
 
 [connection signal="input_event" from="Camera2D/Area2D" to="Camera2D" method="_on_area_2d_input_event"]
 [connection signal="press_button" from="GameManager/最后场景" to="GameManager" method="_on_最后场景_press_button"]

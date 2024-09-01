@@ -153,6 +153,7 @@ texture_focused = ExtResource("4_jqonq")
 [node name="点击声音" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_kqdpb")
 volume_db = 20.097
+bus = &"音效"
 
 [connection signal="pressed" from="左边按钮" to="." method="_on_左边按钮_pressed"]
 [connection signal="pressed" from="右边按钮" to="." method="_on_右边按钮_pressed"]

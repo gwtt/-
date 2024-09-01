@@ -14,8 +14,8 @@ var origin_time:float = 1.0
 
 
 func _ready():
-	move_time = BaseSetting.move_time
-	origin_time = BaseSetting.origin_time
+	move_time = BaseSetting.data.move_time
+	origin_time = BaseSetting.data.origin_time
 	childern = get_children()
 	#调整位置，每个图片根据分辨率放到对应的位置
 	var i = 0

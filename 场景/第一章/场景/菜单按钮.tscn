@@ -13,6 +13,7 @@ texture = ExtResource("1_uwkeh")
 [node name="菜单按钮" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -25,6 +26,7 @@ offset_right = 1510.0
 offset_bottom = 690.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mr6id")
 script = ExtResource("2_2chhx")
 
