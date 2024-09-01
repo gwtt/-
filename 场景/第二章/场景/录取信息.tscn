@@ -27,6 +27,7 @@ position = Vector2(0, -235)
 texture = ExtResource("3_uy116")
 
 [node name="Label" type="Label" parent="录取手机/录取信息"]
+visible = false
 offset_left = -90.0
 offset_top = -47.0
 offset_right = 243.0

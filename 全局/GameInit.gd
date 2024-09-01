@@ -10,7 +10,7 @@ func _game_process():
 
 #游戏销毁后
 func _after_game():
-	await get_tree().create_timer(BaseSetting.move_time).timeout
+	await get_tree().create_timer(BaseSetting.data.move_time).timeout
 	self.queue_free()
 
 #完成游戏

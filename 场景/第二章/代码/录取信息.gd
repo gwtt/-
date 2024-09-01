@@ -19,4 +19,5 @@ func _finish_game():
 	if !finish:
 		finish = true
 		await get_tree().create_timer(3).timeout
+		GlobalGameManager.emit_turn_to_next()
 		print("结束游戏")

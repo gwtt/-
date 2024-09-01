@@ -25,6 +25,6 @@ func change_text():
 
 func _init_game():
 	var tween = create_tween().set_parallel(false).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_LINEAR)
-	tween.tween_property(self,"now_time",target_time,BaseSetting.move_time)
-	await get_tree().create_timer(BaseSetting.move_time).timeout
+	tween.tween_property(self,"now_time",target_time,BaseSetting.data.move_time)
+	await get_tree().create_timer(BaseSetting.data.move_time).timeout
 	GlobalGameManager.emit_complete_game()

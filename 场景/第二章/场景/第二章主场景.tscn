@@ -44,6 +44,7 @@ position = Vector2(2601, 1712)
 position = Vector2(2542, 3116)
 
 [node name="手机亮了" parent="GameManager" instance=ExtResource("8_3lkct")]
+position = Vector2(8432, 2576)
 
 [node name="录取信息" parent="GameManager" instance=ExtResource("9_bnh2k")]
 position = Vector2(877, 1914)

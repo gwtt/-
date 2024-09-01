@@ -1,5 +1,6 @@
 extends Node2D
 const menu_path = "res://场景/主菜单/场景/开始界面.tscn"
+@export var next_scene:PackedScene
 @onready var panel_container = $CanvasLayer/PanelContainer
 @export var wait_time:float = 1
 
@@ -26,3 +27,5 @@ func turn_to_next():
 	var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(panel_container,"modulate",Color(1,1,1,1),wait_time)
 	await get_tree().create_timer(wait_time).timeout
+	if next_scene:
+		get_tree().change_scene_to_packed(next_scene)

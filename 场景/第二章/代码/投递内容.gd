@@ -12,8 +12,9 @@ extends GameInit
 var move_time:float = 0.5
 
 var post_dictionary = {
-	1: "■■■",
-	2: "■■",
+	1: "■■■■",
+	2: "■■■",
+	3: "■■",
 }
 var salary_dictionary = {
 	1: "3-6千",
@@ -28,6 +29,7 @@ var graduation_dictionary = {
 	2: "本科",
 	3: "硕士",
 	4: "博士",
+	5: "不限",
 }
 var experience_dictionary = {
 	1: "1年以上",
@@ -36,18 +38,17 @@ var experience_dictionary = {
 	4: "6月以上",
 }
 var holiday_dictionary = {
-	1: "小周单休",
+	1: "大小周",
 	2: "单休",
 	3: "双休",
-	4: "大周双休",
 }
 
 func random_content():
-	post.set_text(post_dictionary[randi_range(1,2)])
-	salary.set_text(salary_dictionary[randi_range(1,6)])
-	graduation.set_text(graduation_dictionary[randi_range(1,4)])
-	experience.set_text(experience_dictionary[randi_range(1,4)])
-	holiday.set_text(holiday_dictionary[randi_range(1,4)])
+	post.set_text(post_dictionary[randi_range(1,post_dictionary.size())])
+	salary.set_text(salary_dictionary[randi_range(1,salary_dictionary.size())])
+	graduation.set_text(graduation_dictionary[randi_range(1,graduation_dictionary.size())])
+	experience.set_text(experience_dictionary[randi_range(1,experience_dictionary.size())])
+	holiday.set_text(holiday_dictionary[randi_range(1,holiday_dictionary.size())])
 
 func _on_左边按钮_pressed() -> void:
 	right.set_disabled(true)
@@ -71,7 +72,6 @@ func _on_右边按钮_pressed() -> void:
 	await get_tree().create_timer(move_time).timeout
 	self.queue_free()
 	parent.count += 1
-	print(parent.count)
 	if parent.count == 5:
 		GlobalGameManager.emit_complete_game()
 	parent.create_node()	

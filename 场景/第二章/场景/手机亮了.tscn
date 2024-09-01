@@ -1,10 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7pny0j0bqs3"]
+[gd_scene load_steps=8 format=3 uid="uid://c7pny0j0bqs3"]
 
 [ext_resource type="Script" path="res://场景/第二章/代码/手机亮了.gd" id="1_5xqrp"]
-[ext_resource type="Texture2D" uid="uid://bpe7om05xvsvf" path="res://场景/第二章/资源/最后场景/手机亮了.png" id="2_biq5a"]
+[ext_resource type="Texture2D" uid="uid://goyrmcy1ddml" path="res://场景/第二章/资源/最后场景/手机亮了1.png" id="2_8tayg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rk1ub"]
+size = Vector2(105.312, 183.049)
+
+[sub_resource type="Gradient" id="Gradient_f303a"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1qc4b"]
+gradient = SubResource("Gradient_f303a")
+width = 128
+height = 128
+use_hdr = true
+fill_from = Vector2(0.602564, 0.649573)
+fill_to = Vector2(0.042735, 0.0555556)
+
+[sub_resource type="Gradient" id="Gradient_p046l"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7hohf"]
+gradient = SubResource("Gradient_p046l")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0.017094, 0.987179)
 
 [node name="手机亮了" type="Node2D"]
+position = Vector2(978, 502)
 script = ExtResource("1_5xqrp")
 
 [node name="手机亮" type="Sprite2D" parent="."]
-texture = ExtResource("2_biq5a")
+texture = ExtResource("2_8tayg")
+
+[node name="Area2D" type="Area2D" parent="手机亮"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="手机亮/Area2D"]
+position = Vector2(-198, -118)
+rotation = 0.202458
+shape = SubResource("RectangleShape2D_rk1ub")
+
+[node name="人" type="PointLight2D" parent="."]
+position = Vector2(52.8927, 156.208)
+rotation = 0.242601
+scale = Vector2(15.8583, 14.1248)
+color = Color(0, 0, 0, 1)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_1qc4b")
+
+[node name="手机灯" type="PointLight2D" parent="."]
+position = Vector2(-195.691, -120.419)
+rotation = 0.242601
+scale = Vector2(1.41174, 2.76173)
+color = Color(0, 0, 0, 1)
+texture = SubResource("GradientTexture2D_7hohf")
+
+[connection signal="input_event" from="手机亮/Area2D" to="." method="_on_area_2d_input_event"]

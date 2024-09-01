@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://2ttbduhg6tf8"]
+[gd_scene load_steps=6 format=3 uid="uid://2ttbduhg6tf8"]
 
 [ext_resource type="Texture2D" uid="uid://ctptel2w608us" path="res://场景/第一章/资源/白色框.png" id="1_mkakg"]
 [ext_resource type="Script" path="res://场景/第一章/代码/面试.gd" id="1_nyq8a"]
@@ -9,12 +9,6 @@
 diffuse_texture = ExtResource("2_6ufe5")
 normal_texture = ExtResource("4_71mmv")
 
-[sub_resource type="Gradient" id="Gradient_322h3"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_711wr"]
-gradient = SubResource("Gradient_322h3")
-fill_from = Vector2(1, 0.75641)
-
 [node name="面试" type="Node2D"]
 script = ExtResource("1_nyq8a")
 
@@ -23,11 +17,3 @@ texture = ExtResource("1_mkakg")
 
 [node name="面试" type="Sprite2D" parent="白色框"]
 texture = SubResource("CanvasTexture_27p3q")
-
-[node name="Light" type="Node2D" parent="."]
-
-[node name="PointLight2D" type="PointLight2D" parent="Light"]
-position = Vector2(0, 247)
-scale = Vector2(-15.832, -15.891)
-blend_mode = 1
-texture = SubResource("GradientTexture2D_711wr")
