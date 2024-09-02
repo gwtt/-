@@ -51,6 +51,7 @@ func random_content():
 	holiday.set_text(holiday_dictionary[randi_range(1,holiday_dictionary.size())])
 
 func _on_左边按钮_pressed() -> void:
+	left.set_disabled(true)
 	right.set_disabled(true)
 	click_sound.play()
 	var tween = create_tween().set_ease(Tween.EASE_OUT)
@@ -65,6 +66,7 @@ func _on_左边按钮_pressed() -> void:
 	
 func _on_右边按钮_pressed() -> void:
 	left.set_disabled(true)
+	right.set_disabled(true)
 	click_sound.play()
 	var tween = create_tween().set_ease(Tween.EASE_OUT)
 	var parent = get_node("../../")

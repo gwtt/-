@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqqjcdx203o66"]
+[gd_scene load_steps=7 format=3 uid="uid://bqqjcdx203o66"]
 
 [ext_resource type="Texture2D" uid="uid://8e0cbqumcw6e" path="res://场景/第二章/资源/时钟转动/时间 底.png" id="1_k5igr"]
 [ext_resource type="Script" path="res://场景/第二章/代码/时钟转动场景.gd" id="1_so8ps"]
 [ext_resource type="Texture2D" uid="uid://be5norl0rivqw" path="res://场景/第二章/资源/时钟转动/分针.png" id="2_p0457"]
 [ext_resource type="Texture2D" uid="uid://c7gf4hgyrnd2k" path="res://场景/第二章/资源/时钟转动/时针.png" id="3_vyekp"]
+[ext_resource type="AudioStream" uid="uid://m13wx5rk2akk" path="res://场景/第二章/资源/时钟转动/时钟转动1.wav" id="5_112iw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31kb1"]
 size = Vector2(16.6667, 83)
@@ -28,5 +29,12 @@ texture = ExtResource("2_p0457")
 position = Vector2(0, -47.5)
 shape = SubResource("RectangleShape2D_31kb1")
 
+[node name="声音" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_112iw")
+volume_db = 10.0
+autoplay = true
+bus = &"音效"
+
 [connection signal="input_event" from="Sprite2D/分钟/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_exited" from="Sprite2D/分钟/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="finished" from="声音" to="." method="_on_声音_finished"]

@@ -57,12 +57,14 @@ func back_one_circle():
 
 func 走马灯():
 	时钟转动.able_drag = false
+	时钟转动.dragging = true
 	时钟转动.分钟.rotation_degrees = 0.0
 	场景.texture = png_dict[1]
 	now = 1
 	场景.self_modulate = Color(1,1,1,0)
 	var tween = create_tween().set_parallel(false).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(时钟转动.分钟,"rotation_degrees",25200,10)
+	
 
 func 最后场景():
 	to_last = true
