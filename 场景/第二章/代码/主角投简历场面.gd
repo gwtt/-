@@ -62,15 +62,17 @@ func 走马灯():
 	场景.texture = png_dict[1]
 	now = 1
 	场景.self_modulate = Color(1,1,1,0)
-	var tween = create_tween().set_parallel(false).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+	var tween = create_tween().set_parallel(true).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(时钟转动.分钟,"rotation_degrees",25200,10)
-	
+	tween.tween_property(时钟转动.声音,"pitch_scale",时钟转动.声音.pitch_scale + 2, 10)
 
 func 最后场景():
 	to_last = true
 	await get_tree().create_timer(1.0).timeout
+	时钟转动.声音.set_stream_paused(true)
 	时钟转动.is_over = true
 	var tween = create_tween().set_parallel(true).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(时钟转动.时钟,"rotation_degrees",时钟转动.时钟.rotation_degrees + 180, 1)
+	
 	GlobalGameManager.emit_complete_game()
 	

@@ -11,20 +11,28 @@ var is_over = false
 var able_drag = true
 var dragging = false
 var mouse_start_angle = 0
+var wait_time = 0
 var origin_rotation:float = 0
-var total_rotation:float = 0
+var total_rotation:float = 0:
+	set(value):
+		if total_rotation != value:
+			声音.set_stream_paused(false)
+			wait_time = 0.015
+		total_rotation = value
 
 func _ready() -> void:
 	origin_rotation = 分钟.rotation_degrees
 	
 func _process(delta: float) -> void:
+	wait_time -= delta
+	if wait_time <= 0:
+		声音.set_stream_paused(true)
 	if is_over:
 		return
 	total_rotation = total_rotation + 分钟.rotation_degrees - origin_rotation
 	origin_rotation = 分钟.rotation_degrees
 	时钟度数(total_rotation)
-	if !dragging:
-		声音.set_stream_paused(true)
+
 		
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if !able_drag:
@@ -37,7 +45,6 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			dragging = false
 		
 	if event is InputEventMouseMotion and dragging:
-		声音.set_stream_paused(false)
 		分钟.look_at(get_global_mouse_position())
 		分钟.rotation_degrees += 90
 		
