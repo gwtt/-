@@ -1,0 +1,296 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq76cru2if2gp"]
+
+[ext_resource type="Script" path="res://场景/第三章/代码/注册登录.gd" id="1_a6lts"]
+
+[node name="登录" type="Node2D"]
+script = ExtResource("1_a6lts")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+offset_right = 1914.0
+offset_bottom = 1076.0
+scale = Vector2(0.997791, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="公司名" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 4.0
+theme_override_font_sizes/font_size = 80
+text = "江北股份有限公司
+员工管理系统"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 3.0
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="用户提示" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 64
+text = "用户名："
+
+[node name="用户名" type="LineEdit" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 64
+
+[node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 3.0
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="密码提示" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 64
+text = "密码："
+
+[node name="密码" type="LineEdit" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 64
+
+[node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 3.0
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="注册按钮" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
+text = "注册"
+
+[node name="Control3" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="登录按钮" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
+text = "登录"
+
+[node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+offset_right = 1914.0
+offset_bottom = 1076.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Control" type="Control" parent="PanelContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="公司名" type="Label" parent="PanelContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 4.0
+theme_override_font_sizes/font_size = 80
+text = "江北股份有限公司
+员工注册"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 3.0
+
+[node name="Control" type="Control" parent="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="用户提示" type="Label" parent="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 64
+text = "用户名："
+
+[node name="用户名" type="LineEdit" parent="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 64
+
+[node name="Control2" type="Control" parent="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 3.0
+
+[node name="Control" type="Control" parent="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="密码提示" type="Label" parent="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 64
+text = "密码："
+
+[node name="密码" type="LineEdit" parent="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 64
+text = "💪"
+
+[node name="Control2" type="Control" parent="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 3.0
+
+[node name="Control" type="Control" parent="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="确认按钮" type="Button" parent="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
+text = "确认"
+
+[node name="Control3" type="Control" parent="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="返回按钮" type="Button" parent="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
+text = "返回"
+
+[node name="Control2" type="Control" parent="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="密码提示1" type="Label" parent="PanelContainer2/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 40
+text = "提示1：
+你的密码需要包含大写、小写字母及数字"
+autowrap_mode = 2
+
+[node name="密码提示2" type="Label" parent="PanelContainer2/HBoxContainer/VBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 40
+text = "提示2：
+你的密码需要包含我们老板喜欢的快餐之一：麦当劳、肯德基、达美乐"
+autowrap_mode = 2
+
+[node name="密码提示3" type="Label" parent="PanelContainer2/HBoxContainer/VBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 40
+text = "提示3：
+你的密码需要包含至少一个特殊符号"
+autowrap_mode = 2
+
+[node name="密码提示4" type="Label" parent="PanelContainer2/HBoxContainer/VBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 40
+text = "提示4：
+你的密码中数字和数字之间若差小于4，必须中间隔一个字母"
+autowrap_mode = 2
+
+[node name="密码提示5" type="Label" parent="PanelContainer2/HBoxContainer/VBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 40
+text = "提示5：
+您的密码不够强壮💪"
+autowrap_mode = 2
+
+[node name="注册成功" type="Label" parent="PanelContainer2/HBoxContainer/VBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 64
+text = "注册成功！！！"
+autowrap_mode = 2
+
+[node name="用户名为空" type="Label" parent="PanelContainer2/HBoxContainer/VBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 64
+text = "用户名为空！！"
+autowrap_mode = 2
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer3/注册按钮" to="." method="_on_注册按钮_pressed"]
+[connection signal="pressed" from="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer3/确认按钮" to="." method="_on_确认按钮_pressed"]
+[connection signal="pressed" from="PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer3/返回按钮" to="." method="_on_返回按钮_pressed"]
