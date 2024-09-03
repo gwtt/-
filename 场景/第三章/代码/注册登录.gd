@@ -1,20 +1,20 @@
 extends Node2D
 
-@onready var login_panel: PanelContainer = $PanelContainer
-@onready var logon_panel: PanelContainer = $PanelContainer2
-@onready var name_content: LineEdit = $"PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer/用户名"
-@onready var pwd_content: LineEdit = $"PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer2/密码"
-@onready var name_input: LineEdit = $"PanelContainer/VBoxContainer/HBoxContainer/用户名"
-@onready var pwd_input: LineEdit = $"PanelContainer/VBoxContainer/HBoxContainer2/密码"
+@onready var login_panel: PanelContainer = $Control/PanelContainer
+@onready var logon_panel: PanelContainer = $Control/PanelContainer2
+@onready var name_content: LineEdit = $"Control/PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer/用户名"
+@onready var pwd_content: LineEdit = $"Control/PanelContainer2/HBoxContainer/VBoxContainer/HBoxContainer2/密码"
+@onready var name_input: LineEdit = $"Control/PanelContainer/VBoxContainer/HBoxContainer/用户名"
+@onready var pwd_input: LineEdit = $"Control/PanelContainer/VBoxContainer/HBoxContainer2/密码"
 
-@onready var sign1: Label = $"PanelContainer2/HBoxContainer/VBoxContainer2/密码提示1"
-@onready var sign2: Label = $"PanelContainer2/HBoxContainer/VBoxContainer2/密码提示2"
-@onready var sign3: Label = $"PanelContainer2/HBoxContainer/VBoxContainer2/密码提示3"
-@onready var sign4: Label = $"PanelContainer2/HBoxContainer/VBoxContainer2/密码提示4"
-@onready var sign5: Label = $"PanelContainer2/HBoxContainer/VBoxContainer2/密码提示5"
-@onready var success: Label = $"PanelContainer2/HBoxContainer/VBoxContainer2/注册成功"
-@onready var empty: Label = $"PanelContainer2/HBoxContainer/VBoxContainer2/用户名为空"
-@onready var logon: Button = $"PanelContainer/VBoxContainer/HBoxContainer3/注册按钮"
+@onready var sign1: Label = $"Control/PanelContainer2/HBoxContainer/VBoxContainer2/密码提示1"
+@onready var sign2: Label = $"Control/PanelContainer2/HBoxContainer/VBoxContainer2/密码提示2"
+@onready var sign3: Label = $"Control/PanelContainer2/HBoxContainer/VBoxContainer2/密码提示3"
+@onready var sign4: Label = $"Control/PanelContainer2/HBoxContainer/VBoxContainer2/密码提示4"
+@onready var sign5: Label = $"Control/PanelContainer2/HBoxContainer/VBoxContainer2/密码提示5"
+@onready var success: Label = $"Control/PanelContainer2/HBoxContainer/VBoxContainer2/注册成功"
+@onready var empty: Label = $"Control/PanelContainer2/HBoxContainer/VBoxContainer2/用户名为空"
+@onready var logon: Button = $"Control/PanelContainer/VBoxContainer/HBoxContainer3/注册按钮"
 
 const PwdValidate = preload("res://场景/第三章/代码/PwdValidate.gd")
 var password_validator = PwdValidate.new()
