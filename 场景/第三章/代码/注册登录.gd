@@ -16,19 +16,22 @@ extends Node2D
 @onready var empty: Label = $"PanelContainer2/HBoxContainer/VBoxContainer2/用户名为空"
 @onready var logon: Button = $"PanelContainer/VBoxContainer/HBoxContainer3/注册按钮"
 
+const PwdValidate = preload("res://场景/第三章/代码/PwdValidate.gd")
+var password_validator = PwdValidate.new()
+
 var is_right = false
 var user_name
 var password
 
 func _process(delta: float) -> void:
 	if !is_right:
-		if(is_valid_password_1(pwd_content.get_text())):
+		if(password_validator.upper_lower_and_digit(pwd_content.get_text())):
 			sign2.set_visible(true)
-			if(is_valid_password_2(pwd_content.get_text())):
+			if(password_validator.contains_brand_name(pwd_content.get_text())):
 				sign3.set_visible(true)
-				if(is_valid_password_3(pwd_content.get_text())):
+				if(password_validator.includes_special_character(pwd_content.get_text())):
 					sign4.set_visible(true)
-					if(is_valid_password_4(pwd_content.get_text())):
+					if(password_validator.proximity_digits_non_alpha(pwd_content.get_text())):
 						sign5.set_visible(true)
 
 func _on_注册按钮_pressed() -> void:
@@ -53,81 +56,6 @@ func _on_返回按钮_pressed() -> void:
 	name_input.set_text("")
 	pwd_input.set_text("")
 
-# 检查字符是否是数字
-func is_digit(char):
-	return char in "0123456789"
-
-func is_valid_password_1(password):
-	var has_upper = false
-	var has_lower = false
-	var has_digit = false
-	for char in password:
-		if char.is_valid_identifier():
-			if char.to_upper() == char:
-				has_upper = true
-			else:
-				has_lower = true
-		elif is_digit(char):
-			has_digit = true
-	return has_upper and has_lower and has_digit
-
-func is_valid_password_2(password):
-	var valid_brands = ["McDonald", "KFC", "Domino"]
-	for brand in valid_brands:
-		if password.find(brand) != -1:
-			return true
-	return false
-
-func is_valid_password_3(password):
-	var special_characters = "~!@#$%^&*()_+{}|:>?,./;[]-=''"
-	for char in password:
-		if special_characters.find(char) != -1:
-			return true
-	return false
-
-func is_valid_password_4(password):
-	for i in range(password.length() - 2):
-		var current_char = password[i]
-		var next_char = password[i + 1]
-		var next_next_char = password[i + 2]
-		# 检查当前字符和下一个字符是否都是数字
-		if is_digit(current_char) and is_digit(next_char):
-			var current_num = current_char.to_int()
-			var next_num = next_char.to_int()
-			# 检查数字差是否小于4
-			if abs(current_num - next_num) < 4:
-				# 检查下一个字符是否不是字母
-				if not next_char.is_valid_identifier():
-					return false
-		if is_digit(current_char) and is_digit(next_next_char):
-			var current_num = current_char.to_int()
-			var next_num = next_next_char.to_int()
-			# 检查数字差是否小于4
-			if abs(current_num - next_num) < 4:
-				# 检查下一个字符是否不是字母
-				if not next_char.is_valid_identifier():
-					return false
-	return true
-	#末尾处理
-	var current_char = password[password.length() - 1]
-	var next_char = password[password.length()]
-	if is_digit(current_char) and is_digit(next_char):
-			var current_num = current_char.to_int()
-			var next_num = next_char.to_int()
-			# 检查数字差是否小于4
-			print(abs(current_num - next_num))
-			if abs(current_num - next_num) < 4:
-					return false
-	
-func is_valid_password_5(password):
-	var emoji_count = 0
-	for char in password:
-		if char == "💪":
-			emoji_count += 1
-		if emoji_count >= 3:
-			return true
-	return false
-
 func invisible():
 	sign1.set_visible(false)
 	sign2.set_visible(false)
@@ -136,9 +64,9 @@ func invisible():
 	sign5.set_visible(false)
 	
 func _on_确认按钮_pressed() -> void:
-	if (is_valid_password_1(pwd_content.get_text()) and is_valid_password_2(pwd_content.get_text()) 
-	and is_valid_password_3(pwd_content.get_text()) and is_valid_password_4(pwd_content.get_text())
-	and is_valid_password_5(pwd_content.get_text())):
+	if (password_validator.upper_lower_and_digit(pwd_content.get_text()) and password_validator.contains_brand_name(pwd_content.get_text()) 
+	and password_validator.includes_special_character(pwd_content.get_text()) and password_validator.proximity_digits_non_alpha(pwd_content.get_text())
+	and password_validator.strong_enough(pwd_content.get_text())):
 		is_right = true
 		invisible()
 		if (name_content.get_text() == ""):
