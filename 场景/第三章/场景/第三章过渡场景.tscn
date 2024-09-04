@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://jee0hdkl6fwc"]
+
+[ext_resource type="Script" path="res://场景/第三章/代码/第三章过渡场景.gd" id="1_djnak"]
+
+[sub_resource type="Gradient" id="Gradient_rsp4w"]
+offsets = PackedFloat32Array(0.952212, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l7dc4"]
+gradient = SubResource("Gradient_rsp4w")
+width = 1920
+height = 1080
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.733173, 0.363248)
+
+[node name="第三章过渡场景" type="Node2D"]
+position = Vector2(960, 540)
+script = ExtResource("1_djnak")
+
+[node name="背景" type="Sprite2D" parent="."]
+position = Vector2(7.62939e-06, 0)
+scale = Vector2(1e-05, 1e-05)
+texture = SubResource("GradientTexture2D_l7dc4")
