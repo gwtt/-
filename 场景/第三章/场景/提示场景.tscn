@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://场景/第三章/代码/提示场景.gd" id="1_q68d1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rxtun"]
-content_margin_left = 30.0
-content_margin_top = 30.0
-content_margin_right = 30.0
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
 
 [node name="提示场景" type="PanelContainer"]
 anchors_preset = 15
@@ -24,6 +24,6 @@ layout_mode = 2
 [node name="文本" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.984314, 0.768627, 0.768627, 1)
-theme_override_font_sizes/font_size = 64
-text = "提示1：你的密码需要包含大写小写字母手动手动是但是但是是"
+theme_override_font_sizes/font_size = 48
+text = "提示1：你的密码需要包含大写小写字母手动手动是但是但是是手动是但是但是是手动是但是但是是手动是但是但是是"
 autowrap_mode = 2

@@ -276,7 +276,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.997791, 1)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_top = 150
@@ -301,7 +300,6 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
 
 [node name="互动层" type="VBoxContainer" parent="Control/登录界面/VBoxContainer/MarginContainer"]
 layout_mode = 2
@@ -394,7 +392,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1, 1.002)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_top = 150
@@ -505,15 +502,16 @@ text = "返回"
 
 [node name="提示" type="MarginContainer" parent="Control/注册界面/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/margin_left = 250
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 250
 theme_override_constants/margin_bottom = 10
 
 [node name="提示场景" parent="Control/注册界面/VBoxContainer/提示" instance=ExtResource("2_1euie")]
-custom_minimum_size = Vector2(400, 220)
+custom_minimum_size = Vector2(400, 160)
 layout_mode = 2
-size_flags_stretch_ratio = 2.32
+size_flags_stretch_ratio = 1.79
 
 [node name="卡皮巴拉" type="AnimatedSprite2D" parent="."]
 position = Vector2(186, 107)
