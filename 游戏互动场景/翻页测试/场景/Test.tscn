@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhb6jnnt516ot"]
+
+[ext_resource type="Shader" path="res://游戏互动场景/翻页测试/代码/Test.gdshader" id="1_hjgbx"]
+[ext_resource type="Texture2D" uid="uid://cbmecwnfuiffk" path="res://icon.svg" id="2_618o1"]
+[ext_resource type="Script" path="res://游戏互动场景/翻页测试/代码/sprite_2d.gd" id="3_1f8ct"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ccwr"]
+shader = ExtResource("1_hjgbx")
+shader_parameter/flip_progress = 0.0
+shader_parameter/page_size = Vector2(1024, 768)
+
+[node name="Test" type="Node2D"]
+position = Vector2(927, 524)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3ccwr")
+texture = ExtResource("2_618o1")
+script = ExtResource("3_1f8ct")

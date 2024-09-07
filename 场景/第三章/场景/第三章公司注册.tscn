@@ -1,0 +1,274 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4qsbx6dcxk8k"]
+
+[ext_resource type="Script" path="res://场景/第三章/代码/第三章公司注册.gd" id="1_ecllr"]
+[ext_resource type="Theme" uid="uid://dweujf387mii0" path="res://场景/第三章/资源/输入背景.tres" id="1_m0pbx"]
+[ext_resource type="Theme" uid="uid://dkqmpihdos2vu" path="res://场景/第三章/资源/字体.tres" id="1_w0ony"]
+[ext_resource type="PackedScene" uid="uid://bim60ddtdbrfp" path="res://场景/第三章/场景/提示场景.tscn" id="2_1euie"]
+
+[node name="第三章公司注册" type="Node2D"]
+script = ExtResource("1_ecllr")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_w0ony")
+
+[node name="登录界面" type="MarginContainer" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.997791, 1)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/登录界面"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="公司名" type="Label" parent="Control/登录界面/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 4.0
+theme_override_font_sizes/font_size = 80
+text = "员工管理系统"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/登录界面/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="互动层" type="VBoxContainer" parent="Control/登录界面/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 100
+
+[node name="用户名" type="MarginContainer" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层"]
+layout_mode = 2
+theme = ExtResource("1_m0pbx")
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+
+[node name="纹理" type="TextureRect" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层/用户名"]
+layout_mode = 2
+
+[node name="用户名" type="HBoxContainer" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层/用户名"]
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+
+[node name="用户提示" type="Label" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层/用户名/用户名"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 64
+text = "用户名："
+
+[node name="用户输入框" type="LineEdit" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层/用户名/用户名"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 64
+
+[node name="密码" type="MarginContainer" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层"]
+layout_mode = 2
+theme = ExtResource("1_m0pbx")
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+
+[node name="纹理" type="TextureRect" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层/密码"]
+layout_mode = 2
+
+[node name="密码" type="HBoxContainer" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层/密码"]
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+
+[node name="密码提示" type="Label" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层/密码/密码"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 64
+text = "密码："
+
+[node name="密码输入框" type="LineEdit" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层/密码/密码"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 64
+
+[node name="操作层" type="MarginContainer" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+
+[node name="按钮" type="HBoxContainer" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层/操作层"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/separation = 100
+
+[node name="登录按钮" type="Button" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
+text = "登录"
+
+[node name="注册按钮" type="Button" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
+text = "注册"
+
+[node name="注册界面" type="MarginContainer" parent="Control"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.997791, 1)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/注册界面"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="欢迎标题" type="Label" parent="Control/注册界面/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 4.0
+theme_override_font_sizes/font_size = 80
+text = "欢迎注册"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/注册界面/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="互动层" type="VBoxContainer" parent="Control/注册界面/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 100
+
+[node name="用户名" type="MarginContainer" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层"]
+layout_mode = 2
+theme = ExtResource("1_m0pbx")
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+
+[node name="纹理" type="TextureRect" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/用户名"]
+layout_mode = 2
+
+[node name="用户名" type="HBoxContainer" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/用户名"]
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+
+[node name="用户提示" type="Label" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/用户名/用户名"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 64
+text = "用户名："
+
+[node name="用户输入框" type="LineEdit" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/用户名/用户名"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 64
+
+[node name="密码" type="MarginContainer" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层"]
+layout_mode = 2
+theme = ExtResource("1_m0pbx")
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+
+[node name="纹理" type="TextureRect" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/密码"]
+layout_mode = 2
+
+[node name="密码" type="HBoxContainer" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/密码"]
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+
+[node name="密码提示" type="Label" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/密码/密码"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 64
+text = "密码："
+
+[node name="密码输入框" type="LineEdit" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/密码/密码"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 64
+text = "💪"
+
+[node name="操作层" type="MarginContainer" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+
+[node name="按钮" type="HBoxContainer" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/separation = 100
+
+[node name="确认按钮" type="Button" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
+text = "确认"
+
+[node name="返回按钮" type="Button" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
+text = "返回"
+
+[node name="提示" type="MarginContainer" parent="Control/注册界面/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 250
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 250
+theme_override_constants/margin_bottom = 10
+
+[node name="提示场景" parent="Control/注册界面/VBoxContainer/提示" instance=ExtResource("2_1euie")]
+custom_minimum_size = Vector2(400, 220)
+layout_mode = 2
+size_flags_stretch_ratio = 2.32
+
+[connection signal="pressed" from="Control/登录界面/VBoxContainer/MarginContainer/互动层/操作层/按钮/登录按钮" to="." method="_on_登录按钮_pressed"]
+[connection signal="pressed" from="Control/登录界面/VBoxContainer/MarginContainer/互动层/操作层/按钮/注册按钮" to="." method="_on_注册按钮_pressed"]
+[connection signal="text_changed" from="Control/注册界面/VBoxContainer/MarginContainer/互动层/密码/密码/密码输入框" to="." method="_on_密码输入框_text_changed"]
+[connection signal="pressed" from="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮/确认按钮" to="." method="_on_确认按钮_pressed"]
+[connection signal="pressed" from="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮/返回按钮" to="." method="_on_返回按钮_pressed"]

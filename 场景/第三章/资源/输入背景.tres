@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dweujf387mii0"]
+
+[ext_resource type="Texture2D" uid="uid://d1rj5oqblt3ut" path="res://场景/主菜单/资源/白.png" id="1_n8dkm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_et1g6"]
+texture = ExtResource("1_n8dkm")
+
+[resource]
+LineEdit/colors/font_color = Color(0.254902, 0.133333, 0.12549, 1)
+LineEdit/styles/normal = SubResource("StyleBoxTexture_et1g6")
