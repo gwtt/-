@@ -1,9 +1,260 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4qsbx6dcxk8k"]
+[gd_scene load_steps=42 format=3 uid="uid://c4qsbx6dcxk8k"]
 
 [ext_resource type="Script" path="res://场景/第三章/代码/第三章公司注册.gd" id="1_ecllr"]
 [ext_resource type="Theme" uid="uid://dweujf387mii0" path="res://场景/第三章/资源/输入背景.tres" id="1_m0pbx"]
 [ext_resource type="Theme" uid="uid://dkqmpihdos2vu" path="res://场景/第三章/资源/字体.tres" id="1_w0ony"]
 [ext_resource type="PackedScene" uid="uid://bim60ddtdbrfp" path="res://场景/第三章/场景/提示场景.tscn" id="2_1euie"]
+[ext_resource type="Theme" uid="uid://cau47gvpflebe" path="res://场景/第三章/资源/按钮.tres" id="4_homo1"]
+[ext_resource type="Texture2D" uid="uid://dlyedx562uc1p" path="res://场景/第三章/资源/V Square Button.png" id="5_gvh6g"]
+[ext_resource type="Texture2D" uid="uid://byigmk4nnu4rh" path="res://场景/第三章/资源/Back Square Button.png" id="6_v7xa6"]
+[ext_resource type="Texture2D" uid="uid://c2sq1nv821xmg" path="res://场景/第三章/资源/charlieTheCapybaraAnimationSheet.png" id="8_03ppa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n121a"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8joph"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(64, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jlk2"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu146"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(192, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik2d2"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(256, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xww7k"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(320, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7nw1"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(384, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgpys"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(448, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nb23"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aibbi"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlsbb"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g81rf"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndj76"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_romdh"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(320, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhyea"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rftay"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj37d"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms5vw"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxnkh"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nige6"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jd82"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(256, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6n3a"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(320, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wrgn"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(384, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxf7t"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(448, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5s3s"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(0, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubi76"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(64, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iodm3"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(128, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bair5"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(192, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lifnx"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(256, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwjc7"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(320, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afl18"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(384, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afyml"]
+atlas = ExtResource("8_03ppa")
+region = Rect2(448, 512, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qbida"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n121a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8joph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jlk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu146")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik2d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xww7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7nw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgpys")
+}],
+"loop": true,
+"name": &"grass",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nb23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aibbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlsbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g81rf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndj76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_romdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhyea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rftay")
+}],
+"loop": true,
+"name": &"sitting_1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj37d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms5vw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxnkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nige6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jd82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6n3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wrgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxf7t")
+}],
+"loop": true,
+"name": &"sitting_2",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5s3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubi76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iodm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bair5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lifnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwjc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afl18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afyml")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
 
 [node name="第三章公司注册" type="Node2D"]
 script = ExtResource("1_ecllr")
@@ -113,8 +364,7 @@ theme_override_font_sizes/font_size = 64
 
 [node name="操作层" type="MarginContainer" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 2
+size_flags_vertical = 3
 theme_override_constants/margin_left = 300
 theme_override_constants/margin_right = 300
 
@@ -127,14 +377,22 @@ theme_override_constants/separation = 100
 [node name="登录按钮" type="Button" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_homo1")
 theme_override_font_sizes/font_size = 64
 text = "登录"
 
 [node name="注册按钮" type="Button" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_homo1")
 theme_override_font_sizes/font_size = 64
 text = "注册"
+
+[node name="空" type="MarginContainer" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
 
 [node name="注册界面" type="MarginContainer" parent="Control"]
 visible = false
@@ -143,9 +401,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -46.0
+offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.997791, 1)
+scale = Vector2(1, 1.002)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_top = 150
@@ -233,7 +493,6 @@ text = "💪"
 [node name="操作层" type="MarginContainer" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
 theme_override_constants/margin_left = 300
 theme_override_constants/margin_right = 300
 
@@ -243,17 +502,34 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 theme_override_constants/separation = 100
 
-[node name="确认按钮" type="Button" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
+[node name="Control" type="Control" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 64
-text = "确认"
 
-[node name="返回按钮" type="Button" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
+[node name="确认按钮" type="TextureButton" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 64
-text = "返回"
+texture_normal = ExtResource("5_gvh6g")
+texture_pressed = ExtResource("5_gvh6g")
+texture_hover = ExtResource("5_gvh6g")
+texture_disabled = ExtResource("5_gvh6g")
+texture_focused = ExtResource("5_gvh6g")
+
+[node name="Control3" type="Control" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="返回按钮" type="TextureButton" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
+layout_mode = 2
+texture_normal = ExtResource("6_v7xa6")
+texture_pressed = ExtResource("6_v7xa6")
+texture_hover = ExtResource("6_v7xa6")
+texture_disabled = ExtResource("6_v7xa6")
+texture_focused = ExtResource("6_v7xa6")
+
+[node name="Control2" type="Control" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="提示" type="MarginContainer" parent="Control/注册界面/VBoxContainer"]
 layout_mode = 2
@@ -266,6 +542,12 @@ theme_override_constants/margin_bottom = 10
 custom_minimum_size = Vector2(400, 220)
 layout_mode = 2
 size_flags_stretch_ratio = 2.32
+
+[node name="卡皮巴拉" type="AnimatedSprite2D" parent="."]
+position = Vector2(186, 107)
+scale = Vector2(4.96736, 4.96736)
+sprite_frames = SubResource("SpriteFrames_qbida")
+animation = &"sitting_2"
 
 [connection signal="pressed" from="Control/登录界面/VBoxContainer/MarginContainer/互动层/操作层/按钮/登录按钮" to="." method="_on_登录按钮_pressed"]
 [connection signal="pressed" from="Control/登录界面/VBoxContainer/MarginContainer/互动层/操作层/按钮/注册按钮" to="." method="_on_注册按钮_pressed"]

@@ -9,6 +9,7 @@ extends Node2D
 @onready var 注册界面: MarginContainer = $"Control/注册界面"
 @onready var 注册: Button = $"Control/登录界面/VBoxContainer/MarginContainer/互动层/操作层/按钮/注册按钮"
 @onready var 登录: Button = $"Control/登录界面/VBoxContainer/MarginContainer/互动层/操作层/按钮/登录按钮"
+@onready var kapibala: AnimatedSprite2D = $"卡皮巴拉"
 
 var remind = {
 	1: "提示1：密码需要包含数字",
@@ -18,12 +19,22 @@ var remind = {
 	5: "提示5：您的密码不足9位",
 	6: "提示6：您的密码不够强壮"
 }
+var animation = {
+	1: "grass",
+	2: "walk",
+	3: "sitting_1",
+	4: "sitting_2"
+}
 var account:Dictionary  = {}
 var flag:bool = false #是否可以注册
 
-		
+
 func _ready() -> void:
 	提示场景.set_text(remind.get(1))
+	kapibala_play()
+	
+func kapibala_play():
+	kapibala.play(animation[randi_range(1,animation.size())])
 	
 func 检验(s:String)->int:
 	if !提示1(s):
@@ -97,12 +108,14 @@ func _on_确认按钮_pressed() -> void:
 		account.get_or_add(注册用户名.text,注册密码.text)
 		注册界面.visible = false
 		登录界面.visible = true
+		kapibala_play()
 		登录用户名.text = ""
 		登录密码.text = ""
 
 func _on_注册按钮_pressed() -> void:
 	注册界面.visible = true
 	登录界面.visible = false
+	kapibala_play()
 	注册密码.text = "💪"
 	注册用户名.text = ""
 func _on_登录按钮_pressed() -> void:
@@ -111,9 +124,9 @@ func _on_登录按钮_pressed() -> void:
 func _on_返回按钮_pressed() -> void:
 	注册界面.visible = false
 	登录界面.visible = true
+	kapibala_play()
 	登录用户名.text = ""
 	登录密码.text = ""
-	
 
 func _on_密码输入框_text_changed(new_text: String) -> void:
 	#提示文字的key值
