@@ -1,12 +1,10 @@
-[gd_scene load_steps=42 format=3 uid="uid://c4qsbx6dcxk8k"]
+[gd_scene load_steps=40 format=3 uid="uid://c4qsbx6dcxk8k"]
 
 [ext_resource type="Script" path="res://场景/第三章/代码/第三章公司注册.gd" id="1_ecllr"]
 [ext_resource type="Theme" uid="uid://dweujf387mii0" path="res://场景/第三章/资源/输入背景.tres" id="1_m0pbx"]
 [ext_resource type="Theme" uid="uid://dkqmpihdos2vu" path="res://场景/第三章/资源/字体.tres" id="1_w0ony"]
 [ext_resource type="PackedScene" uid="uid://bim60ddtdbrfp" path="res://场景/第三章/场景/提示场景.tscn" id="2_1euie"]
 [ext_resource type="Theme" uid="uid://cau47gvpflebe" path="res://场景/第三章/资源/按钮.tres" id="4_homo1"]
-[ext_resource type="Texture2D" uid="uid://dlyedx562uc1p" path="res://场景/第三章/资源/V Square Button.png" id="5_gvh6g"]
-[ext_resource type="Texture2D" uid="uid://byigmk4nnu4rh" path="res://场景/第三章/资源/Back Square Button.png" id="6_v7xa6"]
 [ext_resource type="Texture2D" uid="uid://c2sq1nv821xmg" path="res://场景/第三章/资源/charlieTheCapybaraAnimationSheet.png" id="8_03ppa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n121a"]
@@ -364,7 +362,6 @@ theme_override_font_sizes/font_size = 64
 
 [node name="操作层" type="MarginContainer" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层"]
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_constants/margin_left = 300
 theme_override_constants/margin_right = 300
 
@@ -375,6 +372,7 @@ size_flags_stretch_ratio = 3.0
 theme_override_constants/separation = 100
 
 [node name="登录按钮" type="Button" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("4_homo1")
@@ -388,21 +386,12 @@ theme = ExtResource("4_homo1")
 theme_override_font_sizes/font_size = 64
 text = "注册"
 
-[node name="空" type="MarginContainer" parent="Control/登录界面/VBoxContainer/MarginContainer/互动层"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 300
-theme_override_constants/margin_right = 300
-
 [node name="注册界面" type="MarginContainer" parent="Control"]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -46.0
-offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.002)
@@ -430,7 +419,6 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
 
 [node name="互动层" type="VBoxContainer" parent="Control/注册界面/VBoxContainer/MarginContainer"]
 layout_mode = 2
@@ -500,36 +488,20 @@ theme_override_constants/margin_right = 300
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
+theme = ExtResource("4_homo1")
 theme_override_constants/separation = 100
 
-[node name="Control" type="Control" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
+[node name="确认按钮" type="Button" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 3
+text = "确认"
 
-[node name="确认按钮" type="TextureButton" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
+[node name="返回按钮" type="Button" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("5_gvh6g")
-texture_pressed = ExtResource("5_gvh6g")
-texture_hover = ExtResource("5_gvh6g")
-texture_disabled = ExtResource("5_gvh6g")
-texture_focused = ExtResource("5_gvh6g")
-
-[node name="Control3" type="Control" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="返回按钮" type="TextureButton" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
-layout_mode = 2
-texture_normal = ExtResource("6_v7xa6")
-texture_pressed = ExtResource("6_v7xa6")
-texture_hover = ExtResource("6_v7xa6")
-texture_disabled = ExtResource("6_v7xa6")
-texture_focused = ExtResource("6_v7xa6")
-
-[node name="Control2" type="Control" parent="Control/注册界面/VBoxContainer/MarginContainer/互动层/操作层/按钮"]
-layout_mode = 2
-size_flags_horizontal = 3
+text = "返回"
 
 [node name="提示" type="MarginContainer" parent="Control/注册界面/VBoxContainer"]
 layout_mode = 2
