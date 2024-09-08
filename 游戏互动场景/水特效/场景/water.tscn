@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://4fa2iy7bgl83"]
+
+[ext_resource type="Script" path="res://游戏互动场景/水特效/代码/water.gd" id="1_6e1nc"]
+[ext_resource type="Shader" path="res://游戏互动场景/水特效/代码/water_shader.gdshader" id="2_u2d1f"]
+[ext_resource type="Texture2D" uid="uid://dpbpkmewq42v0" path="res://游戏互动场景/水特效/资源/blackmyth_wukong.jpg" id="3_go1mr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h7rst"]
+shader = ExtResource("2_u2d1f")
+shader_parameter/scale = null
+shader_parameter/mpos = Vector2(-1, -1)
+shader_parameter/waveSize = 20.0
+shader_parameter/kTime = 0.0
+shader_parameter/nowTime = 0.0
+shader_parameter/speedOff = 3.0
+shader_parameter/mPosTime = PackedVector3Array()
+
+[node name="Water" type="Node2D"]
+script = ExtResource("1_6e1nc")
+
+[node name="BlackmythWukong" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_h7rst")
+position = Vector2(929, 543)
+texture = ExtResource("3_go1mr")
