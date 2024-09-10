@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://cm6uqe8u7vgue"]
+
+[ext_resource type="Script" path="res://游戏互动场景/精准点击/脚本/click.gd" id="1_n7big"]
+[ext_resource type="Texture2D" uid="uid://btmsmqn2jr0nr" path="res://游戏互动场景/精准点击/资源/progress bar most rounded progress red.png" id="2_fd8qy"]
+[ext_resource type="Texture2D" uid="uid://dapioasycc0tf" path="res://游戏互动场景/精准点击/资源/progress bar most rounded progress blue.png" id="3_r77o7"]
+[ext_resource type="Texture2D" uid="uid://cwq6l3eo4vjej" path="res://游戏互动场景/精准点击/arrow-removebg-preview.png" id="4_02dg0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvnr6"]
+size = Vector2(361, 210.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0dit"]
+size = Vector2(68, 212)
+
+[node name="Click" type="Node2D"]
+script = ExtResource("1_n7big")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 46.0
+offset_top = 44.0
+offset_right = 78.0
+offset_bottom = 52.0
+scale = Vector2(17.72, 17.72)
+max_value = 1.0
+step = 0.0
+value = 1.0
+texture_under = ExtResource("2_fd8qy")
+texture_progress = ExtResource("3_r77o7")
+
+[node name="blue" type="Sprite2D" parent="."]
+position = Vector2(984, 645)
+scale = Vector2(35.4295, 35.4295)
+texture = ExtResource("3_r77o7")
+
+[node name="left" type="Node2D" parent="blue"]
+position = Vector2(-15.0157, -0.0282251)
+
+[node name="right" type="Node2D" parent="blue"]
+position = Vector2(14.9593, -0.1129)
+
+[node name="条子" type="Area2D" parent="."]
+
+[node name="red" type="Sprite2D" parent="条子"]
+position = Vector2(848, 645)
+scale = Vector2(12.9199, 35.4295)
+texture = ExtResource("2_fd8qy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="条子"]
+position = Vector2(846.5, 643.75)
+shape = SubResource("RectangleShape2D_fvnr6")
+
+[node name="left" type="Node2D" parent="条子"]
+position = Vector2(667, 650)
+
+[node name="right" type="Node2D" parent="条子"]
+position = Vector2(1030, 646)
+
+[node name="Arrow-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(778, 422)
+texture = ExtResource("4_02dg0")
+
+[node name="箭头" type="Area2D" parent="Arrow-removebg-preview"]
+position = Vector2(-778, -421)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow-removebg-preview/箭头"]
+position = Vector2(781, 643)
+shape = SubResource("RectangleShape2D_n0dit")
+
+[connection signal="area_shape_entered" from="条子" to="." method="_on_条子_area_shape_entered"]
+[connection signal="area_shape_exited" from="条子" to="." method="_on_条子_area_shape_exited"]
